@@ -15,3 +15,5 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
+
+Reference: http://vuejs-templates.github.io/webpack/
