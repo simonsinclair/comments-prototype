@@ -1,5 +1,5 @@
 <template>
-  <div class="bbc-comments__add-comment">
+  <div class="add-comment">
     <form v-on:submit.prevent="addComment">
       <input type="text" placeholder="Add a comment" v-model="commentText" />
       <button>Media</button>
@@ -17,33 +17,49 @@ export default {
     displayName: String,
     comments: Array,
   },
+
   data() {
     return {
-      commenter: this.displayName,
+      commenterName: this.displayName,
       commentText: '',
+      nextCommentId: this.comments.length,
     };
   },
+
   methods: {
-    addComment(e) {
+    addComment() {
+      // Validate `commentText` or return.
+      const commentText = this.commentText && this.commentText.trim();
+      if (!commentText) {
+        return;
+      }
+
+      // eslint-disable-next-line
+      console.log('before', this.comments);
+
+      // Post new comment.
       this.comments.push({
-        commenter: this.commenter,
+        id: this.nextCommentId += 1, // Increment `nextCommentId` for next comment.
+        commenterName: this.commenterName,
         commentText: this.commentText,
         timestamp: Date.now(),
         numUpVotes: 0,
         numDownVotes: 0,
         replies: [],
       });
+
+      // Clear `commentText` after posting.
       this.commentText = '';
 
       // eslint-disable-next-line
-      console.log(e, this.comments);
+      console.log('after', this.comments);
     },
   },
 };
 </script>
 
-<style lang="scss">
-  .bbc-comments__add-comment {
+<style lang="scss" scoped="">
+  .add-comment {
     background-color: #FFF;
     padding: 8px;
 
