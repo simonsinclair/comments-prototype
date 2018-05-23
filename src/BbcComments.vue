@@ -1,10 +1,10 @@
 <template>
-  <div class="bbc-comments gel-wrap">
+  <div class="comments gel-wrap">
     <div class="gel-layout">
 
       <!-- Title -->
       <div class="gel-layout__item">
-        <h1>{{ comments.length }} Comments {{ displayName }}</h1>
+        <h1>{{ comments.length }} Comments</h1>
       </div>
 
       <!-- Add a Comment -->
@@ -26,10 +26,10 @@
       <!-- Comments! -->
       <div class="gel-layout__item">
         <bbc-comment
-          v-for="comment in comments"
+          v-for="comment in orderedFilteredAndLimited(comments)"
           :key="comment.id"
 
-          :commenter="comment.commenter"
+          :commenter-name="comment.commenterName"
           :comment-text="comment.commentText"
           :timestamp="comment.timestamp"
           :num-up-votes="comment.numUpVotes"
@@ -38,6 +38,9 @@
         ></bbc-comment>
       </div>
 
+      <div class="gel-layout__item">
+        <button @click="showMoreComments(5)">More Comments</button>
+      </div>
     </div>
   </div>
 </template>
@@ -46,31 +49,86 @@
 import BbcAddComment from './BbcAddComment';
 import BbcComment from './BbcComment';
 
+const filters = {
+  all(comments) {
+    return comments;
+  },
+};
+
+const orders = {
+  oldest(comments) {
+    return comments;
+  },
+  newest(comments) {
+    return comments.slice(0).reverse();
+  },
+};
+
 export default {
   props: {
     displayName: String,
   },
+
   components: { BbcAddComment, BbcComment },
+
   data() {
     return {
+      activeFilter: 'all',
+      activeOrder: 'newest',
+      numVisibleComments: 3,
       comments: [
         {
-          id: 0,
-          commenter: this.displayName,
-          commentText: 'An initial comment.',
+          id: 1,
+          commenterName: this.displayName,
+          commentText: 'First comment!',
           timestamp: Date.now(),
           numUpVotes: 3,
           numDownVotes: 1,
           replies: [],
         },
+        {
+          id: 2,
+          commenterName: this.displayName,
+          commentText: 'Second comment...',
+          timestamp: Date.now(),
+          numUpVotes: 2,
+          numDownVotes: 0,
+          replies: [],
+        },
+        {
+          id: 3,
+          commenterName: this.displayName,
+          commentText: 'Third comment.',
+          timestamp: Date.now(),
+          numUpVotes: 0,
+          numDownVotes: 0,
+          replies: [],
+        },
       ],
     };
+  },
+
+  methods: {
+    orderedFilteredAndLimited(rawComments) {
+      // 1. Order
+      // 2. Filter
+      // 3. Limit
+      let comments = orders[this.activeOrder](rawComments);
+      comments = filters[this.activeFilter](comments);
+      comments = comments.slice(0, this.numVisibleComments);
+      return comments;
+    },
+
+    showMoreComments(numMoreComments) {
+      // eslint-disable-next-line
+      console.log(numMoreComments);
+    },
   },
 };
 </script>
 
-<style lang="scss">
-  .bbc-comments {
+<style lang="scss" scoped="">
+  .comments {
     background-color: #CCC;
   }
 </style>
