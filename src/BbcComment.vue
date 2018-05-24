@@ -5,7 +5,7 @@
     <div class="comment">
       <div class="comment__header">
         <img src="http://placehold.it/32" alt="" />
-        <span class="comment__commenter-name">{{ commenterName }}</span>
+        <span class="comment__display-name">{{ displayName }}</span>
         <!--
           Todo:
             - Render special flag, e.g. Editors pick
@@ -40,7 +40,7 @@ import BbcReply from './BbcReply';
 export default {
   components: { BbcReply },
   props: {
-    commenterName: String,
+    displayName: String,
     commentText: String,
     timestamp: Number,
     numUpVotes: Number,
@@ -59,7 +59,7 @@ export default {
       background-color: #FFF;
     }
       .comment__header {}
-        .comment__commenter-name {}
+        .comment__display-name {}
       .comment__body {}
       .comment__footer {}
 

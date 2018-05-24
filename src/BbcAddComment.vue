@@ -20,7 +20,6 @@ export default {
 
   data() {
     return {
-      commenterName: this.displayName,
       commentText: '',
       nextCommentId: this.comments.length,
     };
@@ -40,7 +39,7 @@ export default {
       // Post new comment.
       this.comments.push({
         id: this.nextCommentId += 1, // Increment `nextCommentId` for next comment.
-        commenterName: this.commenterName,
+        displayName: this.displayName,
         commentText: this.commentText,
         timestamp: Date.now(),
         numUpVotes: 0,

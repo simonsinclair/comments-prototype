@@ -29,7 +29,7 @@
           v-for="comment in orderedFilteredAndLimited(comments)"
           :key="comment.id"
 
-          :commenter-name="comment.commenterName"
+          :display-name="comment.displayName"
           :comment-text="comment.commentText"
           :timestamp="comment.timestamp"
           :num-up-votes="comment.numUpVotes"
@@ -79,7 +79,7 @@ export default {
       comments: [
         {
           id: 1,
-          commenterName: this.displayName,
+          displayName: this.displayName,
           commentText: 'First comment!',
           timestamp: Date.now(),
           numUpVotes: 3,
@@ -88,7 +88,7 @@ export default {
         },
         {
           id: 2,
-          commenterName: this.displayName,
+          displayName: this.displayName,
           commentText: 'Second comment...',
           timestamp: Date.now(),
           numUpVotes: 2,
@@ -97,7 +97,7 @@ export default {
         },
         {
           id: 3,
-          commenterName: this.displayName,
+          displayName: this.displayName,
           commentText: 'Third comment.',
           timestamp: Date.now(),
           numUpVotes: 0,
