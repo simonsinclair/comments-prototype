@@ -29,16 +29,23 @@
       <bbc-reply
         v-for="reply in replies"
         :key="reply.id"
+
+        :display-name="reply.displayName"
+        :reply-text="reply.replyText"
+        :num-up-votes="reply.numUpVotes"
+        :num-down-votes="reply.numDownVotes"
       ></bbc-reply>
+      <bbc-add-reply :display-name="displayName" :replies="replies"></bbc-add-reply>
     </div>
   </div>
 </template>
 
 <script>
 import BbcReply from './BbcReply';
+import BbcAddReply from './BbcAddReply';
 
 export default {
-  components: { BbcReply },
+  components: { BbcReply, BbcAddReply },
   props: {
     displayName: String,
     commentText: String,
