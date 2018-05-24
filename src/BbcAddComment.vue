@@ -33,9 +33,6 @@ export default {
         return;
       }
 
-      // eslint-disable-next-line
-      console.log('before', this.comments);
-
       // Post new comment.
       this.comments.push({
         id: this.nextCommentId += 1, // Increment `nextCommentId` for next comment.
@@ -49,9 +46,6 @@ export default {
 
       // Clear `commentText` after posting.
       this.commentText = '';
-
-      // eslint-disable-next-line
-      console.log('after', this.comments);
     },
   },
 };
