@@ -26,7 +26,7 @@
       <!-- Comments! -->
       <div class="gel-layout__item">
         <bbc-comment
-          v-for="comment in orderedFilteredAndLimited(comments)"
+          v-for="comment in getOrderedFilteredAndLimitComments(comments, numVisibleComments)"
           :key="comment.id"
 
           :display-name="comment.displayName"
@@ -39,7 +39,7 @@
       </div>
 
       <div class="gel-layout__item">
-        <button @click="showMoreComments(5)">More Comments</button>
+        <button @click="showMoreComments">More Comments</button>
       </div>
     </div>
   </div>
@@ -109,19 +109,25 @@ export default {
   },
 
   methods: {
-    orderedFilteredAndLimited(rawComments) {
+    getOrderedAndFilteredComments(rawComments) {
       // 1. Order
       // 2. Filter
-      // 3. Limit
       let comments = orders[this.activeOrder](rawComments);
       comments = filters[this.activeFilter](comments);
-      comments = comments.slice(0, this.numVisibleComments);
       return comments;
     },
 
-    showMoreComments(numMoreComments) {
-      // eslint-disable-next-line
-      console.log(numMoreComments);
+    getOrderedFilteredAndLimitComments(rawComments, numComments) {
+      const comments = this.getOrderedAndFilteredComments(rawComments);
+      return comments.slice(0, numComments);
+    },
+
+    showMoreComments() {
+      const numTotalComments = this.getOrderedFilteredAndLimitComments(this.comments).length;
+
+      if (numTotalComments > this.numVisibleComments) {
+        this.numVisibleComments += 5;
+      }
     },
   },
 };
