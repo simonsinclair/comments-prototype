@@ -1,7 +1,17 @@
 <template>
-  <div class="reply gel-layout">
-    <div class="gel-layout__item">
+  <div class="reply">
+    <div class="reply__header">
+      <img src="http://placehold.it/24" alt="" />
+      <span class="reply__display-name">{{ displayName }}</span>
+    </div>
+    <div class="reply__body">
       <p>{{ replyText }}</p>
+    </div>
+    <div class="reply__footer">
+      <button>Report</button>
+
+      <button>Up {{ numUpVotes }}</button>
+      <button>Down {{ numDownVotes }}</button>
     </div>
   </div>
 </template>
@@ -20,3 +30,4 @@ export default {
 <style lang="scss" scoped="">
   .reply {}
 </style>
+
