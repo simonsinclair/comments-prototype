@@ -39,7 +39,7 @@
       </div>
 
       <div class="gel-layout__item">
-        <button @click="showMoreComments">More Comments</button>
+        <button class="comments__show-more" @click="showMoreComments">More Comments</button>
       </div>
     </div>
   </div>
@@ -138,5 +138,10 @@ export default {
 <style lang="scss" scoped="">
   .comments {
     background-color: #CCC;
+  }
+  .comments__show-more {
+    background-color: #FFF;
+    font-weight: bold;
+    padding: 12px 32px;
   }
 </style>

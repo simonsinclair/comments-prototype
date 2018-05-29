@@ -23,4 +23,8 @@ export default {
     background: #EEE;
     padding-top: 72px;
   }
+
+  button {
+    cursor: pointer;
+  }
 </style>
