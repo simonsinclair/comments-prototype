@@ -86,7 +86,20 @@ export default {
           timestamp: new Date(2018, 4, 23),
           numUpVotes: 3,
           numDownVotes: 1,
-          replies: [],
+          replies: [
+            {
+              displayName: this.displayName,
+              replyText: 'First reply.',
+              numUpVotes: 1,
+              numDownVotes: 0,
+            },
+            {
+              displayName: this.displayName,
+              replyText: 'Second reply.',
+              numUpVotes: 2,
+              numDownVotes: 1,
+            },
+          ],
         },
         {
           id: 2,
