@@ -80,10 +80,10 @@ export default {
 
 <style lang="scss" scoped="">
   .comment-wrap {
-    padding: 8px;
     margin-bottom: 16px;
   }
     .comment {
+      padding: 8px;
       background-color: #FFF;
     }
       .comment__header {}
@@ -91,5 +91,9 @@ export default {
       .comment__body {}
       .comment__footer {}
 
-    .replies {}
+    .replies {
+      margin-right: 8px;
+      margin-bottom: 24px;
+      margin-left: 8px;
+    }
 </style>

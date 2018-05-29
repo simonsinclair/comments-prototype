@@ -13,7 +13,7 @@
       </div>
 
       <!-- Sorting/Filtering -->
-      <div class="gel-layout__item">
+      <div class="gel-layout__item comments__filter-order">
         <select name="showCommentType">
           <option value="all" selected="">Everything</option>
         </select>
@@ -152,9 +152,15 @@ export default {
   .comments {
     background-color: #CCC;
   }
-  .comments__show-more {
-    background-color: #FFF;
-    font-weight: bold;
-    padding: 12px 32px;
-  }
+
+    .comments__filter-order {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .comments__show-more {
+      background-color: #FFF;
+      font-weight: bold;
+      padding: 12px 32px;
+    }
 </style>

@@ -28,6 +28,11 @@ export default {
 </script>
 
 <style lang="scss" scoped="">
-  .reply {}
+  .reply {
+    background-color: #FFF;
+    margin-top: 16px;
+
+    margin-left: 20px;
+  }
 </style>
 
