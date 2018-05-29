@@ -16,7 +16,11 @@
         <span class="comment__timestamp">{{ timestamp | fromNow }}</span>
       </div>
       <div class="comment__footer">
-        <button>{{ replies.length }} Replies</button>
+        <!-- Better way to do this? -->
+        <button @click="toggleReplies()" v-show="!isRepliesVisible">
+          {{ replies.length > 0 ? `${replies.length} Replies` : 'Reply' }}
+        </button>
+        <button @click="toggleReplies()" v-show="isRepliesVisible">Close</button>
 
         <button>Report</button>
         <button>Up {{ numUpVotes }}</button>
@@ -25,7 +29,7 @@
     </div>
 
     <!-- Comment Replies -->
-    <div class="replies">
+    <div class="replies" v-show="isRepliesVisible">
       <bbc-reply
         v-for="reply in replies"
         :key="reply.id"
@@ -48,6 +52,16 @@ import BbcAddReply from './BbcAddReply';
 
 export default {
   components: { BbcReply, BbcAddReply },
+  data() {
+    return {
+      isRepliesVisible: false,
+    };
+  },
+  methods: {
+    toggleReplies() {
+      this.isRepliesVisible = !this.isRepliesVisible;
+    },
+  },
   filters: {
     fromNow(timestamp) {
       return moment(timestamp).fromNow();
