@@ -13,7 +13,7 @@
       </div>
       <div class="comment__body">
         <p>{{ commentText }}</p>
-        <span class="comment__timestamp">{{ timestamp }}</span>
+        <span class="comment__timestamp">{{ timestamp | fromNow }}</span>
       </div>
       <div class="comment__footer">
         <button>{{ replies.length }} Replies</button>
@@ -48,6 +48,11 @@ import BbcAddReply from './BbcAddReply';
 
 export default {
   components: { BbcReply, BbcAddReply },
+  filters: {
+    fromNow(timestamp) {
+      return moment(timestamp).fromNow();
+    },
+  },
   props: {
     displayName: String,
     commentText: String,
