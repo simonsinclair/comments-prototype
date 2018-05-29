@@ -41,6 +41,8 @@
 </template>
 
 <script>
+import moment from 'moment';
+
 import BbcReply from './BbcReply';
 import BbcAddReply from './BbcAddReply';
 
