@@ -1,7 +1,7 @@
 <template>
   <div class="reply">
     <div class="reply__header">
-      <img src="http://placehold.it/24" alt="" />
+      <img src="https://placehold.it/24" alt="" />
       <span class="reply__display-name">{{ displayName }}</span>
     </div>
     <div class="reply__body">

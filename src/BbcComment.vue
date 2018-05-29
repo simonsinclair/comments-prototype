@@ -4,7 +4,7 @@
     <!-- Comment -->
     <div class="comment">
       <div class="comment__header">
-        <img src="http://placehold.it/32" alt="" />
+        <img src="https://placehold.it/32" alt="" />
         <span class="comment__display-name">{{ displayName }}</span>
         <!--
           Todo:
