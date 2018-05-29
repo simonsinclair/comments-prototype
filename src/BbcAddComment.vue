@@ -38,7 +38,7 @@ export default {
         id: this.nextCommentId += 1, // Increment `nextCommentId` for next comment.
         displayName: this.displayName,
         commentText: this.commentText,
-        timestamp: Date.now(),
+        timestamp: new Date(),
         numUpVotes: 0,
         numDownVotes: 0,
         replies: [],

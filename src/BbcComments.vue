@@ -81,7 +81,9 @@ export default {
           id: 1,
           displayName: this.displayName,
           commentText: 'First comment!',
-          timestamp: Date.now(),
+          // new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]]]]]);
+          // The argument monthIndex is 0-based. This means that January = 0 and December = 11.
+          timestamp: new Date(2018, 4, 23),
           numUpVotes: 3,
           numDownVotes: 1,
           replies: [],
@@ -90,7 +92,7 @@ export default {
           id: 2,
           displayName: this.displayName,
           commentText: 'Second comment...',
-          timestamp: Date.now(),
+          timestamp: new Date(2018, 4, 23),
           numUpVotes: 2,
           numDownVotes: 0,
           replies: [],
@@ -99,7 +101,7 @@ export default {
           id: 3,
           displayName: this.displayName,
           commentText: 'Third comment.',
-          timestamp: Date.now(),
+          timestamp: new Date(2018, 4, 23),
           numUpVotes: 0,
           numDownVotes: 0,
           replies: [],

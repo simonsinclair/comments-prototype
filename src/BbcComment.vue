@@ -51,7 +51,7 @@ export default {
   props: {
     displayName: String,
     commentText: String,
-    timestamp: Number,
+    timestamp: Date,
     numUpVotes: Number,
     numDownVotes: Number,
     replies: Array,

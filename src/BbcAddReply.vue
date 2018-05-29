@@ -38,7 +38,7 @@ export default {
         id: this.nextReplyId += 1, // Increment `nextReplyId` for next reply.
         displayName: this.displayName,
         replyText: this.replyText,
-        timestamp: Date.now(),
+        timestamp: new Date(),
         numUpVotes: 0,
         numDownVotes: 0,
       });
