@@ -69,6 +69,7 @@ export default {
   .add-reply {
     background-color: #FFF;
     padding: 8px;
+    margin-top: 16px;
 
     input {
       border: none;
