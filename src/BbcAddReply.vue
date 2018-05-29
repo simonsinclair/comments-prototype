@@ -1,11 +1,11 @@
 <template>
   <div class="add-reply">
-    <form v-on:submit.prevent="addReply">
-      <input type="text" placeholder="Add your reply" v-model="replyText" />
+    <form @submit.prevent="addReply">
+      <input type="text" placeholder="Add your reply" v-model.trim="replyText" />
       <button>Media</button>
 
-      <div class="add-reply__controls">
-        <button>Cancel</button> <button type="submit">Add reply</button>
+      <div class="add-reply__controls" v-show="showSubmit">
+        <button @click="cancelReply()">Cancel</button> <button type="submit">Add reply</button>
       </div>
     </form>
   </div>
@@ -22,7 +22,18 @@ export default {
     return {
       replyText: '',
       nextReplyId: this.replies.length,
+      showSubmit: false,
     };
+  },
+
+  watch: {
+    replyText(newReplyText) {
+      if (newReplyText.length > 0) {
+        this.showSubmit = true;
+      } else {
+        this.showSubmit = false;
+      }
+    },
   },
 
   methods: {
@@ -46,6 +57,10 @@ export default {
       // Clear `replyText` after posting.
       this.replyText = '';
     },
+  },
+
+  cancelReply() {
+    this.replyText = '';
   },
 };
 </script>
