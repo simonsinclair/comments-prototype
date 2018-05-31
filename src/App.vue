@@ -12,7 +12,7 @@ export default {
   components: { BbcComments },
   data() {
     return {
-      displayName: 'Test User',
+      displayName: 'Bob Ross',
     };
   },
 };
