@@ -4,8 +4,9 @@
     <!-- Comment -->
     <div class="comment">
       <div class="comment__header">
-        <img src="https://placehold.it/32" alt="" />
-        <span class="comment__display-name">{{ displayName }}</span>
+        <bbc-contributor :display-name="displayName"></bbc-contributor>
+        <!-- <img src="https://placehold.it/32" alt="" />
+        <span class="comment__display-name gel-pica-bold">{{ displayName }}</span> -->
         <!--
           Todo:
             - Render special flag, e.g. Editors pick
@@ -13,18 +14,24 @@
       </div>
       <div class="comment__body">
         <p>{{ commentText }}</p>
-        <span class="comment__timestamp">{{ timestamp | fromNow }}</span>
+        <span class="comment__timestamp gel-brevier">{{ timestamp | fromNow }}</span>
       </div>
       <div class="comment__footer">
         <!-- Better way to do this? -->
-        <button @click="toggleReplies()" v-show="!isRepliesVisible">
+        <button class="gel-pica-bold"
+          @click="toggleReplies()"
+          v-show="!isRepliesVisible">
           {{ replies.length > 0 ? `${replies.length} Replies` : 'Reply' }}
         </button>
-        <button @click="toggleReplies()" v-show="isRepliesVisible">Close</button>
+        <button class="gel-pica-bold"
+          @click="toggleReplies()"
+          v-show="isRepliesVisible">
+          Close
+        </button>
 
-        <button>Report</button>
-        <button>Up {{ numUpVotes }}</button>
-        <button>Down {{ numDownVotes }}</button>
+        <button class="gel-pica-bold">Report</button>
+        <button class="gel-pica">Up {{ numUpVotes }}</button>
+        <button class="gel-pica">Down {{ numDownVotes }}</button>
       </div>
     </div>
 
@@ -49,9 +56,10 @@ import moment from 'moment';
 
 import BbcReply from './BbcReply';
 import BbcAddReply from './BbcAddReply';
+import BbcContributor from './BbcContributor';
 
 export default {
-  components: { BbcReply, BbcAddReply },
+  components: { BbcReply, BbcAddReply, BbcContributor },
   data() {
     return {
       isRepliesVisible: false,
@@ -83,13 +91,24 @@ export default {
     margin-bottom: 16px;
   }
     .comment {
-      padding: 8px;
       background-color: #FFF;
     }
-      .comment__header {}
+      .comment__header,
+      .comment__body {
+        padding-right: 12px;
+        padding-left: 12px;
+      }
+      .comment__header {
+        padding-top: 12px;
+      }
         .comment__display-name {}
       .comment__body {}
-      .comment__footer {}
+      .comment__footer {
+
+        > button {
+          padding: 12px;
+        }
+      }
 
     .replies {
       margin-right: 8px;
