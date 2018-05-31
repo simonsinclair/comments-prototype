@@ -30,6 +30,7 @@ export default {
     background: #EEE;
     padding-top: 80px;
     padding-bottom: 200px;
+    font-family: "ReithSans", sans-serif;
   }
 
   button {
