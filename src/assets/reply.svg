@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>Reply</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Anatomy-&amp;-Layout" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile-01" transform="translate(-24.000000, -497.000000)" fill="#252525" fill-rule="nonzero">
+            <g id="Group" transform="translate(12.000000, 356.000000)">
+                <path d="M12,141 L36,141 L36,160 L18,160 L12,165 L12,141 Z M17.2295153,158 L34,158 L34,143 L14,143 L14,160.921942 L17.2295153,158 Z M17,147 L31,147 L31,149 L17,149 L17,147 Z M17,152 L28,152 L28,154 L17,154 L17,152 Z" id="Reply"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>avatar placeholder</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Anatomy-&amp;-Layout" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M9.999,15.9996 C9.999,12.6856 12.686,9.9996 16,9.9996 C19.315,9.9996 22.001,12.6856 22.001,15.9996 C22.001,19.3136 19.315,21.9996 16,21.9996 C12.686,21.9996 9.999,19.3136 9.999,15.9996 Z M16,0 C24.837,0 32,7.167 32,16.004 C32,20.674 29.987,24.866 26.798,27.791 L25.863,25.926 C28.413,23.391 30,19.903 30,16.031 C30,8.312 23.72,2.062 16,2.062 C8.28,2.062 2,8.405 2,16.124 C2,21.005 4.515,25.43 8.311,27.937 L10,24.498 L22,24.498 L24.587,29.735 C22.105,31.319 19.163,32 16,32 C7.163,32 0,24.837 0,16 C0,7.164 7.163,0 16,0 Z" id="avatar-placeholder" fill="#999999"></path>
+    </g>
+</svg>
