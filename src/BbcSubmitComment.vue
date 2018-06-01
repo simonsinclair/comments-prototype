@@ -5,9 +5,7 @@
           class="gel-great-primer"
           type="text"
           :placeholder="placeholderText"
-          v-model.trim="commentText"
-          @keyup.enter="submitComment"
-        />
+          v-model.trim="commentText" />
         <img src="./assets/media-chooser.svg" alt="" />
 
         <div class="submit-comment__controls" v-show="showSubmit">
