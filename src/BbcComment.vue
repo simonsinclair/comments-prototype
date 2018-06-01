@@ -5,8 +5,6 @@
     <div class="comment">
       <div class="comment__header">
         <bbc-contributor :display-name="displayName"></bbc-contributor>
-        <!-- <img src="https://placehold.it/32" alt="" />
-        <span class="comment__display-name gel-pica-bold">{{ displayName }}</span> -->
         <!--
           Todo:
             - Render special flag, e.g. Editors pick
@@ -18,20 +16,29 @@
       </div>
       <div class="comment__footer">
         <!-- Better way to do this? -->
-        <button class="gel-pica-bold"
+        <button class="gel-pica-bold comment__reply-btn"
           @click="toggleReplies()"
           v-show="!isRepliesVisible">
-          {{ replies.length > 0 ? `${replies.length} Replies` : 'Reply' }}
+          <span v-show="replies.length > 0">
+            <img src="./assets/n-replies.svg" alt="" /> {{ replies.length }} Replies
+          </span>
+          <span v-show="replies.length === 0">
+            <img src="./assets/reply.svg" alt="" /> Reply
+          </span>
         </button>
-        <button class="gel-pica-bold"
+        <button class="gel-pica-bold comment__reply-btn"
           @click="toggleReplies()"
           v-show="isRepliesVisible">
-          Close
+          <img src="./assets/n-replies.svg" alt="" /> {{ replies.length }} Close
         </button>
 
         <button class="gel-pica-bold">Report</button>
-        <button class="gel-pica">Up {{ numUpVotes }}</button>
-        <button class="gel-pica">Down {{ numDownVotes }}</button>
+        <button class="gel-pica">
+          <img src="./assets/up-thumb.svg" alt="" /> {{ numUpVotes }}
+        </button>
+        <button class="gel-pica">
+          <img src="./assets/down-thumb.svg" alt="" /> {{ numDownVotes }}
+        </button>
       </div>
     </div>
 
@@ -46,7 +53,12 @@
         :num-up-votes="reply.numUpVotes"
         :num-down-votes="reply.numDownVotes"
       ></bbc-reply>
-      <bbc-add-reply :display-name="displayName" :replies="replies"></bbc-add-reply>
+      <bbc-submit-comment
+        :display-name="displayName"
+        @comment-submitted="submitReply"
+        placeholder-text="Add your reply"
+        cta-text="Add reply">
+      </bbc-submit-comment>
     </div>
   </div>
 </template>
@@ -55,26 +67,42 @@
 import moment from 'moment';
 
 import BbcReply from './BbcReply';
-import BbcAddReply from './BbcAddReply';
+import BbcSubmitComment from './BbcSubmitComment';
 import BbcContributor from './BbcContributor';
 
 export default {
-  components: { BbcReply, BbcAddReply, BbcContributor },
+  components: { BbcReply, BbcSubmitComment, BbcContributor },
+
   data() {
     return {
       isRepliesVisible: false,
     };
   },
+
   methods: {
+    submitReply(replyText) {
+      const nextReplyId = this.replies.length + 1;
+      this.replies.push({
+        id: nextReplyId, // Increment `nextReplyId` for next reply.
+        displayName: this.displayName,
+        replyText,
+        timestamp: new Date(),
+        numUpVotes: 0,
+        numDownVotes: 0,
+      });
+    },
+
     toggleReplies() {
       this.isRepliesVisible = !this.isRepliesVisible;
     },
   },
+
   filters: {
     fromNow(timestamp) {
       return moment(timestamp).fromNow();
     },
   },
+
   props: {
     displayName: String,
     commentText: String,

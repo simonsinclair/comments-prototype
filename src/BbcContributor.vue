@@ -1,6 +1,10 @@
 <template>
   <div class="contributor">
-    <img class="contributor__avatar" :src="avatarSrc" alt="" width="32" height="32" />
+    <img
+      class="contributor__avatar"
+      src="./assets/avatar-placeholder.svg"
+      alt=""
+      width="32" height="32" />
     <span class="contributor__name gel-pica-bold">{{ displayName }}</span>
   </div>
 </template>
@@ -9,10 +13,6 @@
 export default {
   props: {
     displayName: String,
-    avatarSrc: {
-      type: String,
-      default: 'https://placehold.it/64',
-    },
   },
 };
 </script>

@@ -9,8 +9,12 @@
     <div class="reply__footer">
       <button class="gel-pica-bold">Report</button>
 
-      <button class="gel-pica">Up {{ numUpVotes }}</button>
-      <button class="gel-pica">Down {{ numDownVotes }}</button>
+      <button class="gel-pica">
+        <img src="./assets/up-thumb.svg" alt="" /> {{ numUpVotes }}
+      </button>
+      <button class="gel-pica">
+        <img src="./assets/down-thumb.svg" alt="" /> {{ numDownVotes }}
+      </button>
     </div>
   </div>
 </template>
