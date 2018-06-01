@@ -26,6 +26,8 @@ export default {
   //   box-sizing: inherit;
   // }
 
+  $blue: #3a64ee;
+
   body {
     background: #EEE;
     padding-top: 80px;
