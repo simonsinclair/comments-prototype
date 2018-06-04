@@ -1,12 +1,12 @@
 <template>
-  <div class="submit-comment">
+  <div class="submit-comment" :class="{ 'submit-comment--media': acceptsMedia }">
       <form class="submit-comment__form" @submit.prevent="submitComment">
         <input
           class="gel-great-primer"
           type="text"
           :placeholder="placeholderText"
           v-model.trim="commentText" />
-        <img src="./assets/media-chooser.svg" alt="" />
+        <img v-if="acceptsMedia" src="./assets/media-chooser.svg" alt="" />
 
         <div class="submit-comment__controls" v-show="showSubmit">
           <button type="button" @click="cancelComment()">Cancel</button>
@@ -19,6 +19,10 @@
 <script>
 export default {
   props: {
+    acceptsMedia: {
+      type: Boolean,
+      default: false,
+    },
     ctaText: String,
     placeholderText: String,
   },
@@ -65,10 +69,7 @@ export default {
     padding: 12px;
     margin-top: 16px;
   }
-
     .submit-comment__form {
-      position: relative;
-      padding-right: 34px + 12;
 
       > input {
         border: none;
@@ -78,12 +79,20 @@ export default {
         padding-bottom: 8px;
         width: 100%;
       }
+    }
+
+  .submit-comment--media {
+
+    .submit-comment__form {
+      position: relative;
+      padding-right: 34px + 12;
 
       > img {
         position: absolute;
           top: 0; right: 0;
       }
     }
+  }
 
     .submit-comment__controls {
       text-align: right;

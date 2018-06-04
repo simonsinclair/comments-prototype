@@ -58,6 +58,7 @@
       <bbc-submit-comment
         :display-name="displayName"
         @comment-submitted="submitReply"
+        accepts-media=""
         placeholder-text="Add your reply"
         cta-text="Add reply">
       </bbc-submit-comment>
