@@ -9,7 +9,7 @@
         <img src="./assets/media-chooser.svg" alt="" />
 
         <div class="submit-comment__controls" v-show="showSubmit">
-          <button @click="cancelComment()">Cancel</button>
+          <button type="button" @click="cancelComment()">Cancel</button>
           <button type="submit">{{ ctaText }}</button>
         </div>
       </form>
