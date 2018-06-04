@@ -35,17 +35,20 @@
 
             <!-- Comments! -->
             <div class="gel-layout__item">
-              <bbc-comment
-                v-for="comment in getOrderedFilteredAndLimitComments(comments, numVisibleComments)"
-                :key="comment.id"
+              <transition-group name="new-comment" tag="div">
+                <bbc-comment
+                  v-for="comment in
+                    getOrderedFilteredAndLimitComments(comments, numVisibleComments)"
+                  :key="comment.id"
 
-                :display-name="comment.displayName"
-                :comment-text="comment.commentText"
-                :timestamp="comment.timestamp"
-                :num-up-votes="comment.numUpVotes"
-                :num-down-votes="comment.numDownVotes"
-                :replies="comment.replies"
-              ></bbc-comment>
+                  :display-name="comment.displayName"
+                  :comment-text="comment.commentText"
+                  :timestamp="comment.timestamp"
+                  :num-up-votes="comment.numUpVotes"
+                  :num-down-votes="comment.numDownVotes"
+                  :replies="comment.replies"
+                ></bbc-comment>
+              </transition-group>
             </div>
 
             <button class="comments__show-more" @click="showMoreComments">More Comments</button>
@@ -219,4 +222,34 @@ export default {
       transform: translate(-50%, 50%);
       white-space: nowrap;
     }
+
+  // Animation
+  //
+  .new-comment {}
+
+  // .new-comment-enter-active, .new-comment-leave-active {
+  //   transition: all 1s;
+  // }
+  // .new-comment-enter
+  //   opacity: 0;
+  //   transform: translateY(-32px);
+  // }
+
+  .new-comment-leave-to {
+    transform: translateY(32px);
+  }
+  // Enter
+  .new-comment-enter {
+    opacity: 0;
+    transform: translateY(-32px);
+  }
+  .new-comment-enter-active {
+    transition: all 350ms ease-out;
+  }
+  .new-comment-enter-to {}
+
+  // Leave
+  .new-comment-leave {}
+  .new-comment-leave-active {}
+  .new-comment-leave-to {}
 </style>

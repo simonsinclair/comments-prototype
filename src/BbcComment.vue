@@ -44,15 +44,17 @@
 
     <!-- Comment Replies -->
     <div class="replies" v-show="isRepliesVisible">
-      <bbc-reply
-        v-for="reply in replies"
-        :key="reply.id"
+      <transition-group name="new-reply" tag="div">
+        <bbc-reply
+          v-for="reply in replies"
+          :key="reply.id"
 
-        :display-name="reply.displayName"
-        :reply-text="reply.replyText"
-        :num-up-votes="reply.numUpVotes"
-        :num-down-votes="reply.numDownVotes"
-      ></bbc-reply>
+          :display-name="reply.displayName"
+          :reply-text="reply.replyText"
+          :num-up-votes="reply.numUpVotes"
+          :num-down-votes="reply.numDownVotes"
+        ></bbc-reply>
+      </transition-group>
       <bbc-submit-comment
         :display-name="displayName"
         @comment-submitted="submitReply"
@@ -143,4 +145,23 @@ export default {
       margin-bottom: 24px;
       margin-left: 8px;
     }
+
+    // Animation
+    //
+    .new-reply {}
+
+    // Enter
+    .new-reply-enter {
+      opacity: 0;
+      transform: translateY(-32px);
+    }
+    .new-reply-enter-active {
+      transition: all 350ms ease-out;
+    }
+    .new-reply-enter-to {}
+
+    // Leave
+    .new-reply-leave {}
+    .new-reply-leave-active {}
+    .new-reply-leave-to {}
 </style>
