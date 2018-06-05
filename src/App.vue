@@ -30,6 +30,7 @@ export default {
 
   body {
     background: #EEE;
+    color: #333;
     padding-top: 80px;
     padding-bottom: 200px;
     font-family: "ReithSans", sans-serif;
