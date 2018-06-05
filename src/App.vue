@@ -35,6 +35,11 @@ export default {
     font-family: "ReithSans", sans-serif;
   }
 
+  a {
+    color: inherit;
+    font-weight: bold;
+  }
+
   button {
     background: none;
     border: none;
