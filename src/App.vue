@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import BbcComments from './BbcComments';
+import BbcComments from './components/BbcComments';
 
 export default {
   name: 'App',

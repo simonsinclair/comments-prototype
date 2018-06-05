@@ -6,7 +6,7 @@
           type="text"
           :placeholder="placeholderText"
           v-model.trim="commentText" />
-        <img v-if="acceptsMedia" src="./assets/media-chooser.svg" alt="" />
+        <img v-if="acceptsMedia" src="../assets/media-chooser.svg" alt="" />
         <div class="submit-comment__controls" v-show="showSubmit">
           <button type="button" @click="cancelComment()">Cancel</button>
           <button type="submit">{{ ctaText }}</button>

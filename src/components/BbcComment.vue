@@ -25,26 +25,26 @@
               @click="toggleReplies()"
               v-show="!isRepliesVisible">
               <span v-show="replies.length > 0">
-                <img src="./assets/n-replies.svg" alt="" /> {{ replies.length }} Replies
+                <img src="../assets/n-replies.svg" alt="" /> {{ replies.length }} Replies
               </span>
               <span v-show="replies.length === 0">
-                <img src="./assets/reply.svg" alt="" /> Reply
+                <img src="../assets/reply.svg" alt="" /> Reply
               </span>
             </button>
             <button class="gel-pica-bold comment__reply-btn"
               @click="toggleReplies()"
               v-show="isRepliesVisible">
-              <img src="./assets/n-replies.svg" alt="" /> {{ replies.length }} Close
+              <img src="../assets/n-replies.svg" alt="" /> {{ replies.length }} Close
             </button>
           </div>
           <div class="gel-layout__item gel-1/2">
             <button class="gel-pica">
-              <img src="./assets/up-thumb.svg" alt="" /> {{ numUpVotes }}
+              <img src="../assets/up-thumb.svg" alt="" /> {{ numUpVotes }}
             </button>
             <button class="gel-pica">
-              <img src="./assets/down-thumb.svg" alt="" /> {{ numDownVotes }}
+              <img src="../assets/down-thumb.svg" alt="" /> {{ numDownVotes }}
             </button>
-            <button><img src="./assets/share.svg" alt="" /></button>
+            <button><img src="../assets/share.svg" alt="" /></button>
           </div>
         </div>
       </div>

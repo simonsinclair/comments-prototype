@@ -17,12 +17,12 @@
         </div>
         <div class="gel-layout__item gel-1/2@m">
           <button class="gel-brevier">
-            <img src="./assets/up-thumb.svg" alt="" /> {{ numUpVotes }}
+            <img src="../assets/up-thumb.svg" alt="" /> {{ numUpVotes }}
           </button>
           <button class="gel-brevier">
-            <img src="./assets/down-thumb.svg" alt="" /> {{ numDownVotes }}
+            <img src="../assets/down-thumb.svg" alt="" /> {{ numDownVotes }}
           </button>
-          <button><img src="./assets/share.svg" alt="" /></button>
+          <button><img src="../assets/share.svg" alt="" /></button>
         </div>
       </div>
     </div>

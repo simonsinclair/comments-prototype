@@ -2,7 +2,7 @@
   <div class="contributor">
     <img
       class="contributor__avatar"
-      src="./assets/avatar-placeholder.svg"
+      src="../assets/avatar-placeholder.svg"
       alt=""
       width="32" height="32" />
     <span class="contributor__name gel-pica-bold">{{ displayName }}</span>
