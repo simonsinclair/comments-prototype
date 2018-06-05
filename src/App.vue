@@ -19,12 +19,12 @@ export default {
 </script>
 
 <style lang="scss">
-  // html {
-  //   box-sizing: border-box;
-  // }
-  // *, *:before, *:after {
-  //   box-sizing: inherit;
-  // }
+  html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
 
   $blue: #3a64ee;
 
