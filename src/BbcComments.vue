@@ -7,25 +7,32 @@
 
             <!-- Title -->
             <div class="gel-layout__item">
-              <span class="comments__title gel-paragon">
-                <span>{{ comments.length }}</span> Comments
-              </span>
+              <div class="comments__title gel-paragon-bold">
+                Two lines max: call to action, title or question?
+              </div>
             </div>
 
             <!-- Add a Comment -->
             <div class="gel-layout__item">
               <bbc-submit-comment
                 :display-name="displayName"
+                :placeholder-text="'Comment as ' + displayName"
                 @comment-submitted="submitComment"
-                placeholder-text="Add a comment"
                 cta-text="Add comment">
               </bbc-submit-comment>
+            </div>
+
+            <!-- Num. Comments -->
+            <div class="gel-layout__item">
+              <div class="comments__number gel-pica">
+                <span>{{ comments.length }}</span> Comments
+              </div>
             </div>
 
             <!-- Sorting/Filtering -->
             <div class="gel-layout__item comments__filter-order">
               <select name="showCommentType">
-                <option value="all" selected="">Everything</option>
+                <option value="all" selected="">Show everything</option>
               </select>
 
               <select name="orderCommentsBy">
@@ -108,7 +115,7 @@ export default {
           commentText: 'There comes a nice little fluffer. Only eight colours that you need.',
           // new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]]]]]);
           // The argument monthIndex is 0-based. This means that January = 0 and December = 11.
-          timestamp: new Date(2018, 4, 23),
+          timestamp: new Date(2018, 3, 23, 20, 24, 0),
           numUpVotes: 3,
           numDownVotes: 1,
           replies: [
@@ -116,7 +123,7 @@ export default {
               id: 1,
               displayName: this.displayName,
               replyText: 'Anyone can paint.',
-              timestamp: new Date(2018, 4, 23),
+              timestamp: new Date(2018, 4, 12, 20, 24, 0),
               numUpVotes: 1,
               numDownVotes: 0,
             },
@@ -124,7 +131,7 @@ export default {
               id: 2,
               displayName: this.displayName,
               replyText: 'Maybe we got a few little happy bushes here, just covered with snow. The man who does the best job is the one who is happy at his job.',
-              timestamp: new Date(2018, 4, 23),
+              timestamp: new Date(2018, 4, 13, 20, 24, 0),
               numUpVotes: 2,
               numDownVotes: 1,
             },
@@ -134,7 +141,7 @@ export default {
           id: 2,
           displayName: this.displayName,
           commentText: 'For the lack of a better word I call them hangy downs. Van Dyke Brown is a very nice brown, it\'s almost like a chocolate brown.',
-          timestamp: new Date(2018, 4, 23),
+          timestamp: new Date(2018, 3, 23, 20, 24, 0),
           numUpVotes: 2,
           numDownVotes: 0,
           replies: [],
@@ -143,7 +150,7 @@ export default {
           id: 3,
           displayName: this.displayName,
           commentText: 'But we\'re not there yet, so we don\'t need to worry about it. You can\'t have light without dark. You can\'t know happiness unless you\'ve known sorrow.',
-          timestamp: new Date(2018, 4, 20),
+          timestamp: new Date(2018, 3, 20, 20, 24, 0),
           numUpVotes: 0,
           numDownVotes: 0,
           replies: [],
@@ -196,12 +203,12 @@ export default {
 <style lang="scss" scoped="">
   .comments {
     background-color: #CCC;
-    padding-top: 32px;
+    padding-top: 64px;
     padding-bottom: 28px;
     position: relative;
   }
     .comments__title {
-      display: block;
+      margin-bottom: 24px;
 
       > span {
         font-weight: bold;
@@ -209,8 +216,16 @@ export default {
     }
 
     .comments__filter-order {
-      padding-top: 20px;
+      padding-top: 12px;
       padding-bottom: 20px;
+    }
+
+    .comments__number {
+      margin-top: 24px;
+
+      > span {
+        font-weight: bold;
+      }
     }
 
     .comments__show-more {

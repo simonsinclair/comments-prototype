@@ -7,7 +7,6 @@
           :placeholder="placeholderText"
           v-model.trim="commentText" />
         <img v-if="acceptsMedia" src="./assets/media-chooser.svg" alt="" />
-
         <div class="submit-comment__controls" v-show="showSubmit">
           <button type="button" @click="cancelComment()">Cancel</button>
           <button type="submit">{{ ctaText }}</button>
@@ -66,8 +65,8 @@ export default {
 <style lang="scss" scoped="">
   .submit-comment {
     background-color: #FFF;
+    border-radius: 4px;
     padding: 12px;
-    margin-top: 16px;
   }
     .submit-comment__form {
 

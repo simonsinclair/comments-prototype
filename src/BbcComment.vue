@@ -1,5 +1,5 @@
 <template>
-  <div class="comment-wrap">
+  <div class="comment-wrap" :class="{ 'comment-wrap--replies-visible': isRepliesVisible }">
 
     <!-- Comment -->
     <div class="comment">
@@ -11,34 +11,42 @@
         -->
       </div>
       <div class="comment__body">
-        <p>{{ commentText }}</p>
-        <span class="comment__timestamp gel-brevier">{{ timestamp | fromNow }}</span>
+        <p class="gel-great-primer">{{ commentText }}</p>
+        <span class="gel-brevier">
+          <span class="comment__timestamp">{{ timestamp | fromNow }}</span>
+          <span class="comment__bullet">&bull;</span>
+          <span class="comment__report"><a href="#">Report</a></span>
+        </span>
       </div>
       <div class="comment__footer">
-        <!-- Better way to do this? -->
-        <button class="gel-pica-bold comment__reply-btn"
-          @click="toggleReplies()"
-          v-show="!isRepliesVisible">
-          <span v-show="replies.length > 0">
-            <img src="./assets/n-replies.svg" alt="" /> {{ replies.length }} Replies
-          </span>
-          <span v-show="replies.length === 0">
-            <img src="./assets/reply.svg" alt="" /> Reply
-          </span>
-        </button>
-        <button class="gel-pica-bold comment__reply-btn"
-          @click="toggleReplies()"
-          v-show="isRepliesVisible">
-          <img src="./assets/n-replies.svg" alt="" /> {{ replies.length }} Close
-        </button>
-
-        <button class="gel-pica-bold">Report</button>
-        <button class="gel-pica">
-          <img src="./assets/up-thumb.svg" alt="" /> {{ numUpVotes }}
-        </button>
-        <button class="gel-pica">
-          <img src="./assets/down-thumb.svg" alt="" /> {{ numDownVotes }}
-        </button>
+        <div class="gel-layout">
+          <div class="gel-layout__item gel-1/2">
+            <button class="gel-pica-bold comment__reply-btn"
+              @click="toggleReplies()"
+              v-show="!isRepliesVisible">
+              <span v-show="replies.length > 0">
+                <img src="./assets/n-replies.svg" alt="" /> {{ replies.length }} Replies
+              </span>
+              <span v-show="replies.length === 0">
+                <img src="./assets/reply.svg" alt="" /> Reply
+              </span>
+            </button>
+            <button class="gel-pica-bold comment__reply-btn"
+              @click="toggleReplies()"
+              v-show="isRepliesVisible">
+              <img src="./assets/n-replies.svg" alt="" /> {{ replies.length }} Close
+            </button>
+          </div>
+          <div class="gel-layout__item gel-1/2">
+            <button class="gel-pica">
+              <img src="./assets/up-thumb.svg" alt="" /> {{ numUpVotes }}
+            </button>
+            <button class="gel-pica">
+              <img src="./assets/down-thumb.svg" alt="" /> {{ numDownVotes }}
+            </button>
+            <button><img src="./assets/share.svg" alt="" /></button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -51,15 +59,16 @@
 
           :display-name="reply.displayName"
           :reply-text="reply.replyText"
+          :timestamp="reply.timestamp"
           :num-up-votes="reply.numUpVotes"
           :num-down-votes="reply.numDownVotes"
         ></bbc-reply>
       </transition-group>
       <bbc-submit-comment
         :display-name="displayName"
+        :placeholder-text="'Reply as ' + displayName"
         @comment-submitted="submitReply"
         accepts-media=""
-        placeholder-text="Add your reply"
         cta-text="Add reply">
       </bbc-submit-comment>
     </div>
@@ -68,6 +77,25 @@
 
 <script>
 import moment from 'moment';
+
+moment.updateLocale('en', {
+    relativeTime : {
+        // future: "in %s",
+        // past:   "%s ago",
+        s  : 'just now',
+        // ss : '%d seconds',
+        // m:  "a minute",
+        // mm: "%d minutes",
+        // h:  "an hour",
+        // hh: "%d hours",
+        // d:  "a day",
+        // dd: "%d days",
+        // M:  "a month",
+        // MM: "%d months",
+        // y:  "a year",
+        // yy: "%d years"
+    },
+});
 
 import BbcReply from './BbcReply';
 import BbcSubmitComment from './BbcSubmitComment';
@@ -102,7 +130,7 @@ export default {
 
   filters: {
     fromNow(timestamp) {
-      return moment(timestamp).fromNow();
+      return moment(timestamp).fromNow(true);
     },
   },
 
@@ -119,10 +147,16 @@ export default {
 
 <style lang="scss" scoped="">
   .comment-wrap {
-    margin-bottom: 16px;
+
+    &.comment-wrap--replies-visible {
+      margin-bottom: 32px;
+    }
   }
+
     .comment {
       background-color: #FFF;
+      border-radius: 4px;
+      margin-bottom: 20px;
     }
       .comment__header,
       .comment__body {
@@ -134,9 +168,17 @@ export default {
       }
         .comment__display-name {}
       .comment__body {}
+        .comment__timestamp {}
+        .comment__bullet {
+          margin-left: 4px;
+        }
+        .comment__report {
+          margin-left: 4px;
+        }
       .comment__footer {
+        margin-top: 12px;
 
-        > button {
+        button {
           padding: 12px;
         }
       }
