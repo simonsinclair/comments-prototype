@@ -44,9 +44,15 @@
 
     <!-- Comment Replies -->
     <div class="replies" v-show="isRepliesVisible">
+      <button
+        v-show="isRepliesLimited"
+        class="replies__show-earlier"
+        @click="showEarlierReplies()">
+          Show earlier replies
+      </button>
       <transition-group name="new-reply" tag="div">
         <bbc-reply
-          v-for="reply in replies"
+          v-for="reply in getLatestReplies(replies, numVisibleReplies)"
           :key="reply.id"
 
           :display-name="reply.displayName"
@@ -88,6 +94,8 @@ export default {
   data() {
     return {
       isRepliesVisible: false,
+      isRepliesLimited: false,
+      numVisibleReplies: 2,
     };
   },
 
@@ -95,6 +103,24 @@ export default {
     doReply() {
       this.isRepliesVisible = true;
       this.$refs.submitComment.focus();
+    },
+
+    showEarlierReplies() {
+      const numTotalReplies = this.replies.length;
+
+      if (numTotalReplies > this.numVisibleReplies) {
+        this.numVisibleReplies += 5;
+      }
+    },
+
+    getLatestReplies(rawReplies, numReplies) {
+      // Watch/set this elsewhere?
+      if (rawReplies.length > this.numVisibleReplies) {
+        this.isRepliesLimited = true;
+      } else {
+        this.isRepliesLimited = false;
+      }
+      return rawReplies.slice(-numReplies);
     },
 
     submitReply(replyText) {
@@ -170,6 +196,20 @@ export default {
       margin-bottom: 24px;
       margin-left: 8px;
     }
+
+    .replies__show-earlier,
+    .replies__show-new {
+      background-color: #EEE;
+      display: block;
+      margin: 0 auto 20px;
+      padding: 8px 16px;
+    }
+
+    .replies__show-earlier {
+      border-radius: 17px;
+    }
+
+    .replies__show-new {}
 
     // Animation
     //

@@ -58,7 +58,7 @@
               </transition-group>
             </div>
 
-            <button class="comments__show-more" @click="showMoreComments">More Comments</button>
+            <button class="comments__show-more" @click="showMoreComments()">More Comments</button>
           </div>
         </div>
       </div>
@@ -134,6 +134,14 @@ export default {
               timestamp: new Date(2018, 4, 13, 20, 24, 0),
               numUpVotes: 2,
               numDownVotes: 1,
+            },
+            {
+              id: 3,
+              displayName: 'Barbara',
+              replyText: 'Isn\'t that fantastic that you can create an almighty tree that fast? Anything you want to do you can do here. Let your imagination be your guide.',
+              timestamp: new Date(2018, 4, 14, 20, 24, 0),
+              numUpVotes: 791,
+              numDownVotes: 25,
             },
           ],
         },
