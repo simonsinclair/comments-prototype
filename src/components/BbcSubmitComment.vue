@@ -2,6 +2,7 @@
   <div class="submit-comment" :class="{ 'submit-comment--media': acceptsMedia }">
       <form class="submit-comment__form" @submit.prevent="submitComment">
         <input
+          ref="input"
           class="gel-great-primer"
           type="text"
           :placeholder="placeholderText"
@@ -26,24 +27,13 @@ export default {
     placeholderText: String,
   },
 
-  data() {
-    return {
-      commentText: '',
-      showSubmit: false,
-    };
-  },
-
-  watch: {
-    commentText(newCommentText) {
-      if (newCommentText.length > 0) {
-        this.showSubmit = true;
-      } else {
-        this.showSubmit = false;
-      }
-    },
-  },
-
   methods: {
+    focus() {
+      this.$nextTick(() => {
+        this.$refs.input.focus();
+      });
+    },
+
     submitComment() {
       if (!this.commentText) {
         return;
@@ -57,6 +47,21 @@ export default {
 
     cancelComment() {
       this.commentText = '';
+    },
+  },
+
+  data() {
+    return {
+      commentText: '',
+      showSubmit: false,
+    };
+  },
+
+  watch: {
+    commentText(newCommentText) {
+      // Also test `this.showSubmit !== true`, so we don't keep setting it.
+      if (newCommentText.length > 0 && this.showSubmit !== true) this.showSubmit = true;
+      if (newCommentText.length < 1) this.showSubmit = false;
     },
   },
 };

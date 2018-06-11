@@ -21,21 +21,13 @@
       <div class="comment__footer">
         <div class="gel-layout">
           <div class="gel-layout__item gel-1/2">
-            <button class="gel-pica-bold comment__reply-btn"
-              @click="toggleReplies()"
-              v-show="!isRepliesVisible">
-              <span v-show="replies.length > 0">
-                <img src="../assets/n-replies.svg" alt="" /> {{ replies.length }} Replies
-              </span>
-              <span v-show="replies.length === 0">
-                <img src="../assets/reply.svg" alt="" /> Reply
-              </span>
-            </button>
-            <button class="gel-pica-bold comment__reply-btn"
-              @click="toggleReplies()"
-              v-show="isRepliesVisible">
-              <img src="../assets/n-replies.svg" alt="" /> {{ replies.length }} Close
-            </button>
+            <bbc-reply-cta
+              :replies="replies"
+              :is-replies-visible="isRepliesVisible"
+              @reply="doReply()"
+              @show-replies="isRepliesVisible = true"
+              @hide-replies="isRepliesVisible = false">
+            </bbc-reply-cta>
           </div>
           <div class="gel-layout__item gel-1/2">
             <button class="gel-pica">
@@ -65,6 +57,7 @@
         ></bbc-reply>
       </transition-group>
       <bbc-submit-comment
+        ref="submitComment"
         :display-name="displayName"
         :placeholder-text="'Reply as ' + displayName"
         @comment-submitted="submitReply"
@@ -79,6 +72,7 @@
 import moment from 'moment';
 
 import BbcReply from './BbcReply';
+import BbcReplyCta from './BbcReplyCta';
 import BbcSubmitComment from './BbcSubmitComment';
 import BbcContributor from './BbcContributor';
 
@@ -89,7 +83,7 @@ moment.updateLocale('en', {
 });
 
 export default {
-  components: { BbcReply, BbcSubmitComment, BbcContributor },
+  components: { BbcReply, BbcReplyCta, BbcSubmitComment, BbcContributor },
 
   data() {
     return {
@@ -98,6 +92,11 @@ export default {
   },
 
   methods: {
+    doReply() {
+      this.isRepliesVisible = true;
+      this.$refs.submitComment.focus();
+    },
+
     submitReply(replyText) {
       const nextReplyId = this.replies.length + 1;
       this.replies.push({
@@ -108,10 +107,6 @@ export default {
         numUpVotes: 0,
         numDownVotes: 0,
       });
-    },
-
-    toggleReplies() {
-      this.isRepliesVisible = !this.isRepliesVisible;
     },
   },
 
