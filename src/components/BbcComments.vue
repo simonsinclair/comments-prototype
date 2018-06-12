@@ -58,7 +58,12 @@
               </transition-group>
             </div>
 
-            <button class="comments__show-more" @click="showMoreComments()">More Comments</button>
+            <button
+              class="comments__show-more"
+              v-show="isCommentsLimited"
+              @click="showMoreComments()">
+                More Comments
+            </button>
           </div>
         </div>
       </div>
@@ -96,7 +101,8 @@ export default {
     return {
       activeFilter: 'all',
       activeOrder: 'newest',
-      numVisibleComments: 2,
+      numVisibleComments: 3,
+      isCommentsLimited: false,
 
       // DATA SCHEMA
       // -----------
@@ -163,6 +169,69 @@ export default {
           numDownVotes: 0,
           replies: [],
         },
+        {
+          id: 4,
+          displayName: this.displayName,
+          commentText: 'But we\'re not there yet, so we don\'t need to worry about it. You can\'t have light without dark. You can\'t know happiness unless you\'ve known sorrow.',
+          timestamp: new Date(2018, 3, 20, 20, 24, 0),
+          numUpVotes: 0,
+          numDownVotes: 0,
+          replies: [],
+        },
+        {
+          id: 5,
+          displayName: this.displayName,
+          commentText: 'But we\'re not there yet, so we don\'t need to worry about it. You can\'t have light without dark. You can\'t know happiness unless you\'ve known sorrow.',
+          timestamp: new Date(2018, 3, 20, 20, 24, 0),
+          numUpVotes: 0,
+          numDownVotes: 0,
+          replies: [],
+        },
+        {
+          id: 6,
+          displayName: this.displayName,
+          commentText: 'But we\'re not there yet, so we don\'t need to worry about it. You can\'t have light without dark. You can\'t know happiness unless you\'ve known sorrow.',
+          timestamp: new Date(2018, 3, 20, 20, 24, 0),
+          numUpVotes: 0,
+          numDownVotes: 0,
+          replies: [],
+        },
+        {
+          id: 7,
+          displayName: this.displayName,
+          commentText: 'But we\'re not there yet, so we don\'t need to worry about it. You can\'t have light without dark. You can\'t know happiness unless you\'ve known sorrow.',
+          timestamp: new Date(2018, 3, 20, 20, 24, 0),
+          numUpVotes: 0,
+          numDownVotes: 0,
+          replies: [],
+        },
+        {
+          id: 8,
+          displayName: this.displayName,
+          commentText: 'But we\'re not there yet, so we don\'t need to worry about it. You can\'t have light without dark. You can\'t know happiness unless you\'ve known sorrow.',
+          timestamp: new Date(2018, 3, 20, 20, 24, 0),
+          numUpVotes: 0,
+          numDownVotes: 0,
+          replies: [],
+        },
+        {
+          id: 9,
+          displayName: this.displayName,
+          commentText: 'But we\'re not there yet, so we don\'t need to worry about it. You can\'t have light without dark. You can\'t know happiness unless you\'ve known sorrow.',
+          timestamp: new Date(2018, 3, 20, 20, 24, 0),
+          numUpVotes: 0,
+          numDownVotes: 0,
+          replies: [],
+        },
+        {
+          id: 10,
+          displayName: this.displayName,
+          commentText: 'But we\'re not there yet, so we don\'t need to worry about it. You can\'t have light without dark. You can\'t know happiness unless you\'ve known sorrow.',
+          timestamp: new Date(2018, 3, 20, 20, 24, 0),
+          numUpVotes: 0,
+          numDownVotes: 0,
+          replies: [],
+        },
       ],
     };
   },
@@ -186,6 +255,14 @@ export default {
       // 2. Filter
       let comments = orders[this.activeOrder](rawComments);
       comments = filters[this.activeFilter](comments);
+
+      // Watch/set this elsewhere?
+      if (comments.length > this.numVisibleComments) {
+        this.isCommentsLimited = true;
+      } else {
+        this.isCommentsLimited = false;
+      }
+
       return comments;
     },
 
