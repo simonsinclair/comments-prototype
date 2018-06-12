@@ -5,12 +5,13 @@
           ref="input"
           class="gel-great-primer"
           type="text"
+          @focus="isActive = true"
           :placeholder="placeholderText"
           v-model.trim="commentText" />
         <img v-if="acceptsMedia" src="../assets/media-chooser.svg" alt="" />
-        <div class="submit-comment__controls" v-show="showSubmit">
+        <div class="submit-comment__controls" v-show="isActive">
           <button type="button" @click="cancelComment()">Cancel</button>
-          <button type="submit">{{ ctaText }}</button>
+          <button type="submit" v-bind:disabled="!isSubmittable">{{ ctaText }}</button>
         </div>
       </form>
   </div>
@@ -43,25 +44,28 @@ export default {
 
       // Clear `commentText` after posting.
       this.commentText = '';
+      this.isActive = false;
     },
 
     cancelComment() {
       this.commentText = '';
+      this.isActive = false;
     },
   },
 
   data() {
     return {
       commentText: '',
-      showSubmit: false,
+      isActive: false,
+      isSubmittable: false,
     };
   },
 
   watch: {
     commentText(newCommentText) {
-      // Also test `this.showSubmit !== true`, so we don't keep setting it.
-      if (newCommentText.length > 0 && this.showSubmit !== true) this.showSubmit = true;
-      if (newCommentText.length < 1) this.showSubmit = false;
+      // Also test `this.isSubmittable !== true`, so we don't keep setting it.
+      if (newCommentText.length > 0 && this.isSubmittable !== true) this.isSubmittable = true;
+      if (newCommentText.length < 1) this.isSubmittable = false;
     },
   },
 };
@@ -107,6 +111,10 @@ export default {
         &[type="submit"] {
           background-color: #3a64ee;
           color: #FFF;
+        }
+        &[disabled] {
+          background-color: #999;
+          cursor: not-allowed;
         }
       }
     }
