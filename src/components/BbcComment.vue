@@ -29,7 +29,7 @@
               @hide-replies="isRepliesVisible = false">
             </bbc-reply-cta>
           </div>
-          <div class="gel-layout__item gel-1/2">
+          <div class="gel-layout__item gel-1/2 comment__actions">
             <button class="gel-pica">
               <img src="../assets/up-thumb.svg" alt="" /> {{ numUpVotes }}
             </button>
@@ -95,7 +95,7 @@ export default {
     return {
       isRepliesVisible: false,
       isRepliesLimited: false,
-      numVisibleReplies: 2,
+      numVisibleReplies: 5,
     };
   },
 
@@ -175,7 +175,12 @@ export default {
         padding-top: 12px;
       }
         .comment__display-name {}
-      .comment__body {}
+      .comment__body {
+
+        > p {
+          white-space: pre-line;
+        }
+      }
         .comment__timestamp {}
         .comment__bullet {
           margin-left: 4px;
@@ -190,6 +195,9 @@ export default {
           padding: 12px;
         }
       }
+        .comment__actions {
+          text-align: right;
+        }
 
     .replies {
       margin-right: 8px;

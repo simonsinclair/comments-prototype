@@ -86,6 +86,7 @@ const orders = {
   oldest(comments) {
     return comments;
   },
+
   newest(comments) {
     return comments.slice(0).reverse();
   },
@@ -161,7 +162,7 @@ export default {
       const numTotalComments = this.getOrderedAndFilteredComments(this.comments).length;
 
       if (numTotalComments > this.numVisibleComments) {
-        this.numVisibleComments += 5;
+        this.numVisibleComments += 10;
       }
     },
   },
@@ -209,18 +210,10 @@ export default {
   // Animation
   //
   .new-comment {}
-
-  // .new-comment-enter-active, .new-comment-leave-active {
-  //   transition: all 1s;
-  // }
-  // .new-comment-enter
-  //   opacity: 0;
-  //   transform: translateY(-32px);
-  // }
-
   .new-comment-leave-to {
     transform: translateY(32px);
   }
+
   // Enter
   .new-comment-enter {
     opacity: 0;

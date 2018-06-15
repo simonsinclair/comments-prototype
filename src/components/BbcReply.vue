@@ -10,12 +10,12 @@
       <div class="gel-layout">
         <div class="gel-layout__item gel-1/2@m">
           <div class="gel-brevier">
-            <span class="comment__timestamp">{{ timestamp | fromNow }}</span>
-            <span class="comment__bullet">&bull;</span>
-            <span class="comment__report"><a href="#">Report</a></span>
+            <span class="reply__timestamp">{{ timestamp | fromNow }}</span>
+            <span class="reply__bullet">&bull;</span>
+            <span class="reply__report"><a href="#">Report</a></span>
           </div>
         </div>
-        <div class="gel-layout__item gel-1/2@m">
+        <div class="gel-layout__item gel-1/2@m reply__actions">
           <button class="gel-brevier">
             <img src="../assets/up-thumb.svg" alt="" /> {{ numUpVotes }}
           </button>
@@ -84,18 +84,23 @@ export default {
       }
     }
   }
-    .comment__timestamp,
-    .comment__bullet,
-    .comment__report {
+    .reply__actions {
+      text-align: right;
+    }
+
+
+    .reply__timestamp,
+    .reply__bullet,
+    .reply__report {
       display: inline-block;
     }
-    .comment__timestamp {
+    .reply__timestamp {
       margin-left: 12px;
     }
-    .comment__bullet {
+    .reply__bullet {
       margin-left: 4px;
     }
-    .comment__report {
+    .reply__report {
       margin-left: 4px;
     }
 </style>
