@@ -72,6 +72,7 @@
 </template>
 
 <script>
+import commentsData from '../comments';
 import BbcSubmitComment from './BbcSubmitComment';
 import BbcComment from './BbcComment';
 
@@ -114,125 +115,7 @@ export default {
       // numDownVotes: 0,
       // replies: [],
 
-      comments: [
-        {
-          id: 1,
-          displayName: this.displayName,
-          commentText: 'There comes a nice little fluffer. Only eight colours that you need.',
-          // new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]]]]]);
-          // The argument monthIndex is 0-based. This means that January = 0 and December = 11.
-          timestamp: new Date(2018, 3, 23, 20, 24, 0),
-          numUpVotes: 3,
-          numDownVotes: 1,
-          replies: [
-            {
-              id: 1,
-              displayName: this.displayName,
-              replyText: 'Anyone can paint.',
-              timestamp: new Date(2018, 4, 12, 20, 24, 0),
-              numUpVotes: 1,
-              numDownVotes: 0,
-            },
-            {
-              id: 2,
-              displayName: this.displayName,
-              replyText: 'Maybe we got a few little happy bushes here, just covered with snow. The man who does the best job is the one who is happy at his job.',
-              timestamp: new Date(2018, 4, 13, 20, 24, 0),
-              numUpVotes: 2,
-              numDownVotes: 1,
-            },
-            {
-              id: 3,
-              displayName: 'Barbara',
-              replyText: 'Isn\'t that fantastic that you can create an almighty tree that fast? Anything you want to do you can do here. Let your imagination be your guide.',
-              timestamp: new Date(2018, 4, 14, 20, 24, 0),
-              numUpVotes: 791,
-              numDownVotes: 25,
-            },
-          ],
-        },
-        {
-          id: 2,
-          displayName: this.displayName,
-          commentText: 'For the lack of a better word I call them hangy downs. Van Dyke Brown is a very nice brown, it\'s almost like a chocolate brown.',
-          timestamp: new Date(2018, 3, 23, 20, 24, 0),
-          numUpVotes: 2,
-          numDownVotes: 0,
-          replies: [],
-        },
-        {
-          id: 3,
-          displayName: this.displayName,
-          commentText: 'But we\'re not there yet, so we don\'t need to worry about it. You can\'t have light without dark. You can\'t know happiness unless you\'ve known sorrow.',
-          timestamp: new Date(2018, 3, 20, 20, 24, 0),
-          numUpVotes: 0,
-          numDownVotes: 0,
-          replies: [],
-        },
-        {
-          id: 4,
-          displayName: this.displayName,
-          commentText: 'But we\'re not there yet, so we don\'t need to worry about it. You can\'t have light without dark. You can\'t know happiness unless you\'ve known sorrow.',
-          timestamp: new Date(2018, 3, 20, 20, 24, 0),
-          numUpVotes: 0,
-          numDownVotes: 0,
-          replies: [],
-        },
-        {
-          id: 5,
-          displayName: this.displayName,
-          commentText: 'But we\'re not there yet, so we don\'t need to worry about it. You can\'t have light without dark. You can\'t know happiness unless you\'ve known sorrow.',
-          timestamp: new Date(2018, 3, 20, 20, 24, 0),
-          numUpVotes: 0,
-          numDownVotes: 0,
-          replies: [],
-        },
-        {
-          id: 6,
-          displayName: this.displayName,
-          commentText: 'But we\'re not there yet, so we don\'t need to worry about it. You can\'t have light without dark. You can\'t know happiness unless you\'ve known sorrow.',
-          timestamp: new Date(2018, 3, 20, 20, 24, 0),
-          numUpVotes: 0,
-          numDownVotes: 0,
-          replies: [],
-        },
-        {
-          id: 7,
-          displayName: this.displayName,
-          commentText: 'But we\'re not there yet, so we don\'t need to worry about it. You can\'t have light without dark. You can\'t know happiness unless you\'ve known sorrow.',
-          timestamp: new Date(2018, 3, 20, 20, 24, 0),
-          numUpVotes: 0,
-          numDownVotes: 0,
-          replies: [],
-        },
-        {
-          id: 8,
-          displayName: this.displayName,
-          commentText: 'But we\'re not there yet, so we don\'t need to worry about it. You can\'t have light without dark. You can\'t know happiness unless you\'ve known sorrow.',
-          timestamp: new Date(2018, 3, 20, 20, 24, 0),
-          numUpVotes: 0,
-          numDownVotes: 0,
-          replies: [],
-        },
-        {
-          id: 9,
-          displayName: this.displayName,
-          commentText: 'But we\'re not there yet, so we don\'t need to worry about it. You can\'t have light without dark. You can\'t know happiness unless you\'ve known sorrow.',
-          timestamp: new Date(2018, 3, 20, 20, 24, 0),
-          numUpVotes: 0,
-          numDownVotes: 0,
-          replies: [],
-        },
-        {
-          id: 10,
-          displayName: this.displayName,
-          commentText: 'But we\'re not there yet, so we don\'t need to worry about it. You can\'t have light without dark. You can\'t know happiness unless you\'ve known sorrow.',
-          timestamp: new Date(2018, 3, 20, 20, 24, 0),
-          numUpVotes: 0,
-          numDownVotes: 0,
-          replies: [],
-        },
-      ],
+      comments: commentsData,
     };
   },
 
