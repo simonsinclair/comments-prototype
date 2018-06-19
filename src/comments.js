@@ -8,7 +8,25 @@ module.exports = [
     timestamp: new Date(2018, 3, 16, 15, 15, 0),
     numUpVotes: 1,
     numDownVotes: 0,
-    replies: [],
+    // displayName, replyText, timestamp, numUpVotes, numDownVotes,
+    replies: [
+      {
+        id: 1,
+        displayName: 'Dummy',
+        replyText: 'This is a dummy reply.',
+        timestamp: new Date(2018, 3, 16, 16, 52, 0),
+        numUpVotes: 0,
+        numDownVotes: 0,
+      },
+      {
+        id: 2,
+        displayName: 'Dummy2',
+        replyText: 'This is a second dummy reply.',
+        timestamp: new Date(2018, 3, 16, 16, 55, 0),
+        numUpVotes: 0,
+        numDownVotes: 0,
+      },
+    ],
   },
   {
     id: 2,
