@@ -16,7 +16,7 @@
             <div class="gel-layout__item">
               <bbc-submit-comment
                 :display-name="displayName"
-                :placeholder-text="'Comment as ' + displayName"
+                :placeholder-text="'Comment as ' + sessionDisplayName"
                 @comment-submitted="submitComment"
                 cta-text="Add comment">
               </bbc-submit-comment>
@@ -48,6 +48,7 @@
                     getOrderedFilteredAndLimitComments(comments, numVisibleComments)"
                   :key="comment.id"
 
+                  :session-display-name="sessionDisplayName"
                   :display-name="comment.displayName"
                   :comment-text="comment.commentText"
                   :timestamp="comment.timestamp"
@@ -94,7 +95,7 @@ const orders = {
 
 export default {
   props: {
-    displayName: String,
+    sessionDisplayName: String,
   },
 
   components: { BbcSubmitComment, BbcComment },
@@ -109,7 +110,7 @@ export default {
       // DATA SCHEMA
       // -----------
       // id: this.nextCommentId += 1, // Increment `nextCommentId` for next comment.
-      // displayName: this.displayName,
+      // displayName: this.sessionDisplayName,
       // commentText: this.commentText,
       // timestamp: new Date(),
       // numUpVotes: 0,
@@ -125,7 +126,7 @@ export default {
       const nextCommentId = this.comments.length + 1;
       this.comments.push({
         id: nextCommentId, // Increment `nextCommentId` for next reply.
-        displayName: this.displayName,
+        displayName: this.sessionDisplayName,
         commentText,
         timestamp: new Date(),
         numUpVotes: 0,

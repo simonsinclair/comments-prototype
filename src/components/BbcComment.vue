@@ -65,7 +65,7 @@
       <bbc-submit-comment
         ref="submitComment"
         :display-name="displayName"
-        :placeholder-text="'Reply as ' + displayName"
+        :placeholder-text="'Reply as ' + sessionDisplayName"
         @comment-submitted="submitReply"
         accepts-media=""
         cta-text="Add reply">
@@ -127,7 +127,7 @@ export default {
       const nextReplyId = this.replies.length + 1;
       this.replies.push({
         id: nextReplyId, // Increment `nextReplyId` for next reply.
-        displayName: this.displayName,
+        displayName: this.sessionDisplayName,
         replyText,
         timestamp: new Date(),
         numUpVotes: 0,
@@ -143,6 +143,7 @@ export default {
   },
 
   props: {
+    sessionDisplayName: String,
     displayName: String,
     commentText: String,
     timestamp: Date,

@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="app">
-    <bbc-comments :display-name="displayName"></bbc-comments>
+    <bbc-comments :session-display-name="sessionDisplayName"></bbc-comments>
   </div>
 </template>
 
@@ -12,7 +12,7 @@ export default {
   components: { BbcComments },
   data() {
     return {
-      displayName: 'Bob Ross',
+      sessionDisplayName: 'Bob Ross',
     };
   },
 };
