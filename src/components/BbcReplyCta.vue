@@ -1,25 +1,34 @@
 <template>
   <div class="reply-cta" :class="{ 'reply-cta--replies-visible': isRepliesVisible }">
 
-    <!-- A) Reply, when there are no replies OR -->
-    <button
+    <!-- A) Reply, when there are no replies. -->
+    <button class="gel-pica-bold"
       @click="$emit('reply')"
       v-show="!isRepliesVisible && replies.length === 0">
         <img src="../assets/reply.svg" alt="" /> Reply
     </button>
 
-    <!-- B) Expand replies when there are some. -->
+    <!-- B) Expand reply/replies. -->
     <button class="gel-pica-bold"
       @click="$emit('show-replies')"
       v-show="!isRepliesVisible && replies.length > 0">
-        <img src="../assets/n-replies.svg" alt="" /> {{ replies.length }} Replies
+        <img src="../assets/n-replies.svg" alt="" />
+        {{ replies.length > 1 ? `${replies.length} Replies` : `${replies.length} Reply` }}
     </button>
 
-    <!-- C) Close reply action/replies. -->
+    <!-- C) Hide no reply/replies. -->
     <button class="gel-pica-bold"
       @click="$emit('hide-replies')"
-      v-show="isRepliesVisible">
-        <img src="../assets/n-replies.svg" alt="" /> {{ replies.length }} Close
+      v-show="isRepliesVisible && replies.length === 0">
+        <img src="../assets/n-replies.svg" alt="" /> Hide
+    </button>
+
+    <!-- D) Hide reply/replies. -->
+    <button class="gel-pica-bold"
+      @click="$emit('hide-replies')"
+      v-show="isRepliesVisible && replies.length > 0">
+        <img src="../assets/n-replies.svg" alt="" />
+        {{ replies.length > 1 ? `Hide replies` : `Hide reply` }}
     </button>
   </div>
 </template>
