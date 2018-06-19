@@ -15,7 +15,6 @@
             <!-- Add a Comment -->
             <div class="gel-layout__item">
               <bbc-submit-comment
-                :display-name="displayName"
                 :placeholder-text="'Comment as ' + sessionDisplayName"
                 @comment-submitted="submitComment"
                 cta-text="Add comment">

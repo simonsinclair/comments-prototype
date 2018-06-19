@@ -64,7 +64,6 @@
       </transition-group>
       <bbc-submit-comment
         ref="submitComment"
-        :display-name="displayName"
         :placeholder-text="'Reply as ' + sessionDisplayName"
         @comment-submitted="submitReply"
         accepts-media=""
