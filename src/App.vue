@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="app">
+  <div id="app" class="app" :class="themeClass">
     <bbc-comments :session-display-name="sessionDisplayName"></bbc-comments>
   </div>
 </template>
@@ -12,8 +12,14 @@ export default {
   components: { BbcComments },
   data() {
     return {
+      theme: 'childrens',
       sessionDisplayName: 'Bob Ross',
     };
+  },
+  computed: {
+    themeClass() {
+      return `app--${this.theme}`;
+    },
   },
 };
 </script>
@@ -29,8 +35,6 @@ export default {
   $blue: #3a64ee;
 
   body {
-    background: #EEE;
-    color: #333;
     padding-top: 80px;
     padding-bottom: 200px;
     font-family: "ReithSans", sans-serif;

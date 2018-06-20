@@ -172,10 +172,17 @@ export default {
 <style lang="scss" scoped="">
   .comments {
     background-color: #CCC;
+    color: #333;
     padding-top: 64px;
     padding-bottom: 28px;
     position: relative;
+
+    .app--childrens & {
+      background-color: #363D8D;
+      color: #FFF;
+    }
   }
+
     .comments__title {
       margin-bottom: 24px;
 
@@ -205,6 +212,10 @@ export default {
         bottom: 0; left: 50%;
       transform: translate(-50%, 50%);
       white-space: nowrap;
+
+      .app--childrens & {
+        background-color: #3395D4;
+      }
     }
 
   // Animation

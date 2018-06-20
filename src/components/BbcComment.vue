@@ -20,7 +20,7 @@
       </div>
       <div class="comment__footer">
         <div class="gel-layout">
-          <div class="gel-layout__item gel-1/2">
+          <div class="gel-layout__item gel-1/3">
             <bbc-reply-cta
               :replies="replies"
               :is-replies-visible="isRepliesVisible"
@@ -29,7 +29,7 @@
               @hide-replies="isRepliesVisible = false">
             </bbc-reply-cta>
           </div>
-          <div class="gel-layout__item gel-1/2 comment__actions">
+          <div class="gel-layout__item gel-2/3 comment__actions">
             <button class="gel-pica">
               <img src="../assets/up-thumb.svg" alt="" /> {{ numUpVotes }}
             </button>
@@ -165,6 +165,10 @@ export default {
       background-color: #FFF;
       border-radius: 4px;
       margin-bottom: 20px;
+
+      .app--childrens & {
+        color: #333;
+      }
     }
       .comment__header,
       .comment__body {
