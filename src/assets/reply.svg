@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
     <title>Reply</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Anatomy-&amp;-Layout" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Mobile-01" transform="translate(-24.000000, -497.000000)" fill="#252525" fill-rule="nonzero">
-            <g id="Group" transform="translate(12.000000, 356.000000)">
-                <path d="M12,141 L36,141 L36,160 L18,160 L12,165 L12,141 Z M17.2295153,158 L34,158 L34,143 L14,143 L14,160.921942 L17.2295153,158 Z M17,147 L31,147 L31,149 L17,149 L17,147 Z M17,152 L28,152 L28,154 L17,154 L17,152 Z" id="Reply"></path>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Childrens-Desktop-02-Copy" transform="translate(-348.000000, -2194.000000)" fill="#252525" fill-rule="nonzero">
+            <g id="Group-Copy-11" transform="translate(332.000000, 2055.000000)">
+                <g id="Group-2" transform="translate(10.000000, 133.000000)">
+                    <path d="M6,6 L26,6 L26,21.5993548 L11,21.5993548 L6,25.7044482 L6,6 Z M10.3579294,19.9573175 L24.3333333,19.9573175 L24.3333333,7.64203735 L7.66666667,7.64203735 L7.66666667,22.3562868 L10.3579294,19.9573175 Z M10.1666667,10.926112 L21.8333333,10.926112 L21.8333333,12.5681494 L10.1666667,12.5681494 L10.1666667,10.926112 Z M10.1666667,15.0312054 L19.3333333,15.0312054 L19.3333333,16.6732428 L10.1666667,16.6732428 L10.1666667,15.0312054 Z" id="Reply"></path>
+                </g>
             </g>
         </g>
     </g>

@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
-    <title>Replies</title>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Reply</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Anatomy-&amp;-Layout" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Mobile-01" transform="translate(-24.000000, -996.000000)" fill="#252525" fill-rule="nonzero">
-            <g id="Group-Copy" transform="translate(12.000000, 806.000000)">
-                <path d="M12,190 L36,190 L36,209 L18,209 L12,214 L12,190 Z M17.2295153,207 L34,207 L34,192 L14,192 L14,209.921942 L17.2295153,207 Z" id="Replies"></path>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Childrens-Desktop-02-Copy" transform="translate(-350.000000, -2648.000000)" fill="#252525" fill-rule="nonzero">
+            <g id="Group-Copy" transform="translate(332.000000, 2461.000000)">
+                <g id="Group-2" transform="translate(12.000000, 181.000000)">
+                    <path d="M6,6 L26,6 L26,21.5993548 L11,21.5993548 L6,25.7044482 L6,6 Z M10.1666667,10.926112 L10.1666667,12.5681494 L21.8333333,12.5681494 L21.8333333,10.926112 L10.1666667,10.926112 Z M10.1666667,15.0312054 L10.1666667,16.6732428 L19.3333333,16.6732428 L19.3333333,15.0312054 L10.1666667,15.0312054 Z" id="Reply"></path>
+                </g>
             </g>
         </g>
     </g>
