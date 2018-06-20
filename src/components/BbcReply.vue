@@ -72,7 +72,12 @@ export default {
   .reply__header {
     padding-top: 12px;
   }
-  .reply__body {}
+  .reply__body {
+
+    > p {
+      white-space: pre-line;
+    }
+  }
   .reply__footer {
 
     button {

@@ -179,12 +179,15 @@ export default {
 
     .app--childrens & {
       background-color: #363D8D;
-      color: #FFF;
     }
   }
 
     .comments__title {
       margin-bottom: 24px;
+
+      .app--childrens & {
+        color: #FFF;
+      }
 
       > span {
         font-weight: bold;
@@ -198,6 +201,10 @@ export default {
 
     .comments__number {
       margin-top: 24px;
+
+      .app--childrens & {
+        color: #FFF;
+      }
 
       > span {
         font-weight: bold;

@@ -165,10 +165,6 @@ export default {
       background-color: #FFF;
       border-radius: 4px;
       margin-bottom: 20px;
-
-      .app--childrens & {
-        color: #333;
-      }
     }
       .comment__header,
       .comment__body {
