@@ -23,6 +23,7 @@ export default {
     align-items: center;
   }
   .contributor__avatar {
+    background-color: #CCC;
     border-radius: 50%;
     margin-right: 8px;
   }
