@@ -117,7 +117,7 @@ module.exports = [
     numUpVotes: 0,
     numDownVotes: 0,
     replies: [
-    {
+      {
         id: 1,
         displayName: 'DJ_SnowflakeDiva',
         replyText: '@Unicorn22\nI agree *crying on the inside* 😂\n\n👑❄🔥🎶 DJ Ash 🎶🔥❄👑\n😎🐍👑 #SlytherinQueen 👑🐍😎\n👻🎉😱🎆BP\'sOctoberFoTM2017🎆😱🎉👻',
@@ -162,7 +162,7 @@ module.exports = [
     numUpVotes: 0,
     numDownVotes: 0,
     replies: [
-    {
+      {
         id: 1,
         displayName: 'DJ_SnowflakeDiva',
         replyText: '@OrangeSummerySeal\nYep, Tom Holland (AKA: SpiderMan) is on Infinity War. But so is Chris Evans (AKA: Captain America) and Robert Downey Jr (AKA: Iron Man). So maybe they just were *sadly* busy at the time of the interview 😔\nHope this helps!',
