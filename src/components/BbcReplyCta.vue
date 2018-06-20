@@ -12,7 +12,7 @@
     <button class="gel-pica-bold"
       @click="$emit('show-replies')"
       v-show="!isRepliesVisible && replies.length > 0">
-        <img src="../assets/n-replies.svg" alt="" />
+        <img src="../assets/reply.svg" alt="" />
         {{ replies.length > 1 ? `${replies.length} Replies` : `${replies.length} Reply` }}
     </button>
 
@@ -43,8 +43,17 @@ export default {
 </script>
 
 <style lang="scss" scoped="">
-  .reply-cta {}
+  .reply-cta {
+    display: inline-block;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: #EEE;
+    }
+  }
+
   .reply-cta--replies-visible {
+    background-color: #EEE;
 
     svg {}
   }
