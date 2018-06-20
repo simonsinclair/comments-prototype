@@ -120,7 +120,7 @@ module.exports = [
       {
         id: 1,
         displayName: 'DJ_SnowflakeDiva',
-        replyText: '@Unicorn22\nI agree *crying on the inside* 😂\n\n👑❄🔥🎶 DJ Ash 🎶🔥❄👑\n😎🐍👑 #SlytherinQueen 👑🐍😎\n👻🎉😱🎆BP\'sOctoberFoTM2017🎆😱🎉👻',
+        replyText: 'I agree *crying on the inside* 😂\n\n👑❄🔥🎶 DJ Ash 🎶🔥❄👑\n😎🐍👑 #SlytherinQueen 👑🐍😎\n👻🎉😱🎆BP\'sOctoberFoTM2017🎆😱🎉👻',
         timestamp: new Date(2018, 3, 16, 16, 52, 0),
         numUpVotes: 0,
         numDownVotes: 0,
@@ -165,7 +165,7 @@ module.exports = [
       {
         id: 1,
         displayName: 'DJ_SnowflakeDiva',
-        replyText: '@OrangeSummerySeal\nYep, Tom Holland (AKA: SpiderMan) is on Infinity War. But so is Chris Evans (AKA: Captain America) and Robert Downey Jr (AKA: Iron Man). So maybe they just were *sadly* busy at the time of the interview 😔\nHope this helps!',
+        replyText: 'Yep, Tom Holland (AKA: SpiderMan) is on Infinity War. But so is Chris Evans (AKA: Captain America) and Robert Downey Jr (AKA: Iron Man). So maybe they just were *sadly* busy at the time of the interview 😔\nHope this helps!',
         timestamp: new Date(2018, 3, 16, 16, 52, 0),
         numUpVotes: 0,
         numDownVotes: 0,
