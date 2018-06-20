@@ -8,14 +8,14 @@
     </div>
     <div class="reply__footer">
       <div class="gel-layout">
-        <div class="gel-layout__item gel-1/2@m">
+        <div class="gel-layout__item gel-1/2@s">
           <div class="gel-brevier">
             <span class="reply__timestamp">{{ timestamp | fromNow }}</span>
             <span class="reply__bullet">&bull;</span>
             <span class="reply__report"><a href="#">Report</a></span>
           </div>
         </div>
-        <div class="gel-layout__item gel-1/2@m reply__actions">
+        <div class="gel-layout__item gel-1/2@s reply__actions">
           <button class="gel-brevier">
             <img src="../assets/up-thumb.svg" alt="" /> {{ numUpVotes }}
           </button>
@@ -83,14 +83,18 @@ export default {
     button {
       padding: 12px;
 
-      // Medium only -> 600px
-      @media (min-width: 600px) {
+      // Small only -> 399px
+      @media (min-width: 399px) {
         padding-top: 0;
       }
     }
   }
     .reply__actions {
-      text-align: right;
+
+      // Small only -> 399px
+      @media (min-width: 399px) {
+        text-align: right;
+      }
     }
 
 
