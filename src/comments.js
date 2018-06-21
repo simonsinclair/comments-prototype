@@ -218,7 +218,7 @@ module.exports = [
     numUpVotes: 0,
     numDownVotes: 0,
     replies: [
-    {
+      {
         id: 1,
         displayName: 'PrincessPeaches',
         replyText: 'Yeah how do you do that?!!!',
