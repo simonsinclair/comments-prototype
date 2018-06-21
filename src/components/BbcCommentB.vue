@@ -149,7 +149,6 @@ export default {
         });
       } else {
         // Push reply normally.
-        // nextReplyId = this.replies.length + 1;
         this.replies.push({
           id: this.replies.length + 1, // Increment `nextReplyId` for next reply.
           displayName: this.session.displayName,
