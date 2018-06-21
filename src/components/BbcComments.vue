@@ -15,7 +15,7 @@
             <!-- Add a Comment -->
             <div class="gel-layout__item">
               <bbc-submit-comment
-                :placeholder-text="'Comment as ' + sessionDisplayName"
+                :placeholder-text="'Comment as ' + session.displayName"
                 @comment-submitted="submitComment"
                 cta-text="Add comment">
               </bbc-submit-comment>
@@ -42,19 +42,21 @@
             <!-- Comments! -->
             <div class="gel-layout__item">
               <transition-group name="new-comment" tag="div">
-                <bbc-comment
+                <component
+                  :is="session.commentComponent"
+
                   v-for="comment in
                     getOrderedFilteredAndLimitComments(comments, numVisibleComments)"
                   :key="comment.id"
 
-                  :session-display-name="sessionDisplayName"
+                  :session="session"
                   :display-name="comment.displayName"
                   :comment-text="comment.commentText"
                   :timestamp="comment.timestamp"
                   :num-up-votes="comment.numUpVotes"
                   :num-down-votes="comment.numDownVotes"
-                  :replies="comment.replies"
-                ></bbc-comment>
+                  :replies="comment.replies">
+                </component>
               </transition-group>
             </div>
 
@@ -74,7 +76,8 @@
 <script>
 import commentsData from '../comments';
 import BbcSubmitComment from './BbcSubmitComment';
-import BbcComment from './BbcComment';
+import BbcCommentA from './BbcCommentA';
+import BbcCommentB from './BbcCommentB';
 
 const filters = {
   all(comments) {
@@ -94,10 +97,10 @@ const orders = {
 
 export default {
   props: {
-    sessionDisplayName: String,
+    session: Object,
   },
 
-  components: { BbcSubmitComment, BbcComment },
+  components: { BbcSubmitComment, BbcCommentA, BbcCommentB },
 
   data() {
     return {
@@ -109,7 +112,7 @@ export default {
       // DATA SCHEMA
       // -----------
       // id: this.nextCommentId += 1, // Increment `nextCommentId` for next comment.
-      // displayName: this.sessionDisplayName,
+      // displayName: this.session.displayName,
       // commentText: this.commentText,
       // timestamp: new Date(),
       // numUpVotes: 0,
@@ -125,7 +128,7 @@ export default {
       const nextCommentId = this.comments.length + 1;
       this.comments.push({
         id: nextCommentId, // Increment `nextCommentId` for next reply.
-        displayName: this.sessionDisplayName,
+        displayName: this.session.displayName,
         commentText,
         timestamp: new Date(),
         numUpVotes: 0,

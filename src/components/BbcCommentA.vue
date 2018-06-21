@@ -48,7 +48,7 @@
         v-show="isRepliesLimited"
         class="replies__show-earlier"
         @click="showEarlierReplies()">
-          Show earlier replies
+          Show older replies
       </button>
       <transition-group name="new-reply" tag="div">
         <bbc-reply
@@ -64,7 +64,7 @@
       </transition-group>
       <bbc-submit-comment
         ref="submitComment"
-        :placeholder-text="'Reply as ' + sessionDisplayName"
+        :placeholder-text="'Reply as ' + session.displayName"
         @comment-submitted="submitReply"
         accepts-media=""
         cta-text="Add reply">
@@ -126,7 +126,7 @@ export default {
       const nextReplyId = this.replies.length + 1;
       this.replies.push({
         id: nextReplyId, // Increment `nextReplyId` for next reply.
-        displayName: this.sessionDisplayName,
+        displayName: this.session.displayName,
         replyText,
         timestamp: new Date(),
         numUpVotes: 0,
@@ -142,7 +142,7 @@ export default {
   },
 
   props: {
-    sessionDisplayName: String,
+    session: Object,
     displayName: String,
     commentText: String,
     timestamp: Date,
