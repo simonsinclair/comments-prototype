@@ -52,7 +52,7 @@ export default {
   data() {
     return {
       theme: 'childrens',
-      isConfigVisible: false,
+      isConfigVisible: true,
       session: {
         displayName: 'Bob Ross',
         commentComponent: 'BbcCommentA',
