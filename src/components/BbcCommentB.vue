@@ -46,7 +46,7 @@
     <div class="replies" v-show="isRepliesVisible">
       <transition-group name="new-reply" tag="div">
         <bbc-reply
-          v-for="reply in getLatestReplies(replies, numVisibleReplies)"
+          v-for="reply in getOldestReplies(replies, numVisibleReplies)"
           :key="reply.id"
 
           :display-name="reply.displayName"
@@ -58,10 +58,22 @@
       </transition-group>
       <button
         v-show="isRepliesLimited"
-        class="replies__show-earlier"
-        @click="showEarlierReplies()">
-          Show newer replies
+        class="replies__show-more"
+        @click="showMoreReplies()">
+          Show more replies
       </button>
+      <transition-group name="new-reply" tag="div">
+        <bbc-reply
+          v-for="newReply in newReplies"
+          :key="newReply.id"
+
+          :display-name="newReply.displayName"
+          :reply-text="newReply.replyText"
+          :timestamp="newReply.timestamp"
+          :num-up-votes="newReply.numUpVotes"
+          :num-down-votes="newReply.numDownVotes"
+        ></bbc-reply>
+      </transition-group>
       <bbc-submit-comment
         ref="submitComment"
         :placeholder-text="'Reply as ' + session.displayName"
@@ -95,6 +107,7 @@ export default {
       isRepliesVisible: false,
       isRepliesLimited: false,
       numVisibleReplies: 5,
+      newReplies: [],
     };
   },
 
@@ -104,7 +117,7 @@ export default {
       this.$refs.submitComment.focus();
     },
 
-    showEarlierReplies() {
+    showMoreReplies() {
       const numTotalReplies = this.replies.length;
 
       if (numTotalReplies > this.numVisibleReplies) {
@@ -112,26 +125,40 @@ export default {
       }
     },
 
-    getLatestReplies(rawReplies, numReplies) {
+    getOldestReplies(rawReplies, numReplies) {
       // Watch/set this elsewhere?
       if (rawReplies.length > this.numVisibleReplies) {
         this.isRepliesLimited = true;
       } else {
         this.isRepliesLimited = false;
       }
-      return rawReplies.slice(-numReplies);
+      return rawReplies.slice(0, numReplies);
     },
 
     submitReply(replyText) {
-      const nextReplyId = this.replies.length + 1;
-      this.replies.push({
-        id: nextReplyId, // Increment `nextReplyId` for next reply.
-        displayName: this.session.displayName,
-        replyText,
-        timestamp: new Date(),
-        numUpVotes: 0,
-        numDownVotes: 0,
-      });
+      // If replies are limited, or would be limited after next reply:
+      if (this.isRepliesLimited || this.replies.length === this.numVisibleReplies) {
+        // Push reply into 'always visible' reply slot.
+        this.newReplies.push({
+          id: this.newReplies.length + 1, // Increment `nextReplyId` for next reply.
+          displayName: this.session.displayName,
+          replyText,
+          timestamp: new Date(),
+          numUpVotes: 0,
+          numDownVotes: 0,
+        });
+      } else {
+        // Push reply normally.
+        // nextReplyId = this.replies.length + 1;
+        this.replies.push({
+          id: this.replies.length + 1, // Increment `nextReplyId` for next reply.
+          displayName: this.session.displayName,
+          replyText,
+          timestamp: new Date(),
+          numUpVotes: 0,
+          numDownVotes: 0,
+        });
+      }
     },
   },
 
@@ -205,19 +232,13 @@ export default {
       margin-left: 8px;
     }
 
-    .replies__show-earlier,
-    .replies__show-new {
+    .replies__show-more {
       background-color: #EEE;
+      border-radius: 17px;
       display: block;
       margin: 0 auto 20px;
       padding: 8px 16px;
     }
-
-    .replies__show-earlier {
-      border-radius: 17px;
-    }
-
-    .replies__show-new {}
 
     // Animation
     //
