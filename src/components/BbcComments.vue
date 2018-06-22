@@ -8,7 +8,7 @@
             <!-- Title -->
             <div class="gel-layout__item">
               <div class="comments__title gel-paragon-bold">
-                Two lines max: call to action, title or question?
+                {{ title }}
               </div>
             </div>
 
@@ -108,6 +108,7 @@ export default {
       activeOrder: 'newest',
       numVisibleComments: 3,
       isCommentsLimited: false,
+      title: 'Who\'s your favourite Infinity War Avenger?',
 
       // DATA SCHEMA
       // -----------
