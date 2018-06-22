@@ -91,8 +91,8 @@ export default {
 
   .submit-comment--replies {
     border-radius: 0;
-    margin-right: 8px;
-    margin-left: 8px;
+    margin-right: 12px;
+    margin-left: 12px;
   }
 
   .submit-comment--media {

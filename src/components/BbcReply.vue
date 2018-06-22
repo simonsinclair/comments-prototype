@@ -8,21 +8,21 @@
     </div>
     <div class="reply__footer">
       <div class="gel-layout">
-        <div class="gel-layout__item gel-1/2@s">
+        <div class="gel-layout__item gel-1/2">
           <div class="gel-brevier">
             <span class="reply__timestamp">{{ timestamp | fromNow }}</span>
             <span class="reply__bullet">&bull;</span>
             <span class="reply__report"><a href="#">Report</a></span>
           </div>
         </div>
-        <div class="gel-layout__item gel-1/2@s reply__actions">
+        <div class="gel-layout__item gel-1/2 reply__actions">
           <button class="gel-brevier">
             <img src="../assets/up-thumb.svg" alt="" /> {{ numUpVotes }}
           </button>
-          <button class="gel-brevier">
+          <!-- <button class="gel-brevier">
             <img src="../assets/down-thumb.svg" alt="" /> {{ numDownVotes }}
-          </button>
-          <button><img src="../assets/share.svg" alt="" /></button>
+          </button> -->
+          <!-- <button><img src="../assets/share.svg" alt="" /></button> -->
         </div>
       </div>
     </div>
@@ -60,12 +60,12 @@ export default {
 <style lang="scss" scoped="">
   .reply {
     background-color: #FFF;
-    margin-right: 8px;
+    margin-right: 12px;
     margin-bottom: 2px;
-    margin-left: 8px;
+    margin-left: 12px;
 
     &:last-child {
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
   }
   .reply__header,
@@ -86,19 +86,21 @@ export default {
 
     button {
       padding: 12px;
+      padding-top: 0;
 
       // Small only -> 399px
-      @media (min-width: 399px) {
-        padding-top: 0;
-      }
+      // @media (min-width: 399px) {
+      //   padding-top: 0;
+      // }
     }
   }
     .reply__actions {
+      text-align: right;
 
       // Small only -> 399px
-      @media (min-width: 399px) {
-        text-align: right;
-      }
+      // @media (min-width: 399px) {
+      //   text-align: right;
+      // }
     }
 
 

@@ -1,7 +1,7 @@
 .comment-wrap {
 
     &.comment-wrap--replies-visible {
-      margin-bottom: 32px;
+      margin-bottom: 24px;
     }
   }
 
@@ -9,7 +9,7 @@
       background-color: #FFF;
       border-radius: 2px;
       box-shadow: 0px 2px 1px 0px rgba(0,0,0,0.3);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
 
       .comment-wrap--replies-visible & {
         border-bottom-right-radius: 0;
@@ -60,8 +60,8 @@
       border-bottom-left-radius: 2px;
       box-shadow: 0px 2px 1px 0px rgba(0,0,0,0.3), inset 0px 2px 1px 0px rgba(0,0,0,0.25);
       margin-bottom: 24px;
-      padding-top: 8px;
-      padding-bottom: 8px;
+      padding-top: 12px;
+      padding-bottom: 12px;
     }
 
     .replies__show-more {
@@ -69,7 +69,7 @@
       display: block;
       margin-right: auto;
       margin-left: auto;
-      padding: 8px 16px 16px 16px;
+      padding: 4px 16px 16px 16px;
     }
 
 

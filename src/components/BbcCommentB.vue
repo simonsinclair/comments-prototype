@@ -20,7 +20,7 @@
       </div>
       <div class="comment__footer">
         <div class="gel-layout">
-          <div class="gel-layout__item gel-1/3">
+          <div class="gel-layout__item gel-1/2">
             <bbc-reply-cta
               :replies="replies"
               :is-replies-visible="isRepliesVisible"
@@ -29,14 +29,14 @@
               @hide-replies="isRepliesVisible = false">
             </bbc-reply-cta>
           </div>
-          <div class="gel-layout__item gel-2/3 comment__actions">
+          <div class="gel-layout__item gel-1/2 comment__actions">
             <button class="gel-pica">
               <img src="../assets/up-thumb.svg" alt="" /> {{ numUpVotes }}
             </button>
-            <button class="gel-pica">
+            <!-- <button class="gel-pica">
               <img src="../assets/down-thumb.svg" alt="" /> {{ numDownVotes }}
-            </button>
-            <button><img src="../assets/share.svg" alt="" /></button>
+            </button> -->
+            <!-- <button><img src="../assets/share.svg" alt="" /></button> -->
           </div>
         </div>
       </div>
