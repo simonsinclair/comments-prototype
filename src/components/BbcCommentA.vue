@@ -43,34 +43,36 @@
     </div>
 
     <!-- Comment Replies -->
-    <div class="replies" v-show="isRepliesVisible">
-      <button
-        v-show="isRepliesLimited"
-        class="replies__show-more gel-brevier-bold"
-        @click="showEarlierReplies()">
-          Show more replies
-      </button>
-      <transition-group name="new-reply" tag="div">
-        <bbc-reply
-          v-for="reply in getLatestReplies(replies, numVisibleReplies)"
-          :key="reply.id"
+    <transition name="drawer">
+      <div class="replies" v-show="isRepliesVisible">
+        <button
+          v-show="isRepliesLimited"
+          class="replies__show-more gel-brevier-bold"
+          @click="showEarlierReplies()">
+            Show more replies
+        </button>
+        <transition-group name="new-reply" tag="div">
+          <bbc-reply
+            v-for="reply in getLatestReplies(replies, numVisibleReplies)"
+            :key="reply.id"
 
-          :display-name="reply.displayName"
-          :reply-text="reply.replyText"
-          :timestamp="reply.timestamp"
-          :num-up-votes="reply.numUpVotes"
-          :num-down-votes="reply.numDownVotes"
-        ></bbc-reply>
-      </transition-group>
-      <bbc-submit-comment
-        class="submit-comment--replies"
-        ref="submitComment"
-        :placeholder-text="'Reply as ' + session.displayName"
-        @comment-submitted="submitReply"
-        accepts-media=""
-        cta-text="Add reply">
-      </bbc-submit-comment>
-    </div>
+            :display-name="reply.displayName"
+            :reply-text="reply.replyText"
+            :timestamp="reply.timestamp"
+            :num-up-votes="reply.numUpVotes"
+            :num-down-votes="reply.numDownVotes"
+          ></bbc-reply>
+        </transition-group>
+        <bbc-submit-comment
+          class="submit-comment--replies"
+          ref="submitComment"
+          :placeholder-text="'Reply as ' + session.displayName"
+          @comment-submitted="submitReply"
+          accepts-media=""
+          cta-text="Add reply">
+        </bbc-submit-comment>
+      </div>
+    </transition>
   </div>
 </template>
 
