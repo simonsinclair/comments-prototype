@@ -60,9 +60,9 @@ export default {
 <style lang="scss" scoped="">
   .reply {
     background-color: #FFF;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    margin-left: 20px;
+    margin-right: 8px;
+    margin-bottom: 2px;
+    margin-left: 8px;
   }
   .reply__header,
   .reply__body {

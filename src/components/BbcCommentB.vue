@@ -58,7 +58,7 @@
       </transition-group>
       <button
         v-show="isRepliesLimited"
-        class="replies__show-more"
+        class="replies__show-more gel-brevier-bold"
         @click="showMoreReplies()">
           Show more replies
       </button>
@@ -75,6 +75,7 @@
         ></bbc-reply>
       </transition-group>
       <bbc-submit-comment
+        class="replies__submit"
         ref="submitComment"
         :placeholder-text="'Reply as ' + session.displayName"
         @comment-submitted="submitReply"
@@ -225,18 +226,28 @@ export default {
           text-align: right;
         }
 
+
+    // REPLIES
+    //
+
     .replies {
-      margin-right: 8px;
+      background-color: #DDD;
       margin-bottom: 24px;
-      margin-left: 8px;
+      padding-top: 8px;
+      padding-bottom: 8px;
     }
 
     .replies__show-more {
-      background-color: #EEE;
-      border-radius: 17px;
+      color: #3a64ee;
       display: block;
-      margin: 0 auto 20px;
-      padding: 8px 16px;
+      margin-right: auto;
+      margin-left: auto;
+      padding: 8px 16px 16px 16px;
+    }
+
+    .replies__submit {
+      margin-right: 8px;
+      margin-left: 8px;
     }
 
     // Animation

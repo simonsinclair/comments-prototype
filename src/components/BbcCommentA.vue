@@ -46,9 +46,9 @@
     <div class="replies" v-show="isRepliesVisible">
       <button
         v-show="isRepliesLimited"
-        class="replies__show-earlier"
+        class="replies__show-earlier gel-brevier-bold"
         @click="showEarlierReplies()">
-          Show older replies
+          Show more replies
       </button>
       <transition-group name="new-reply" tag="div">
         <bbc-reply
@@ -63,6 +63,7 @@
         ></bbc-reply>
       </transition-group>
       <bbc-submit-comment
+        class="replies__submit"
         ref="submitComment"
         :placeholder-text="'Reply as ' + session.displayName"
         @comment-submitted="submitReply"
@@ -199,25 +200,29 @@ export default {
           text-align: right;
         }
 
-    .replies {
-      margin-right: 8px;
-      margin-bottom: 24px;
-      margin-left: 8px;
-    }
 
-    .replies__show-earlier,
-    .replies__show-new {
-      background-color: #EEE;
-      display: block;
-      margin: 0 auto 20px;
-      padding: 8px 16px;
+    // REPLIES
+    //
+
+    .replies {
+      background-color: #DDD;
+      margin-bottom: 24px;
+      padding-top: 8px;
+      padding-bottom: 8px;
     }
 
     .replies__show-earlier {
-      border-radius: 17px;
+      color: #3a64ee;
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+      padding: 8px 16px 16px 16px;
     }
 
-    .replies__show-new {}
+    .replies__submit {
+      margin-right: 8px;
+      margin-left: 8px;
+    }
 
     // Animation
     //
