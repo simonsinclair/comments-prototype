@@ -1,5 +1,10 @@
 <template>
-  <div class="comment-wrap" :class="{ 'comment-wrap--replies-visible': isRepliesVisible }">
+  <div
+    class="comment-wrap"
+    :class="{
+      'comment-wrap--replies-visible': isRepliesVisible,
+      'comment-wrap--has-replies': replies.length > 0 }
+    ">
 
     <!-- Comment -->
     <div class="comment">

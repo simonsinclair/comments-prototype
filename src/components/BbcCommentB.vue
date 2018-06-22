@@ -1,5 +1,10 @@
 <template>
-  <div class="comment-wrap" :class="{ 'comment-wrap--replies-visible': isRepliesVisible }">
+  <div
+    class="comment-wrap"
+    :class="{
+      'comment-wrap--replies-visible': isRepliesVisible,
+      'comment-wrap--has-replies': replies.length > 0 }
+    ">
 
     <!-- Comment -->
     <div class="comment">
@@ -63,7 +68,7 @@
           @click="showMoreReplies()">
             Show more replies
         </button>
-        <transition-group name="new-reply" tag="div">
+        <transition-group name="new-reply" tag="div" class="replies--new">
           <bbc-reply
             v-for="newReply in newReplies"
             :key="newReply.id"
