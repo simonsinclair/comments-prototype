@@ -50,7 +50,7 @@ module.exports = [
   {
     id: 5,
     displayName: 'DiamondSnowKitten',
-    commentText: 'I can\'t believe there\'s a superhero that turns into ice cream. Useless superpower...\nBy the way StarstoneViolinChimp yes the guardians of the galaxy are in Infinity WarBy the way StarstoneViolinChimp yes the guardians of the galaxy are in Infinity War',
+    commentText: 'I can\'t believe there\'s a superhero that turns into ice cream. Useless superpower...\nBy the way StarstoneViolinChimp yes the guardians of the galaxy are in Infinity War',
     timestamp: new Date(2018, 4, 22, 17, 2),
     numUpVotes: 13,
     numDownVotes: 0,
