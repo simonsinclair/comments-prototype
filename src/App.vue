@@ -90,6 +90,7 @@ export default {
     background: none;
     border: none;
     cursor: pointer;
+    outline: none;
   }
 
   .app__bg {
