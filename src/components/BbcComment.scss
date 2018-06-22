@@ -41,13 +41,16 @@
         }
       .comment__footer {
         margin-top: 12px;
-
-        button {
-          padding: 12px;
-        }
+        padding-right: 12px-4;
+        padding-bottom: 12px;
+        padding-left: 12px-4;
       }
         .comment__actions {
           text-align: right;
+
+          button {
+            padding: 4px;
+          }
         }
 
 

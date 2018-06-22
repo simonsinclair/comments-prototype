@@ -91,6 +91,7 @@ export default {
     border: none;
     cursor: pointer;
     outline: none;
+    padding: 0;
   }
 
   .app__bg {

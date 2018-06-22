@@ -5,7 +5,7 @@
     <button class="gel-pica-bold"
       @click="$emit('reply')"
       v-show="!isRepliesVisible && replies.length === 0">
-        <img src="../assets/reply.svg" alt="" /> Reply
+        <img src="../assets/reply.svg" alt="" /> <span>Reply</span>
     </button>
 
     <!-- B) Expand reply/replies. -->
@@ -13,14 +13,16 @@
       @click="$emit('show-replies')"
       v-show="!isRepliesVisible && replies.length > 0">
         <img src="../assets/reply.svg" alt="" />
-        {{ replies.length > 1 ? `${replies.length} Replies` : `${replies.length} Reply` }}
+        <span>
+          {{ replies.length > 1 ? `${replies.length} Replies` : `${replies.length} Reply` }}
+        </span>
     </button>
 
     <!-- C) Hide no reply/replies. -->
     <button class="gel-pica-bold"
       @click="$emit('hide-replies')"
       v-show="isRepliesVisible && replies.length === 0">
-        <img src="../assets/n-replies.svg" alt="" /> Hide
+        <img src="../assets/n-replies.svg" alt="" /> <span>Hide</span>
     </button>
 
     <!-- D) Hide reply/replies. -->
@@ -28,7 +30,7 @@
       @click="$emit('hide-replies')"
       v-show="isRepliesVisible && replies.length > 0">
         <img src="../assets/n-replies.svg" alt="" />
-        {{ replies.length > 1 ? `Hide replies` : `Hide reply` }}
+        <span>{{ replies.length > 1 ? `Hide replies` : `Hide reply` }}</span>
     </button>
   </div>
 </template>
@@ -44,17 +46,26 @@ export default {
 
 <style lang="scss" scoped="">
   .reply-cta {
-    display: inline-block;
     border-radius: 4px;
+    display: inline-block;
+    padding: 4px;
 
     &:hover {
       background-color: #EEE;
+    }
+
+    > button {
+      display: flex;
+
+      > img {}
+
+      > span {
+        margin-left: 6px;
+      }
     }
   }
 
   .reply-cta--replies-visible {
     background-color: #EEE;
-
-    svg {}
   }
 </style>
