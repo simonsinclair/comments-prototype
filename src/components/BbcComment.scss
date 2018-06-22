@@ -1,5 +1,9 @@
 .comment-wrap {
 
+    &:last-child {
+      margin-bottom: 24px;
+    }
+
     &.comment-wrap--replies-visible {
       margin-bottom: 24px;
     }

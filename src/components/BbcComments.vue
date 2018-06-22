@@ -60,12 +60,14 @@
               </transition-group>
             </div>
 
-            <button
-              class="comments__show-more"
-              v-show="isCommentsLimited"
-              @click="showMoreComments()">
-                More Comments
-            </button>
+            <div class="gel-layout__item">
+              <button
+                class="comments__show-more"
+                v-show="isCommentsLimited"
+                @click="showMoreComments()">
+                  More Comments
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -178,7 +180,7 @@ export default {
     background-color: #CCC;
     color: #333;
     padding-top: 64px;
-    padding-bottom: 28px;
+    padding-bottom: 32px-2;
     position: relative;
 
     .app--childrens & {
@@ -217,15 +219,24 @@ export default {
 
     .comments__show-more {
       background-color: #FFF;
+      border-radius: 4px;
+      display: block;
       font-weight: bold;
-      padding: 12px 32px;
-      position: absolute;
-        bottom: 0; left: 50%;
-      transform: translate(-50%, 50%);
+      margin: 0 auto;
+      padding: 12px;
+      width: 60%;
       white-space: nowrap;
 
       .app--childrens & {
-        background-color: #3395D4;
+        background-color: #3395d4;
+        box-shadow: 0px 3px 0px 0px #006db3;
+        margin-bottom: 2px;
+
+        &:active {
+          margin-top: 2px;
+          margin-bottom: 0;
+          box-shadow: 0px 1px 0px 0px #006db3;
+        }
       }
     }
 

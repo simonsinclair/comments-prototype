@@ -31,7 +31,7 @@
           </div>
           <div class="gel-layout__item gel-1/2 comment__actions">
             <button class="gel-pica">
-              <img src="../assets/up-thumb.svg" alt="" /> {{ numUpVotes }}
+              <img src="../assets/love.svg" alt="" /> {{ numUpVotes }}
             </button>
             <!-- <button class="gel-pica">
               <img src="../assets/down-thumb.svg" alt="" /> {{ numDownVotes }}
