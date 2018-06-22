@@ -63,6 +63,10 @@ export default {
     margin-right: 8px;
     margin-bottom: 2px;
     margin-left: 8px;
+
+    &:last-child {
+      margin-bottom: 8px;
+    }
   }
   .reply__header,
   .reply__body {

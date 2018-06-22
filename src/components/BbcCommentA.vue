@@ -46,7 +46,7 @@
     <div class="replies" v-show="isRepliesVisible">
       <button
         v-show="isRepliesLimited"
-        class="replies__show-earlier gel-brevier-bold"
+        class="replies__show-more gel-brevier-bold"
         @click="showEarlierReplies()">
           Show more replies
       </button>
@@ -63,7 +63,7 @@
         ></bbc-reply>
       </transition-group>
       <bbc-submit-comment
-        class="replies__submit"
+        class="submit-comment--replies"
         ref="submitComment"
         :placeholder-text="'Reply as ' + session.displayName"
         @comment-submitted="submitReply"
@@ -154,92 +154,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped="">
-  .comment-wrap {
-
-    &.comment-wrap--replies-visible {
-      margin-bottom: 32px;
-    }
-  }
-
-    .comment {
-      background-color: #FFF;
-      border-radius: 4px;
-      margin-bottom: 20px;
-    }
-      .comment__header,
-      .comment__body {
-        padding-right: 12px;
-        padding-left: 12px;
-      }
-      .comment__header {
-        padding-top: 12px;
-      }
-        .comment__display-name {}
-      .comment__body {
-
-        > p {
-          white-space: pre-line;
-        }
-      }
-        .comment__timestamp {}
-        .comment__bullet {
-          margin-left: 4px;
-        }
-        .comment__report {
-          margin-left: 4px;
-        }
-      .comment__footer {
-        margin-top: 12px;
-
-        button {
-          padding: 12px;
-        }
-      }
-        .comment__actions {
-          text-align: right;
-        }
-
-
-    // REPLIES
-    //
-
-    .replies {
-      background-color: #DDD;
-      margin-bottom: 24px;
-      padding-top: 8px;
-      padding-bottom: 8px;
-    }
-
-    .replies__show-earlier {
-      color: #3a64ee;
-      display: block;
-      margin-right: auto;
-      margin-left: auto;
-      padding: 8px 16px 16px 16px;
-    }
-
-    .replies__submit {
-      margin-right: 8px;
-      margin-left: 8px;
-    }
-
-    // Animation
-    //
-    .new-reply {}
-
-    // Enter
-    .new-reply-enter {
-      opacity: 0;
-      transform: translateY(-32px);
-    }
-    .new-reply-enter-active {
-      transition: all 350ms ease-out;
-    }
-    .new-reply-enter-to {}
-
-    // Leave
-    .new-reply-leave {}
-    .new-reply-leave-active {}
-    .new-reply-leave-to {}
-</style>
+<style src="./BbcComment.scss" lang="scss" scoped=""></style>
