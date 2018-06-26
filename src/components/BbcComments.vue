@@ -77,7 +77,7 @@
 
 <script>
 import commentsDataCore from '../comments-core';
-import commentsDataChildrens from '../comments-childrens';
+// import commentsDataChildrens from '../comments-childrens';
 
 import BbcSubmitComment from './BbcSubmitComment';
 import BbcCommentA from './BbcCommentA';
