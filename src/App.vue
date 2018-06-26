@@ -19,11 +19,27 @@
               v-model="session.commentComponent" />
           </label>
         </fieldset>
+        <fieldset>
+          <label>
+            Core
+            <input
+              type="radio"
+              value="core"
+              v-model="session.theme" />
+          </label>
+          <label>
+            Childrens
+            <input
+              type="radio"
+              value="childrens"
+              v-model="session.theme" />
+          </label>
+        </fieldset>
         <button type="submit">Hide</button>
       </form>
     </div>
 
-    <picture class="app__bg" v-if="theme === 'childrens'">
+    <picture class="app__bg" v-if="session.theme === 'childrens'">
       <source media="(max-width: 400px)" srcset="./assets/page/childrens/b1_body.png" />
       <source media="(max-width: 600px)" srcset="./assets/page/childrens/b2_body.png" />
       <source media="(max-width: 768px)" srcset="./assets/page/childrens/b3_body.png" />
@@ -32,7 +48,7 @@
       <img src="./assets/page/childrens/b6_body.png" alt="" />
     </picture>
     <bbc-comments :session="session"></bbc-comments>
-    <picture class="app__bg" v-if="theme === 'childrens'">
+    <picture class="app__bg" v-if="session.theme === 'childrens'">
       <source media="(max-width: 400px)" srcset="./assets/page/childrens/b1_footer.png" />
       <source media="(max-width: 600px)" srcset="./assets/page/childrens/b2_footer.png" />
       <source media="(max-width: 768px)" srcset="./assets/page/childrens/b3_footer.png" />
@@ -51,9 +67,9 @@ export default {
   components: { BbcComments },
   data() {
     return {
-      theme: 'childrens',
       isConfigVisible: true,
       session: {
+        theme: 'core',
         displayName: 'Bob Ross',
         commentComponent: 'BbcCommentA',
       },
@@ -61,7 +77,7 @@ export default {
   },
   computed: {
     themeClass() {
-      return `app--${this.theme}`;
+      return `app--${this.session.theme}`;
     },
   },
 };

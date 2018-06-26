@@ -30,11 +30,11 @@
 
             <!-- Sorting/Filtering -->
             <div class="gel-layout__item comments__filter-order">
-              <select name="showCommentType">
+              <select class="gel-pica-bold" name="showCommentType">
                 <option value="all" selected="">Show everything</option>
               </select>
 
-              <select name="orderCommentsBy">
+              <select class="gel-pica-bold" name="orderCommentsBy">
                 <option value="latest" selected="">Latest first</option>
               </select>
             </div>
@@ -76,7 +76,9 @@
 </template>
 
 <script>
-import commentsData from '../comments';
+import commentsDataCore from '../comments-core';
+import commentsDataChildrens from '../comments-childrens';
+
 import BbcSubmitComment from './BbcSubmitComment';
 import BbcCommentA from './BbcCommentA';
 import BbcCommentB from './BbcCommentB';
@@ -110,7 +112,6 @@ export default {
       activeOrder: 'newest',
       numVisibleComments: 3,
       isCommentsLimited: false,
-      title: 'Who\'s your favourite Infinity War Avenger?',
 
       // DATA SCHEMA
       // -----------
@@ -122,7 +123,9 @@ export default {
       // numDownVotes: 0,
       // replies: [],
 
-      comments: commentsData,
+      // To do: data switching based on theme.
+      title: commentsDataCore.title,
+      comments: commentsDataCore.comments,
     };
   },
 
@@ -203,6 +206,17 @@ export default {
     .comments__filter-order {
       padding-top: 12px;
       padding-bottom: 20px;
+
+      > select {
+        border: none;
+        outline: none;
+        padding: 4px 8px;
+
+        .app--childrens & {
+          background-color: #3395D4;
+          border-radius: 16px;
+        }
+      }
     }
 
     .comments__number {

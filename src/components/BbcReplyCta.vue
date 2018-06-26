@@ -5,32 +5,40 @@
     <button class="gel-pica-bold"
       @click="$emit('reply')"
       v-show="!isRepliesVisible && replies.length === 0">
-        <img src="../assets/reply.svg" alt="" /> <span>Reply</span>
+        <div>
+          <img src="../assets/reply.svg" alt="" /> <span>Reply</span>
+        </div>
     </button>
 
     <!-- B) Expand reply/replies. -->
     <button class="gel-pica-bold"
       @click="$emit('show-replies')"
       v-show="!isRepliesVisible && replies.length > 0">
-        <img src="../assets/reply.svg" alt="" />
-        <span>
-          {{ replies.length > 1 ? `${replies.length} Replies` : `${replies.length} Reply` }}
-        </span>
+        <div>
+          <img src="../assets/reply.svg" alt="" />
+          <span>
+            {{ replies.length > 1 ? `${replies.length} Replies` : `${replies.length} Reply` }}
+          </span>
+        </div>
     </button>
 
     <!-- C) Hide no reply/replies. -->
     <button class="gel-pica-bold"
       @click="$emit('hide-replies')"
       v-show="isRepliesVisible && replies.length === 0">
-        <img src="../assets/n-replies.svg" alt="" /> <span>Hide</span>
+        <div>
+          <img src="../assets/n-replies.svg" alt="" /> <span>Hide</span>
+        </div>
     </button>
 
     <!-- D) Hide reply/replies. -->
     <button class="gel-pica-bold"
       @click="$emit('hide-replies')"
       v-show="isRepliesVisible && replies.length > 0">
-        <img src="../assets/n-replies.svg" alt="" />
-        <span>{{ replies.length > 1 ? `Hide replies` : `Hide reply` }}</span>
+        <div>
+          <img src="../assets/n-replies.svg" alt="" />
+          <span>{{ replies.length > 1 ? `Hide replies` : `Hide reply` }}</span>
+        </div>
     </button>
   </div>
 </template>
@@ -55,12 +63,15 @@ export default {
     }
 
     > button {
-      display: flex;
 
-      > img {}
+      > div {
+        display: flex;
 
-      > span {
-        margin-left: 6px;
+        > img {}
+
+        > span {
+          margin-left: 6px;
+        }
       }
     }
   }
