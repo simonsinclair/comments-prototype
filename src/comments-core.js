@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Core comments title',
+  title: 'Comments',
   comments: [
     {
       id: 1,

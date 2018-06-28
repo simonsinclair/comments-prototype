@@ -17,12 +17,12 @@
         </div>
         <div class="gel-layout__item gel-1/2 reply__actions">
           <button class="gel-brevier">
-            <img src="../assets/love.svg" alt="" /> {{ numUpVotes }}
+            <img src="../assets/up-thumb.svg" alt="" /> {{ numUpVotes }}
           </button>
-          <!-- <button class="gel-brevier">
+          <button class="gel-brevier">
             <img src="../assets/down-thumb.svg" alt="" /> {{ numDownVotes }}
-          </button> -->
-          <!-- <button><img src="../assets/share.svg" alt="" /></button> -->
+          </button>
+          <button><img src="../assets/share.svg" alt="" /></button>
         </div>
       </div>
     </div>
@@ -92,20 +92,16 @@ export default {
     button {
       padding: 12px;
       padding-top: 0;
-
-      // Small only -> 399px
-      // @media (min-width: 399px) {
-      //   padding-top: 0;
-      // }
     }
   }
+
     .reply__actions {
       text-align: right;
+      padding-right: 8px;
 
-      // Small only -> 399px
-      // @media (min-width: 399px) {
-      //   text-align: right;
-      // }
+      button {
+        padding: 0 4px 12px;
+      }
     }
 
 
