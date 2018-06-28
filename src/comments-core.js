@@ -1,22 +1,25 @@
+/* eslint quotes: ["error", "single", { "allowTemplateLiterals": true }] */
 module.exports = {
   title: 'Comments',
   comments: [
     {
       id: 1,
-      displayName: 'AprilShowers13',
-      commentText: 'can\'t wait for the next avengers to come out!!!!',
+      displayName: 'british patriot',
+      commentText: `We don't need cars or planes or employees or tax revenue or jobs.
+
+( I've got 500 Unicorn eggs. Up West they'll charge you £1m each, I can let you have them for a 'pony' a piece or 5 for a 'monkey'...guaranteed to turn base metal into pure gold..cash only......................eggs may be gold painted duck eggs, buyer beware, only for holders of Blue Passports..it's the will of the people, innit)`,
       // new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]]]]]);
       // The argument monthIndex is 0-based. This means that January = 0 and December = 11.
       timestamp: new Date(2018, 4, 17, 17, 2),
-      numUpVotes: 2,
+      numUpVotes: 1,
       numDownVotes: 0,
       // displayName, replyText, timestamp, numUpVotes, numDownVotes,
       replies: [],
     },
     {
       id: 2,
-      displayName: 'U17035666',
-      commentText: 'i love the Avengers',
+      displayName: 'notory',
+      commentText: 'Gosh exploding gammon ! Doesn\'t bear thinking about !',
       timestamp: new Date(2018, 4, 21, 17, 2),
       numUpVotes: 1,
       numDownVotes: 0,
@@ -24,283 +27,253 @@ module.exports = {
     },
     {
       id: 3,
-      displayName: 'OrangeSummerySeal',
-      commentText: 'Oh Tom Holland wasn\'t there\n\nDoes anyone know Tom Holland?',
+      displayName: 'icecoldstevet',
+      commentText: `Although investment is lower at present it is still significant even though Brexit is now happening (repeal of 1972 act taking us out is now law). Lower level of investment could also be due to cyclical and other reasons.
+
+We want to see all business thrive but most of this noise is from large corporations. Also remember out of 26m employed in UK 22m are employed by SME's or the public sector`,
       timestamp: new Date(2018, 4, 22, 9, 2),
       numUpVotes: 6,
       numDownVotes: 0,
       replies: [
         {
           id: 1,
-          displayName: 'DJ_SnowflakeDiva',
-          replyText: 'Yep, Tom Holland (AKA: SpiderMan) is on Infinity War. But so is Chris Evans (AKA: Captain America) and Robert Downey Jr (AKA: Iron Man). So maybe they just were *sadly* busy at the time of the interview 😔\nHope this helps!',
+          displayName: 'Chris B',
+          replyText: `No so. The recently passed Withdrawal Act repeals the 1972 European Communities Act on the day we leave (if we leave) & not before.
+
+If for any reason, we don't leave, then the 1972 act stands.
+
+All that the Withdrawal Act does is to define what happens when we leave. It doesn't make us any more or less likely to leave.`,
           timestamp: new Date(2018, 5, 23, 10, 2),
-          numUpVotes: 21,
+          numUpVotes: 2,
           numDownVotes: 0,
+        },
+        {
+          id: 2,
+          displayName: 'anotherfakename',
+          replyText: `A researched piece by the BBC would have informed us of the total investment in the car industry, not just from outside, it would also have provided comparisons with other nations. But then it might not have sounded such a disaster and of course might not have linked so readily to the BBC anti brexit agenda. Mind you, I doubt their arts students could even have done the research`,
+          timestamp: new Date(2018, 5, 23, 10, 2),
+          numUpVotes: 0,
+          numDownVotes: 2,
         },
       ],
     },
     {
       id: 4,
-      displayName: 'U17011742',
-      commentText: 'matter eater lad whaaaaat',
+      displayName: 'icecoldstevet',
+      commentText: `Although investment is lower at present it is still significant even though Brexit is now happening (repeal of 1972 act taking us out is now law). Lower level of investment could also be due to cyclical and other reasons.
+
+We want to see all business thrive but most of this noise is from large corporations. Also remember out of 26m employed in UK 22m are employed by SME's or the public sector`,
       timestamp: new Date(2018, 4, 22, 17, 2),
-      numUpVotes: 8,
+      numUpVotes: 2,
       numDownVotes: 0,
       replies: [],
     },
     {
       id: 5,
-      displayName: 'DiamondSnowKitten',
-      commentText: 'I can\'t believe there\'s a superhero that turns into ice cream. Useless superpower...\nBy the way StarstoneViolinChimp yes the guardians of the galaxy are in Infinity War',
+      displayName: 'londonbob',
+      commentText: 'Tick tock tick tock barnier',
       timestamp: new Date(2018, 4, 22, 17, 2),
-      numUpVotes: 13,
-      numDownVotes: 0,
-      replies: [],
-    },
-    {
-      id: 6,
-      displayName: 'DiamondSnowKitten',
-      commentText: 'I love Marvel and Avengers Infinity War was one of their best movies. Can\'t wait for the sequel and the rest of phase 4',
-      timestamp: new Date(2018, 5, 3, 17, 2),
-      numUpVotes: 24,
-      numDownVotes: 0,
-      replies: [],
-    },
-    {
-      id: 7,
-      displayName: 'SwimmingPengiun',
-      commentText: 'Cool 🙂👍❤️',
-      timestamp: new Date(2018, 5, 15, 9, 2),
-      numUpVotes: 1,
-      numDownVotes: 0,
-      replies: [],
-    },
-    {
-      id: 8,
-      displayName: 'jelly_ferret',
-      commentText: 'Scarlet Witch is my favourite super hero! And 2 of my 3 favourite actors were in this !!',
-      timestamp: new Date(2018, 5, 16, 9, 2),
-      numUpVotes: 10,
-      numDownVotes: 0,
-      replies: [],
-    },
-    {
-      id: 9,
-      displayName: 'redguitar10',
-      commentText: 'I absolutely love all the avengers! So amazing!',
-      timestamp: new Date(2018, 5, 16, 9, 30),
-      numUpVotes: 1,
-      numDownVotes: 0,
-      replies: [],
-    },
-    {
-      id: 10,
-      displayName: 'DancingBluePotato',
-      commentText: 'Aren\'t the Guardians of the Galaxy supposed to be in this film? I\'ve completely forgot lol 😂\nViolin 🎻',
-      timestamp: new Date(2018, 5, 19, 9, 30),
-      numUpVotes: 9,
-      numDownVotes: 0,
-      replies: [],
-    },
-    {
-      id: 11,
-      displayName: 'Unicorn22',
-      commentText: 'I absolutely love marvel and all the avengers! 💕 But I’m sad Tom Holland isn\'t there',
-      timestamp: new Date(2018, 5, 20, 17, 30),
       numUpVotes: 8,
       numDownVotes: 0,
       replies: [
         {
           id: 1,
-          displayName: 'DJ_SnowflakeDiva',
-          replyText: 'I agree *crying on the inside* 😂\n\n👑❄🔥🎶 DJ Ash 🎶🔥❄👑\n😎🐍👑 #SlytherinQueen 👑🐍😎\n👻🎉😱🎆BP\'sOctoberFoTM2017🎆😱🎉👻',
-          timestamp: new Date(2018, 5, 20, 17, 31),
-          numUpVotes: 4,
-          numDownVotes: 0,
-        },
-        {
-          id: 2,
-          displayName: 'DCcomical',
-          replyText: 'Who even is Tom Holland?',
-          timestamp: new Date(2018, 5, 21, 17, 35),
-          numUpVotes: 0,
-          numDownVotes: 0,
-        },
-        {
-          id: 3,
-          displayName: 'SpoonHead',
-          replyText: 'I love Tom Holland and sad he\'s not there 😿',
-          timestamp: new Date(2018, 5, 21, 18, 30),
-          numUpVotes: 1,
-          numDownVotes: 0,
-        },
-        {
-          id: 4,
-          displayName: 'Spideysenses09',
-          replyText: 'Tom Holland is Spiderman!!! The best one, he\'s so funny ❤️🕷',
-          timestamp: new Date(2018, 5, 23, 19, 30),
-          numUpVotes: 2,
-          numDownVotes: 0,
-        },
-        {
-          id: 5,
-          displayName: 'Jammyjohnson',
-          replyText: 'Long live Marvel movies, please keep making them',
-          timestamp: new Date(2018, 5, 24, 9, 30),
-          numUpVotes: 36,
-          numDownVotes: 0,
-        },
-        {
-          id: 6,
-          displayName: 'AfricaBambatta',
-          replyText: 'Tom Holland is Mr Magic Web Hands, shazam!',
-          timestamp: new Date(2018, 5, 24, 12, 30),
-          numUpVotes: 5,
-          numDownVotes: 0,
-        },
-        {
-          id: 7,
-          displayName: 'Onethrix_Never',
-          replyText: 'I can\'t wait for Spiderman 2, the new new new Spiderman, not the old old old Spiderman',
-          timestamp: new Date(2018, 5, 25, 8, 30),
+          displayName: 'Chris B',
+          replyText: `This guy can now count to four, albeit without the actual numbers. And he's remembered the name of one of the key figures.
+
+Next time, he might even use a capital letter.`,
+          timestamp: new Date(2018, 5, 23, 10, 2),
           numUpVotes: 3,
           numDownVotes: 0,
         },
         {
-          id: 8,
-          displayName: 'Shakirarea',
-          replyText: 'I love Marvel and Tom Holland as well 💕',
-          timestamp: new Date(2018, 5, 25, 8, 45),
-          numUpVotes: 22,
-          numDownVotes: 0,
-        },
-        {
-          id: 9,
-          displayName: 'ToomanyDJs',
-          replyText: 'I prefer the pajama version of Spiderman. No fancy costume with electronic hands and stuff',
-          timestamp: new Date(2018, 5, 25, 9, 33),
-          numUpVotes: 17,
+          id: 2,
+          displayName: 'Petts Wood Dave',
+          replyText: `And when it stops ticking are you quite confident that it’s not going to explode in our faces. I’m certainly not!`,
+          timestamp: new Date(2018, 5, 23, 10, 2),
+          numUpVotes: 1,
           numDownVotes: 0,
         },
       ],
     },
+    // {
+    //   id: 6,
+    //   displayName: 'londonbob',
+    //   commentText: 'Tick tock tick tock barnier',
+    //   timestamp: new Date(2018, 4, 22, 17, 2),
+    //   numUpVotes: 1,
+    //   numDownVotes: 2,
+    //   replies: [],
+    // },
+    {
+      id: 7,
+      displayName: 'make sense',
+      commentText: `There's always Macron to take over once Merkel falls. Oh wait! He's busy building a private swimming pool and buying crockery!`,
+      timestamp: new Date(2018, 4, 22, 17, 2),
+      numUpVotes: 1,
+      numDownVotes: 2,
+      replies: [],
+    },
+    {
+      id: 8,
+      displayName: 'EddieEagle',
+      commentText: `We are ending up with a soft Brexit. And the Quitters only have themselves to blame for this by failing to deliver the promised benefits. Not the EU’s fault, migrants or Remain supporters, it’s the lying Quitters, Tories and UKIP bigots’ fault for believing in their own lies. Bye bye cliff edge 👋 and welcome to what’s best for Britain 🇬🇧`,
+      timestamp: new Date(2018, 4, 22, 17, 2),
+      numUpVotes: 4,
+      numDownVotes: 3,
+      replies: [
+        {
+          id: 1,
+          displayName: 'anotherfakename',
+          replyText: `Several points. a) We arent out so how can we deliver the benefits of being out. b) May, the government, mps and civil service making a mess of the whole issue are remainers. c) we ended here because those listed in b do not, have not and will never believe in Britain.
+Yes we will end up without leaving, and the UK will suffer from remaining in all the costs and rules as it has for 40 year`,
+          timestamp: new Date(2018, 4, 22, 17, 2),
+          numUpVotes: 0,
+          numDownVotes: 3,
+        },
+      ],
+    },
+    {
+      id: 9,
+      displayName: 'SnowyDay',
+      commentText: `Germany knocked out of the World Cup, Merkel next ? Then the EU ? Better stay in the UK guys, the EU's going down....
+.`,
+      timestamp: new Date(2018, 4, 22, 17, 2),
+      numUpVotes: 3,
+      numDownVotes: 4,
+      replies: [],
+    },
+    {
+      id: 10,
+      displayName: 'longmemory',
+      commentText: `We saw this look of defeat in Stalingrad.`,
+      timestamp: new Date(2018, 4, 22, 17, 2),
+      numUpVotes: 3,
+      numDownVotes: 2,
+      replies: [],
+    },
+    {
+      id: 11,
+      displayName: 'Cap Ferrat',
+      commentText: `Yes indeed, looks like Germany is about to change its political leadership with the coalition disintegrating.
+
+EU has typified arrogance and so no surprise that it has found its elf in such a mess.
+
+Uk was only there as a cash cow.
+
+
+Most Scottish people have now joined the Leave campaign, it’s hardly surprising!!
+
+Euro will fall first closely followed by the EU...
+
+Watch and learn`,
+      timestamp: new Date(2018, 4, 22, 17, 2),
+      numUpVotes: 4,
+      numDownVotes: 3,
+      replies: [],
+    },
     {
       id: 12,
-      displayName: 'DJ_SnowflakeDiva',
-      commentText: 'Absolutely love this!! I am literally obsessed with the Avengers right now!\n👑❄🔥🎶 DJ Ash 🎶🔥❄👑',
-      timestamp: new Date(2018, 5, 21, 9, 30),
-      numUpVotes: 6,
-      numDownVotes: 0,
+      displayName: 'longmemory',
+      commentText: `Oh well it looks like:
+
+Springtime for Merkel & Germany
+
+:-)`,
+      timestamp: new Date(2018, 4, 22, 17, 2),
+      numUpVotes: 4,
+      numDownVotes: 3,
       replies: [],
     },
     {
       id: 13,
-      displayName: 'U16987021',
-      commentText: 'Can\'t wait for Avengers Infinity Wars so cool!!! YAY.',
-      timestamp: new Date(2018, 5, 21, 10, 30),
-      numUpVotes: 21,
-      numDownVotes: 0,
+      displayName: 'longmemory',
+      commentText: `We saw this look of defeat in Stalingrad.`,
+      timestamp: new Date(2018, 4, 22, 17, 2),
+      numUpVotes: 3,
+      numDownVotes: 2,
       replies: [],
     },
     {
       id: 14,
-      displayName: 'BlueVioletMiniBaker',
-      commentText: 'Cool, great!☺\nDiamond 💎',
-      timestamp: new Date(2018, 5, 22, 11, 59),
-      numUpVotes: 0,
-      numDownVotes: 0,
-      replies: [],
+      displayName: 'Tom Waller',
+      commentText: `londonbob You can debate a Clock:
+
+Digital or Analogue
+Battery or Windup
+Roman or plain numbers
+24 or 12 hour
+
+Problem here is that you and longmemory can not debate Brexit. That is the big issue.`,
+      timestamp: new Date(2018, 4, 22, 17, 2),
+      numUpVotes: 1,
+      numDownVotes: 1,
+      replies: [
+        {
+          id: 1,
+          displayName: 'londonbob',
+          replyText: `every one that you have mentioned still goes tick tock.Brexit was a free vote and the result after the clock stopped to count the legal democratic votes from the UK was to leave.`,
+          timestamp: new Date(2018, 4, 22, 17, 2),
+          numUpVotes: 3,
+          numDownVotes: 1,
+        },
+      ],
     },
     {
       id: 15,
-      displayName: 'HarryPotterFan',
-      commentText: 'Elizabeth Olsen was so funny when she bent her thumbs right the way back!',
-      timestamp: new Date(2018, 5, 23, 8, 59),
-      numUpVotes: 32,
+      displayName: 'Tom Waller',
+      commentText: `Where is the pro Brexit debate?
+
+Please inform us how you know more than the people who run the multinational car plants of Europe and inform us all of the error of there ways, as the Government clearly can not at this time.
+
+Q: Can the English Conservative party boil an Egg?
+
+A: Yes but only with the help of the Ulster DUP.`,
+      timestamp: new Date(2018, 4, 22, 17, 2),
+      numUpVotes: 0,
+      numDownVotes: 1,
+      replies: [],
+    },
+    {
+      id: 16,
+      displayName: 'Tom Waller',
+      commentText: `longmemory My reply: Malta does not outlaw the BBC. BBC TV does not broadcast to Malta and to receive it via the internet is not legal.
+
+Now Please stop the personal attacks on myself and debate your reasons for supporting Brexit so I can shoot them down as fast as you put them up.
+
+Thank you.`,
+      timestamp: new Date(2018, 4, 22, 17, 2),
+      numUpVotes: 0,
       numDownVotes: 0,
       replies: [
         {
           id: 1,
-          displayName: 'PrincessPeaches',
-          replyText: 'Yeah how do you do that?!!!',
-          timestamp: new Date(2018, 5, 23, 9, 59),
-          numUpVotes: 3,
-          numDownVotes: 0,
-        },
-        {
-          id: 2,
-          displayName: 'CalPeterPan',
-          replyText: 'I can bend my thumbs back too but not as far as Elizabeth Olsen.\n\nIf that was my superpower I wud do it',
-          timestamp: new Date(2018, 5, 23, 10, 30),
-          numUpVotes: 12,
-          numDownVotes: 0,
-        },
-        {
-          id: 3,
-          displayName: 'ScottyHaze',
-          replyText: '🤢 Errrrrrrrrrrrrrrrrrrrrrrrr 🤢',
-          timestamp: new Date(2018, 5, 23, 10, 50),
-          numUpVotes: 6,
-          numDownVotes: 0,
-        },
-        {
-          id: 4,
-          displayName: 'Lordofthetingz',
-          replyText: 'HarryPotterFan its not that interesting',
-          timestamp: new Date(2018, 5, 23, 12, 1),
+          displayName: 'londonbob',
+          replyText: `what is the difference between legal and illegal.?`,
+          timestamp: new Date(2018, 4, 22, 17, 2),
           numUpVotes: 0,
-          numDownVotes: 0,
-        },
-        {
-          id: 5,
-          displayName: 'Bellaboop',
-          replyText: 'It looks like it hurts 😅',
-          timestamp: new Date(2018, 5, 23, 17, 30),
-          numUpVotes: 0,
-          numDownVotes: 0,
-        },
-        {
-          id: 6,
-          displayName: 'Pogba08',
-          replyText: 'She should try spinning a basketball on both her thumbs at the same time',
-          timestamp: new Date(2018, 5, 24, 9, 59),
-          numUpVotes: 41,
-          numDownVotes: 0,
-        },
-        {
-          id: 7,
-          displayName: 'HarryPlopper',
-          replyText: 'I think it was Lordofthetingz what\'s not funny about bendy thumbs??? Fun fums!',
-          timestamp: new Date(2018, 5, 25, 8, 59),
-          numUpVotes: 12,
-          numDownVotes: 0,
-        },
-        {
-          id: 8,
-          displayName: 'ManCitytheBest',
-          replyText: 'Imagine if you could bend all your fingers back like that?',
-          timestamp: new Date(2018, 5, 25, 9, 1),
-          numUpVotes: 19,
           numDownVotes: 0,
         },
       ],
     },
     {
-      id: 16,
-      displayName: 'BlueCosmicGymnast12',
-      commentText: 'Cool, I loved the part with are the superheroes real!😂\n\n🌠✨Cosmo🌟🌠\n💙🦅Ravenclaw🦅💙\n🌸🌵Cosmo Quotes and Facts🌵🌸',
-      timestamp: new Date(2018, 5, 25, 9, 12),
-      numUpVotes: 9,
-      numDownVotes: 0,
-      replies: [],
-    },
-    {
       id: 17,
-      displayName: 'PottyAboutPotter',
-      commentText: 'Lol love Doctor Strange he is so awesome',
-      timestamp: new Date(2018, 5, 25, 9, 30),
-      numUpVotes: 5,
+      displayName: 'Usun Dem',
+      commentText: `"difficult to take a position not knowing what Brexit will look like"
+
+"we represent one third of the total car production of the UK in our plant in Sunderland"
+
+"it's difficult to tell you what kind of decision we're going to take without knowing exactly what is Brexit"
+
+Carlos Ghosn
+
+What does Boris Johnson say? 4 letter word starts with F
+
+"**** business"
+
+Are you listening Nissan?`,
+      timestamp: new Date(2018, 4, 22, 17, 2),
+      numUpVotes: 0,
       numDownVotes: 0,
       replies: [],
     },
