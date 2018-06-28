@@ -39,6 +39,15 @@
       </form>
     </div>
 
+    <picture class="app__bg" v-if="session.theme === 'core'">
+      <source media="(max-width: 400px)" srcset="./assets/page/core/b1_body.png" />
+      <source media="(max-width: 600px)" srcset="./assets/page/core/b2_body.png" />
+      <source media="(max-width: 768px)" srcset="./assets/page/core/b3_body.png" />
+      <source media="(max-width: 1008px)" srcset="./assets/page/core/b4_body.png" />
+      <source media="(max-width: 1280px)" srcset="./assets/page/core/b5_body.png" />
+      <source media="(max-width: 1440px)" srcset="./assets/page/core/b6_body.png" />
+      <img src="./assets/page/core/b7_body.png" alt="" />
+    </picture>
     <picture class="app__bg" v-if="session.theme === 'childrens'">
       <source media="(max-width: 400px)" srcset="./assets/page/childrens/b1_body.png" />
       <source media="(max-width: 600px)" srcset="./assets/page/childrens/b2_body.png" />
@@ -48,6 +57,15 @@
       <img src="./assets/page/childrens/b6_body.png" alt="" />
     </picture>
     <bbc-comments :session="session"></bbc-comments>
+    <picture class="app__bg" v-if="session.theme === 'core'">
+      <source media="(max-width: 400px)" srcset="./assets/page/core/b1_footer.png" />
+      <source media="(max-width: 600px)" srcset="./assets/page/core/b2_footer.png" />
+      <source media="(max-width: 768px)" srcset="./assets/page/core/b3_footer.png" />
+      <source media="(max-width: 1008px)" srcset="./assets/page/core/b4_footer.png" />
+      <source media="(max-width: 1280px)" srcset="./assets/page/core/b5_footer.png" />
+      <source media="(max-width: 1440px)" srcset="./assets/page/core/b6_footer.png" />
+      <img src="./assets/page/core/b7_footer.png" alt="" />
+    </picture>
     <picture class="app__bg" v-if="session.theme === 'childrens'">
       <source media="(max-width: 400px)" srcset="./assets/page/childrens/b1_footer.png" />
       <source media="(max-width: 600px)" srcset="./assets/page/childrens/b2_footer.png" />
