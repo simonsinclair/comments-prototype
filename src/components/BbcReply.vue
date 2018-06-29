@@ -100,7 +100,7 @@ export default {
       padding-right: 8px;
 
       button {
-        padding: 0 4px 12px;
+        padding: 0 8px 12px;
       }
     }
 

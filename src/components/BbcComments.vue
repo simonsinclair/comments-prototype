@@ -15,6 +15,7 @@
             <!-- Add a Comment -->
             <div class="gel-layout__item">
               <bbc-submit-comment
+                class="submit-comment--isolated"
                 :placeholder-text="'Comment as ' + session.displayName"
                 @comment-submitted="submitComment"
                 cta-text="Add comment">
@@ -180,7 +181,7 @@ export default {
 
 <style lang="scss" scoped="">
   .comments {
-    background-color: #CCC;
+    background-color: #EDEDED;
     color: #333;
     padding-top: 64px;
     padding-bottom: 32px-2;

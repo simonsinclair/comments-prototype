@@ -1,6 +1,6 @@
 /* eslint quotes: ["error", "single", { "allowTemplateLiterals": true }] */
 module.exports = {
-  title: 'Comments',
+  title: 'Do you think the UK car industry will get a good deal?',
   comments: [
     {
       id: 1,

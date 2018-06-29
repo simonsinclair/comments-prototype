@@ -77,6 +77,9 @@ export default {
     border-radius: 4px;
     padding: 12px;
   }
+  .submit-comment--isolated {
+    box-shadow: 0px 2px 1px 0px rgba(0,0,0,0.3)
+  }
     .submit-comment__form {
 
       > input {
