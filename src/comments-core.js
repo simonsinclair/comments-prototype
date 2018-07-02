@@ -303,6 +303,22 @@ Our message to government is that until it can demonstrate exactly how a new mod
           numUpVotes: 0,
           numDownVotes: 0,
         },
+        {
+          id: 6,
+          displayName: 'iliketurtles',
+          replyText: `Are you trying to make a funny british patriot?`,
+          timestamp: new Date(2018, 6, 2, 14, 55),
+          numUpVotes: 0,
+          numDownVotes: 0,
+        },
+        {
+          id: 7,
+          displayName: 'manchestermanny',
+          replyText: `It's hard for me to say this but I totally agree with anotherfakename!`,
+          timestamp: new Date(2018, 6, 2, 14, 59),
+          numUpVotes: 0,
+          numDownVotes: 0,
+        },
       ],
     },
     {
