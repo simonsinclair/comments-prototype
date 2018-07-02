@@ -88,7 +88,7 @@ export default {
       isConfigVisible: true,
       session: {
         theme: 'core',
-        displayName: 'Bob Ross',
+        displayName: 'Alex79',
         commentComponent: 'BbcCommentA',
       },
     };
