@@ -28,7 +28,7 @@ Kick out Boris.`,
     },
     {
       id: 3,
-      displayName: 'Alan B',
+      displayName: 'Alan C',
       commentText: `The howling mob of Brexiteers don't care what happens to the country just so long as we leave the EU. Shame on them.`,
       timestamp: new Date(2018, 5, 26, 12, 33),
       numUpVotes: 6,
