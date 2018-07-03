@@ -78,7 +78,7 @@
 
 <script>
 import commentsDataCore from '../comments-core';
-// import commentsDataChildrens from '../comments-childrens';
+import commentsDataChildrens from '../comments-childrens';
 
 import BbcSubmitComment from './BbcSubmitComment';
 import BbcCommentA from './BbcCommentA';
@@ -124,10 +124,27 @@ export default {
       // numDownVotes: 0,
       // replies: [],
 
-      // To do: data switching based on theme.
-      title: commentsDataCore.title,
-      comments: commentsDataCore.comments,
+      commentsData: {
+        core: commentsDataCore,
+        childrens: commentsDataChildrens,
+      },
     };
+  },
+
+  computed: {
+    title() {
+      return this.commentsData[this.session.theme].title;
+    },
+
+    comments: {
+      get() {
+        return this.commentsData[this.session.theme].comments;
+      },
+
+      set(newCommentsArr) {
+        this.commentsData[this.session.theme].comments = newCommentsArr;
+      },
+    },
   },
 
   methods: {
