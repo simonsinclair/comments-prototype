@@ -88,8 +88,8 @@ export default {
       isConfigVisible: true,
       session: {
         theme: 'core',
-        displayName: 'Alex79',
-        commentComponent: 'BbcCommentA',
+        displayName: 'Alex Jones',
+        commentComponent: 'BbcCommentC',
       },
     };
   },
