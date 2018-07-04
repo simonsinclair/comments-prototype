@@ -83,6 +83,7 @@ import commentsDataChildrens from '../comments-childrens';
 import BbcSubmitComment from './BbcSubmitComment';
 import BbcCommentA from './BbcCommentA';
 import BbcCommentB from './BbcCommentB';
+import BbcCommentC from './BbcCommentC';
 
 const filters = {
   all(comments) {
@@ -105,7 +106,7 @@ export default {
     session: Object,
   },
 
-  components: { BbcSubmitComment, BbcCommentA, BbcCommentB },
+  components: { BbcSubmitComment, BbcCommentA, BbcCommentB, BbcCommentC },
 
   data() {
     return {

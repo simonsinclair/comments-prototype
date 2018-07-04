@@ -18,6 +18,13 @@
               value="BbcCommentB"
               v-model="session.commentComponent" />
           </label>
+          <label>
+            C
+            <input
+              type="radio"
+              value="BbcCommentC"
+              v-model="session.commentComponent" />
+          </label>
         </fieldset>
         <fieldset>
           <label>
