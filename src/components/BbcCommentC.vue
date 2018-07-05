@@ -7,6 +7,7 @@
     <div class="comment">
       <div class="comment__header">
         <bbc-contributor :display-name="displayName"></bbc-contributor>
+        <span class="comment__timestamp">{{ timestamp | fromNow }}</span>
         <!--
           Todo:
             - Render special flag, e.g. Editors pick
@@ -15,7 +16,8 @@
       <div class="comment__body">
         <p class="gel-great-primer">{{ commentText }}</p>
         <span class="gel-brevier">
-          <span class="comment__timestamp">{{ timestamp | fromNow }}</span>
+          <!-- <span class="comment__timestamp">{{ timestamp | fromNow }}</span> -->
+          <bbc-reply-cta-c :reply-to="displayName" @reply="startReply($event)"></bbc-reply-cta-c>
           <span class="comment__bullet">&bull;</span>
           <span class="comment__report"><a href="#">Report</a></span>
         </span>
@@ -23,7 +25,7 @@
       <div class="comment__footer">
         <div class="gel-layout">
           <div class="gel-layout__item gel-1/2">
-            <bbc-reply-cta-c @reply="startReply()"></bbc-reply-cta-c>
+            <!-- <bbc-reply-cta-c @reply="startReply()"></bbc-reply-cta-c> -->
           </div>
           <div class="gel-layout__item gel-1/2 comment__actions">
             <button class="gel-pica">
@@ -118,7 +120,9 @@ export default {
   },
 
   methods: {
-    startReply() {
+    startReply(replyTo) {
+      // eslint-disable-next-line
+      console.log('Reply to', replyTo);
       this.isReplyFieldVisible = true;
       this.$refs.submitComment.focus();
     },
