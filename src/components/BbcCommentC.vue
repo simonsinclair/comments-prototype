@@ -1,7 +1,7 @@
 <template>
   <div
     class="comment-wrap"
-    :class="{ 'comment-wrap--has-replies': hasReplies }">
+    :class="{ 'comment-wrap--has-replies': replies.length > 0 }">
 
     <!-- Comment -->
     <div class="comment">
@@ -23,7 +23,7 @@
       <div class="comment__footer">
         <div class="gel-layout">
           <div class="gel-layout__item gel-1/2">
-            <bbc-reply-cta-c @reply="doReply()"></bbc-reply-cta-c>
+            <bbc-reply-cta-c @reply="startReply()"></bbc-reply-cta-c>
           </div>
           <div class="gel-layout__item gel-1/2 comment__actions">
             <button class="gel-pica">
@@ -39,13 +39,14 @@
     </div>
 
     <!-- Comment Replies -->
-    <div class="replies" v-show="hasReplies">
+    <div class="replies" v-show="replies.length > 0">
       <transition-group name="new-reply" tag="div">
         <bbc-reply
           v-for="reply in getOldestReplies(replies, numVisibleReplies)"
           :key="reply.id"
 
           :display-name="reply.displayName"
+          :reply-to="reply.replyToDisplayName"
           :reply-text="reply.replyText"
           :timestamp="reply.timestamp"
           :num-up-votes="reply.numUpVotes"
@@ -64,22 +65,24 @@
           :key="newReply.id"
 
           :display-name="newReply.displayName"
+          :reply-to="newReply.replyToDisplayName"
           :reply-text="newReply.replyText"
           :timestamp="newReply.timestamp"
           :num-up-votes="newReply.numUpVotes"
           :num-down-votes="newReply.numDownVotes"
         ></bbc-reply>
       </transition-group>
-      <bbc-submit-comment
-        class="submit-comment--replies"
-        v-show="hasReplies || isReplyFieldVisible"
-        ref="submitComment"
-        :placeholder-text="'Reply as ' + session.displayName"
-        @comment-submitted="submitReply"
-        accepts-media=""
-        cta-text="Add reply">
-      </bbc-submit-comment>
     </div>
+
+    <bbc-submit-comment
+      class="submit-comment--replies"
+      v-show="replies.length > 0 || isReplyFieldVisible"
+      ref="submitComment"
+      :placeholder-text="'Reply to ' + this.displayName"
+      @comment-submitted="submitReply"
+      accepts-media=""
+      cta-text="Add reply">
+    </bbc-submit-comment>
   </div>
 </template>
 
@@ -107,7 +110,6 @@ export default {
 
   data() {
     return {
-      hasReplies: this.replies.length > 0,
       isReplyFieldVisible: false,
       isRepliesLimited: false,
       numVisibleReplies: 1,
@@ -116,7 +118,7 @@ export default {
   },
 
   methods: {
-    doReply() {
+    startReply() {
       this.isReplyFieldVisible = true;
       this.$refs.submitComment.focus();
     },
@@ -146,6 +148,7 @@ export default {
         this.newReplies.push({
           id: this.newReplies.length + 1, // Increment `nextReplyId` for next reply.
           displayName: this.session.displayName,
+          replyToDisplayName: this.displayName,
           replyText,
           timestamp: new Date(),
           numUpVotes: 0,
@@ -156,6 +159,7 @@ export default {
         this.replies.push({
           id: this.replies.length + 1, // Increment `nextReplyId` for next reply.
           displayName: this.session.displayName,
+          replyToDisplayName: this.displayName,
           replyText,
           timestamp: new Date(),
           numUpVotes: 0,
