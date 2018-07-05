@@ -26,13 +26,7 @@
       <div class="comment__footer">
         <div class="gel-layout">
           <div class="gel-layout__item gel-1/2">
-            <bbc-reply-cta
-              :replies="replies"
-              :is-replies-visible="isRepliesVisible"
-              @reply="doReply()"
-              @show-replies="isRepliesVisible = true"
-              @hide-replies="isRepliesVisible = false">
-            </bbc-reply-cta>
+            <bbc-reply-cta-c @reply="doReply()"></bbc-reply-cta-c>
           </div>
           <div class="gel-layout__item gel-1/2 comment__actions">
             <button class="gel-pica">
@@ -97,7 +91,7 @@
 import moment from 'moment';
 
 import BbcReply from './BbcReply';
-import BbcReplyCta from './BbcReplyCta';
+import BbcReplyCtaC from './BbcReplyCtaC';
 import BbcSubmitComment from './BbcSubmitComment';
 import BbcContributor from './BbcContributor';
 
@@ -113,7 +107,7 @@ moment.updateLocale('en', {
 });
 
 export default {
-  components: { BbcReply, BbcReplyCta, BbcSubmitComment, BbcContributor },
+  components: { BbcReply, BbcReplyCtaC, BbcSubmitComment, BbcContributor },
 
   data() {
     return {
