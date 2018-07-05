@@ -35,7 +35,7 @@
               v-model="session.theme" />
           </label>
           <label>
-            Childrens
+            Children's
             <input
               type="radio"
               value="childrens"
@@ -46,6 +46,7 @@
       </form>
     </div>
 
+    <!-- Head & Body -->
     <picture class="app__bg" v-if="session.theme === 'core'">
       <source media="(max-width: 400px)" srcset="./assets/page/core/b1_body.png" />
       <source media="(max-width: 600px)" srcset="./assets/page/core/b2_body.png" />
@@ -63,7 +64,11 @@
       <source media="(max-width: 1440px)" srcset="./assets/page/childrens/b5_body.png" />
       <img src="./assets/page/childrens/b6_body.png" alt="" />
     </picture>
+
+    <!-- Comments -->
     <bbc-comments :session="session"></bbc-comments>
+
+    <!-- Footer -->
     <picture class="app__bg" v-if="session.theme === 'core'">
       <source media="(max-width: 400px)" srcset="./assets/page/core/b1_footer.png" />
       <source media="(max-width: 600px)" srcset="./assets/page/core/b2_footer.png" />
@@ -147,16 +152,37 @@ export default {
     background-color: rgba(0,0,0,0.75);
     color: #FFF;
     position: fixed;
-      top: 16px; left: 16px;
+      top: 8px; left: 8px;
     z-index: 100;
 
     > form {
-      padding: 16px;
+      padding: 10px;
       overflow: hidden; // Clearfix.
 
+      > input[type="text"] {
+        border: none;
+        padding: 6px;
+      }
+
+      > fieldset {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        margin-left: 0;
+        margin-top: 6px;
+        margin-right: 0;
+        padding: 6px;
+
+        > label {
+          margin-right: 8px;
+        }
+      }
+
       > button {
-        background-color: #FFF;
+        background-color: #3a64ee;
+        color: #FFF;
         float: right;
+        padding: 4px 8px;
+        margin-top: 6px;
+        font-weight: bold;
       }
     }
   }
