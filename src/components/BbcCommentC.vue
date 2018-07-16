@@ -1,10 +1,7 @@
 <template>
   <div
     class="comment-wrap"
-    :class="{
-      'comment-wrap--replies-visible': isRepliesVisible,
-      'comment-wrap--has-replies': replies.length > 0 }
-    ">
+    :class="{ 'comment-wrap--has-replies': replies.length > 0 }">
 
     <!-- Comment -->
     <div class="comment">
@@ -41,49 +38,51 @@
       </div>
     </div>
 
-    <!-- Comment Replies -->
-    <transition name="drawer">
-      <div class="replies" v-show="isRepliesVisible">
-        <transition-group name="new-reply" tag="div">
-          <bbc-reply-c
-            v-for="reply in getOldestReplies(replies, numVisibleReplies)"
-            :key="reply.id"
-
-            :display-name="reply.displayName"
-            :reply-text="reply.replyText"
-            :timestamp="reply.timestamp"
-            :num-up-votes="reply.numUpVotes"
-            :num-down-votes="reply.numDownVotes"
-          ></bbc-reply-c>
-        </transition-group>
-        <button
-          v-show="isRepliesLimited"
-          class="replies__show-more gel-brevier-bold"
-          @click="showMoreReplies()">
-            Show more replies
-        </button>
-        <transition-group name="new-reply" tag="div" class="replies--new">
-          <bbc-reply-c
-            v-for="newReply in newReplies"
-            :key="newReply.id"
-
-            :display-name="newReply.displayName"
-            :reply-text="newReply.replyText"
-            :timestamp="newReply.timestamp"
-            :num-up-votes="newReply.numUpVotes"
-            :num-down-votes="newReply.numDownVotes"
-          ></bbc-reply-c>
-        </transition-group>
-        <bbc-submit-comment
-          class="submit-comment--replies"
-          ref="submitComment"
-          :placeholder-text="'Reply as ' + session.displayName"
-          @comment-submitted="submitReply"
-          accepts-media=""
-          cta-text="Add reply">
-        </bbc-submit-comment>
-      </div>
+    <transition name="new-reply" tag="div">
+      <bbc-submit-reply
+        v-show="isSubmitReplyVisible"
+        ref="submitReply"
+        :placeholder-text="'Reply as ' + session.displayName"
+        @reply-submitted="submitReply"
+        @reply-cancelled="cancelReply"
+        accepts-media=""
+        cta-text="Add reply">
+      </bbc-submit-reply>
     </transition>
+
+    <!-- Comment Replies -->
+    <div class="replies">
+      <transition-group name="new-reply" tag="div">
+        <bbc-reply-c
+          v-for="reply in getOldestReplies(replies, numVisibleReplies)"
+          :key="reply.id"
+
+          :display-name="reply.displayName"
+          :reply-text="reply.replyText"
+          :timestamp="reply.timestamp"
+          :num-up-votes="reply.numUpVotes"
+          :num-down-votes="reply.numDownVotes"
+        ></bbc-reply-c>
+      </transition-group>
+      <button
+        v-show="isRepliesLimited"
+        class="replies__show-more gel-brevier-bold"
+        @click="showMoreReplies()">
+          Show more replies
+      </button>
+      <transition-group name="new-reply" tag="div" class="replies--new">
+        <bbc-reply-c
+          v-for="newReply in newReplies"
+          :key="newReply.id"
+
+          :display-name="newReply.displayName"
+          :reply-text="newReply.replyText"
+          :timestamp="newReply.timestamp"
+          :num-up-votes="newReply.numUpVotes"
+          :num-down-votes="newReply.numDownVotes"
+        ></bbc-reply-c>
+      </transition-group>
+    </div>
   </div>
 </template>
 
@@ -92,7 +91,7 @@ import moment from 'moment';
 
 import BbcReplyC from './BbcReplyC';
 import BbcReplyCtaC from './BbcReplyCtaC';
-import BbcSubmitComment from './BbcSubmitComment';
+import BbcSubmitReply from './BbcSubmitReply';
 import BbcContributor from './BbcContributor';
 
 moment.updateLocale('en', {
@@ -107,21 +106,21 @@ moment.updateLocale('en', {
 });
 
 export default {
-  components: { BbcReplyC, BbcReplyCtaC, BbcSubmitComment, BbcContributor },
+  components: { BbcReplyC, BbcReplyCtaC, BbcSubmitReply, BbcContributor },
 
   data() {
     return {
-      isRepliesVisible: false,
+      isSubmitReplyVisible: false,
       isRepliesLimited: false,
-      numVisibleReplies: 5,
+      numVisibleReplies: 1,
       newReplies: [],
     };
   },
 
   methods: {
     doReply() {
-      this.isRepliesVisible = true;
-      this.$refs.submitComment.focus();
+      this.isSubmitReplyVisible = true;
+      this.$refs.submitReply.focus();
     },
 
     showMoreReplies() {
@@ -165,6 +164,10 @@ export default {
           numDownVotes: 0,
         });
       }
+    },
+
+    cancelReply() {
+      this.isSubmitReplyVisible = false;
     },
   },
 
@@ -311,22 +314,6 @@ export default {
       //
 
       // Replies
-      //
-
-      .drawer {}
-
-      // Enter
-      .drawer-enter {}
-      .drawer-enter-active {}
-      .drawer-enter-to {}
-
-      // Leave
-      .drawer-leave {}
-      .drawer-leave-active {}
-      .drawer-leave-to {}
-
-
-      // Reply Items
       //
 
       .new-reply {}
