@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import shortid from 'shortid';
+
 export default {
   props: {
     acceptsMedia: {
@@ -40,7 +42,7 @@ export default {
         return;
       }
 
-      this.$emit('reply-submitted', this.commentText);
+      this.$emit('reply-submitted', this.commentText, shortid.generate());
 
       // Clear `commentText` after posting.
       this.commentText = '';
