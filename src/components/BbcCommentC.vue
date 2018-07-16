@@ -45,23 +45,32 @@
         :placeholder-text="'Reply as ' + session.displayName"
         @reply-submitted="submitReply"
         @reply-cancelled="cancelReply"
-        accepts-media=""
         cta-text="Add reply">
       </bbc-submit-reply>
     </transition>
 
+    <transition name="new-reply" tag="div">
+      <div class="submit-reply-success" v-show="isSubmitReplySuccessVisible">
+        <a :href="'#' + latestSubmitReplyId">View my reply</a>
+      </div>
+    </transition>
+
     <!-- Comment Replies -->
-    <div class="replies">
+    <div class="replies" v-show="replies.length > 0">
       <transition-group name="new-reply" tag="div">
         <bbc-reply-c
           v-for="reply in getOldestReplies(replies, numVisibleReplies)"
           :key="reply.id"
 
+          :session="session"
+
+          :uuid="reply.uuid"
           :display-name="reply.displayName"
           :reply-text="reply.replyText"
           :timestamp="reply.timestamp"
           :num-up-votes="reply.numUpVotes"
           :num-down-votes="reply.numDownVotes"
+          :replies="reply.replies"
         ></bbc-reply-c>
       </transition-group>
       <button
@@ -75,11 +84,15 @@
           v-for="newReply in newReplies"
           :key="newReply.id"
 
+          :session="session"
+
+          :uuid="newReply.uuid"
           :display-name="newReply.displayName"
           :reply-text="newReply.replyText"
           :timestamp="newReply.timestamp"
           :num-up-votes="newReply.numUpVotes"
           :num-down-votes="newReply.numDownVotes"
+          :replies="newReply.replies"
         ></bbc-reply-c>
       </transition-group>
     </div>
@@ -110,7 +123,9 @@ export default {
 
   data() {
     return {
+      latestSubmitReplyId: '',
       isSubmitReplyVisible: false,
+      isSubmitReplySuccessVisible: false,
       isRepliesLimited: false,
       numVisibleReplies: 1,
       newReplies: [],
@@ -119,6 +134,7 @@ export default {
 
   methods: {
     doReply() {
+      this.isSubmitReplySuccessVisible = false;
       this.isSubmitReplyVisible = true;
       this.$refs.submitReply.focus();
     },
@@ -141,29 +157,39 @@ export default {
       return rawReplies.slice(0, numReplies);
     },
 
-    submitReply(replyText) {
+    submitReply(replyText, uuid) {
       // If replies are limited, or would be limited after next reply:
       if (this.isRepliesLimited || this.replies.length === this.numVisibleReplies) {
         // Push reply into 'always visible' reply slot.
         this.newReplies.push({
-          id: this.newReplies.length + 1, // Increment `nextReplyId` for next reply.
+          id: this.newReplies.length + 1,
+
+          uuid,
           displayName: this.session.displayName,
           replyText,
           timestamp: new Date(),
           numUpVotes: 0,
           numDownVotes: 0,
+          replies: [],
         });
       } else {
         // Push reply normally.
         this.replies.push({
-          id: this.replies.length + 1, // Increment `nextReplyId` for next reply.
+          id: this.replies.length + 1,
+
+          uuid,
           displayName: this.session.displayName,
           replyText,
           timestamp: new Date(),
           numUpVotes: 0,
           numDownVotes: 0,
+          replies: [],
         });
       }
+
+      this.latestSubmitReplyId = uuid;
+      this.isSubmitReplyVisible = false;
+      this.isSubmitReplySuccessVisible = true;
     },
 
     cancelReply() {
@@ -179,6 +205,8 @@ export default {
 
   props: {
     session: Object,
+
+    id: Number,
     displayName: String,
     commentText: String,
     timestamp: Date,
@@ -292,10 +320,10 @@ export default {
       //
 
       .replies {
-        background-color: #DDD;
+        // background-color: #DDD;
         border-bottom-right-radius: 2px;
         border-bottom-left-radius: 2px;
-        box-shadow: 0px 2px 1px 0px rgba(0,0,0,0.3);
+        // box-shadow: 0px 2px 1px 0px rgba(0,0,0,0.3);
         margin-bottom: 24px;
         padding-top: 12px;
         padding-bottom: 12px;

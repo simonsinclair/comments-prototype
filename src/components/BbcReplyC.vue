@@ -1,30 +1,69 @@
 <template>
-  <div class="reply">
-    <div class="reply__header">
-      <bbc-contributor :display-name="displayName"></bbc-contributor>
-    </div>
-    <div class="reply__body">
-      <p class="gel-great-primer">{{ replyText }}</p>
-    </div>
-    <div class="reply__footer">
-      <div class="gel-layout">
-        <div class="gel-layout__item gel-1/2">
-          <div class="gel-brevier">
-            <span class="reply__timestamp">{{ timestamp | fromNow }}</span>
-            <span class="reply__bullet">&bull;</span>
-            <span class="reply__report"><a href="#">Report</a></span>
+  <div class="reply-wrap" :id="uuid">
+    <div class="reply">
+      <div class="reply__header">
+        <bbc-contributor :display-name="displayName"></bbc-contributor>
+      </div>
+      <div class="reply__body">
+        <p class="gel-great-primer">{{ replyText }}</p>
+      </div>
+      <div class="reply__footer">
+        <div class="gel-layout">
+          <div class="gel-layout__item gel-1/2">
+            <div class="gel-brevier">
+              <bbc-reply-cta-c @reply="doReply()"></bbc-reply-cta-c>
+              <span class="reply__timestamp">{{ timestamp | fromNow }}</span>
+              <span class="reply__bullet">&bull;</span>
+              <span class="reply__report"><a href="#">Report</a></span>
+            </div>
+          </div>
+          <div class="gel-layout__item gel-1/2 reply__actions">
+            <button class="gel-brevier">
+              <img src="../assets/up-thumb.svg" alt="" /> {{ numUpVotes }}
+            </button>
+            <button class="gel-brevier">
+              <img src="../assets/down-thumb.svg" alt="" /> {{ numDownVotes }}
+            </button>
+            <button><img src="../assets/share.svg" alt="" /></button>
           </div>
         </div>
-        <div class="gel-layout__item gel-1/2 reply__actions">
-          <button class="gel-brevier">
-            <img src="../assets/up-thumb.svg" alt="" /> {{ numUpVotes }}
-          </button>
-          <button class="gel-brevier">
-            <img src="../assets/down-thumb.svg" alt="" /> {{ numDownVotes }}
-          </button>
-          <button><img src="../assets/share.svg" alt="" /></button>
-        </div>
       </div>
+    </div>
+
+    <transition name="new-reply" tag="div">
+      <bbc-submit-reply
+        v-show="isSubmitReplyVisible"
+        ref="submitReply"
+        :placeholder-text="'Reply as ' + session.displayName"
+        @reply-submitted="submitReply"
+        @reply-cancelled="cancelReply"
+        cta-text="Add reply">
+      </bbc-submit-reply>
+    </transition>
+
+    <transition name="new-reply" tag="div">
+      <div class="submit-reply-success" v-show="isSubmitReplySuccessVisible">
+        <a :href="'#' + latestSubmitReplyId">View my reply</a>
+      </div>
+    </transition>
+
+    <div class="replies" v-show="replies.length > 0">
+      <transition-group name="new-reply" tag="div">
+        <bbc-reply-c
+          v-for="reply in getReplies(replies)"
+          :key="reply.id"
+
+          :session="session"
+
+          :uuid="reply.uuid"
+          :display-name="reply.displayName"
+          :reply-text="reply.replyText"
+          :timestamp="reply.timestamp"
+          :num-up-votes="reply.numUpVotes"
+          :num-down-votes="reply.numDownVotes"
+          :replies="reply.replies"
+        ></bbc-reply-c>
+      </transition-group>
     </div>
   </div>
 </template>
@@ -33,6 +72,9 @@
 import moment from 'moment';
 
 import BbcContributor from './BbcContributor';
+import BbcSubmitReply from './BbcSubmitReply';
+import BbcReplyCtaC from './BbcReplyCtaC';
+import BbcReplyC from './BbcReplyC';
 
 moment.updateLocale('en', {
   relativeTime: {
@@ -46,28 +88,80 @@ moment.updateLocale('en', {
 });
 
 export default {
-  components: { BbcContributor },
+  name: 'bbc-reply-c',
+
+  data() {
+    return {
+      latestSubmitReplyId: '',
+      isSubmitReplyVisible: false,
+      isSubmitReplySuccessVisible: false,
+    };
+  },
+
+  components: { BbcContributor, BbcSubmitReply, BbcReplyCtaC, BbcReplyC },
+
   filters: {
     fromNow(timestamp) {
       return moment(timestamp).fromNow(true);
     },
   },
+
   props: {
+    session: Object,
+
+    uuid: String,
+
     displayName: String,
     replyText: String,
     timestamp: Date,
     numUpVotes: Number,
     numDownVotes: Number,
+    replies: Array, // Replies to replies.
+  },
+
+  methods: {
+    doReply() {
+      this.isSubmitReplySuccessVisible = false;
+      this.isSubmitReplyVisible = true;
+      this.$refs.submitReply.focus();
+    },
+
+    submitReply(replyText, uuid) {
+      this.replies.push({
+        id: this.replies.length + 1, // Increment `nextReplyId` for next reply.
+        uuid,
+        displayName: this.session.displayName,
+        replyText,
+        timestamp: new Date(),
+        numUpVotes: 0,
+        numDownVotes: 0,
+        replies: [],
+      });
+
+      this.latestSubmitReplyId = uuid;
+      this.isSubmitReplyVisible = false;
+      this.isSubmitReplySuccessVisible = true;
+    },
+
+    cancelReply() {
+      this.isSubmitReplyVisible = false;
+    },
+
+    getReplies(rawReplies) {
+      return rawReplies;
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped="">
+  .reply-wrap {
+    padding-left: 24px;
+  }
+
   .reply {
     background-color: #FFF;
-    margin-right: 12px;
     margin-bottom: 2px;
-    margin-left: 12px;
 
     &:last-child {
       margin-bottom: 12px;
