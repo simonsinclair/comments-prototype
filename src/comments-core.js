@@ -170,6 +170,7 @@ The foreign Remoaners on here pretending to be British do provide plenty of amus
           timestamp: new Date(2018, 6, 1, 11, 32),
           numUpVotes: 0,
           numDownVotes: 0,
+          replies: [],
         },
         {
           id: 2,
@@ -182,6 +183,16 @@ That is a fact England/Westminster best not ignore.`,
           timestamp: new Date(2018, 6, 2, 12, 37),
           numUpVotes: 0,
           numDownVotes: 0,
+          replies: [
+            {
+              id: 1,
+              displayName: 'ReplyToReplyTester',
+              replyText: 'Check out my display name!',
+              timestamp: new Date(2018, 6, 2, 12, 40),
+              numUpVotes: 999,
+              numDownVotes: 0,
+            },
+          ],
         },
         {
           id: 3,
@@ -192,6 +203,7 @@ NOR was turning down Scotland's request to hold the 2016 referendum to EU Majori
           timestamp: new Date(2018, 6, 2, 13, 0),
           numUpVotes: 0,
           numDownVotes: 0,
+          replies: [],
         },
         {
           id: 4,
@@ -208,6 +220,7 @@ It needs only one to work to save UK.`,
           timestamp: new Date(2018, 6, 3, 11, 0),
           numUpVotes: 0,
           numDownVotes: 0,
+          replies: [],
         },
         {
           id: 5,
@@ -219,6 +232,7 @@ Are you enjoying paying for Calillion public works when the EU would have given 
           timestamp: new Date(2018, 6, 3, 12, 30),
           numUpVotes: 0,
           numDownVotes: 0,
+          replies: [],
         },
         {
           id: 6,
@@ -229,6 +243,7 @@ Are you enjoying paying for Calillion public works when the EU would have given 
           timestamp: new Date(2018, 6, 3, 12, 43),
           numUpVotes: 0,
           numDownVotes: 0,
+          replies: [],
         },
         {
           id: 7,
@@ -237,6 +252,7 @@ Are you enjoying paying for Calillion public works when the EU would have given 
           timestamp: new Date(2018, 6, 3, 13, 43),
           numUpVotes: 0,
           numDownVotes: 0,
+          replies: [],
         },
       ],
     },
@@ -274,6 +290,7 @@ Yes we will end up without leaving, and the UK will suffer from remaining in all
           timestamp: new Date(2018, 6, 3, 13, 21),
           numUpVotes: 0,
           numDownVotes: 0,
+          replies: [],
         },
         {
           id: 2,
@@ -282,6 +299,7 @@ Yes we will end up without leaving, and the UK will suffer from remaining in all
           timestamp: new Date(2018, 6, 3, 10, 0),
           numUpVotes: 0,
           numDownVotes: 0,
+          replies: [],
         },
         {
           id: 3,
@@ -292,6 +310,7 @@ Our message to government is that until it can demonstrate exactly how a new mod
           timestamp: new Date(2018, 6, 3, 11, 30),
           numUpVotes: 0,
           numDownVotes: 0,
+          replies: [],
         },
         {
           id: 4,
@@ -300,6 +319,7 @@ Our message to government is that until it can demonstrate exactly how a new mod
           timestamp: new Date(2018, 6, 3, 12, 0),
           numUpVotes: 0,
           numDownVotes: 0,
+          replies: [],
         },
         {
           id: 5,
@@ -310,6 +330,7 @@ Our message to government is that until it can demonstrate exactly how a new mod
           timestamp: new Date(2018, 6, 3, 13, 0),
           numUpVotes: 0,
           numDownVotes: 0,
+          replies: [],
         },
         {
           id: 6,
@@ -318,6 +339,7 @@ Our message to government is that until it can demonstrate exactly how a new mod
           timestamp: new Date(2018, 6, 3, 13, 30),
           numUpVotes: 0,
           numDownVotes: 0,
+          replies: [],
         },
         {
           id: 7,
@@ -326,6 +348,7 @@ Our message to government is that until it can demonstrate exactly how a new mod
           timestamp: new Date(2018, 6, 3, 14, 0),
           numUpVotes: 0,
           numDownVotes: 0,
+          replies: [],
         },
       ],
     },
