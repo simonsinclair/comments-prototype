@@ -1,7 +1,10 @@
 <template>
   <div
     class="comment-wrap"
-    :class="{ 'comment-wrap--has-replies': hasReplies }">
+    :class="{
+      'comment-wrap--replies-visible': isRepliesVisible,
+      'comment-wrap--has-replies': replies.length > 0 }
+    ">
 
     <!-- Comment -->
     <div class="comment">
@@ -39,47 +42,48 @@
     </div>
 
     <!-- Comment Replies -->
-    <div class="replies" v-show="hasReplies">
-      <transition-group name="new-reply" tag="div">
-        <bbc-reply
-          v-for="reply in getOldestReplies(replies, numVisibleReplies)"
-          :key="reply.id"
+    <transition name="drawer">
+      <div class="replies" v-show="isRepliesVisible">
+        <transition-group name="new-reply" tag="div">
+          <bbc-reply
+            v-for="reply in getOldestReplies(replies, numVisibleReplies)"
+            :key="reply.id"
 
-          :display-name="reply.displayName"
-          :reply-text="reply.replyText"
-          :timestamp="reply.timestamp"
-          :num-up-votes="reply.numUpVotes"
-          :num-down-votes="reply.numDownVotes"
-        ></bbc-reply>
-      </transition-group>
-      <button
-        v-show="isRepliesLimited"
-        class="replies__show-more gel-brevier-bold"
-        @click="showMoreReplies()">
-          Show more replies
-      </button>
-      <transition-group name="new-reply" tag="div" class="replies--new">
-        <bbc-reply
-          v-for="newReply in newReplies"
-          :key="newReply.id"
+            :display-name="reply.displayName"
+            :reply-text="reply.replyText"
+            :timestamp="reply.timestamp"
+            :num-up-votes="reply.numUpVotes"
+            :num-down-votes="reply.numDownVotes"
+          ></bbc-reply>
+        </transition-group>
+        <button
+          v-show="isRepliesLimited"
+          class="replies__show-more gel-brevier-bold"
+          @click="showMoreReplies()">
+            Show more replies
+        </button>
+        <transition-group name="new-reply" tag="div" class="replies--new">
+          <bbc-reply
+            v-for="newReply in newReplies"
+            :key="newReply.id"
 
-          :display-name="newReply.displayName"
-          :reply-text="newReply.replyText"
-          :timestamp="newReply.timestamp"
-          :num-up-votes="newReply.numUpVotes"
-          :num-down-votes="newReply.numDownVotes"
-        ></bbc-reply>
-      </transition-group>
-      <bbc-submit-comment
-        class="submit-comment--replies"
-        v-show="hasReplies || isReplyFieldVisible"
-        ref="submitComment"
-        :placeholder-text="'Reply as ' + session.displayName"
-        @comment-submitted="submitReply"
-        accepts-media=""
-        cta-text="Add reply">
-      </bbc-submit-comment>
-    </div>
+            :display-name="newReply.displayName"
+            :reply-text="newReply.replyText"
+            :timestamp="newReply.timestamp"
+            :num-up-votes="newReply.numUpVotes"
+            :num-down-votes="newReply.numDownVotes"
+          ></bbc-reply>
+        </transition-group>
+        <bbc-submit-comment
+          class="submit-comment--replies"
+          ref="submitComment"
+          :placeholder-text="'Reply as ' + session.displayName"
+          @comment-submitted="submitReply"
+          accepts-media=""
+          cta-text="Add reply">
+        </bbc-submit-comment>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -107,17 +111,16 @@ export default {
 
   data() {
     return {
-      hasReplies: this.replies.length > 0,
-      isReplyFieldVisible: false,
+      isRepliesVisible: false,
       isRepliesLimited: false,
-      numVisibleReplies: 1,
+      numVisibleReplies: 5,
       newReplies: [],
     };
   },
 
   methods: {
     doReply() {
-      this.isReplyFieldVisible = true;
+      this.isRepliesVisible = true;
       this.$refs.submitComment.focus();
     },
 
@@ -205,7 +208,44 @@ export default {
         position: relative;
 
         .comment-wrap--has-replies & {
+          margin-bottom: 16px+8;
+
+          &::before,
+          &::after {
+            background-color: #DDD;
+            border-radius: 0 0 2px 2px;
+            box-shadow: 0 1px 1px rgba(0,0,0,0.3), inset 0 1px 1px rgba(0,0,0,0.3);
+            content: '';
+            display: block;
+            height: 4px;
+            position: absolute;
+          }
+
+          &::before {
+            right: 8px;
+            bottom: -4px;
+            left: 8px;
+            // width: 94%;
+          }
+
+          &::after {
+            background-color: #CCC;
+            right: 16px;
+            bottom: -8px;
+            left: 16px;
+            // width: 88%;
+          }
+        }
+
+        .comment-wrap--replies-visible & {
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: 0;
           margin-bottom: 0;
+
+          &::before,
+          &::after {
+            content: normal;
+          }
         }
       }
         .comment__header,
@@ -269,6 +309,22 @@ export default {
 
       // Animation
       //
+
+      // Replies
+      //
+
+      .drawer {}
+
+      // Enter
+      .drawer-enter {}
+      .drawer-enter-active {}
+      .drawer-enter-to {}
+
+      // Leave
+      .drawer-leave {}
+      .drawer-leave-active {}
+      .drawer-leave-to {}
+
 
       // Reply Items
       //
