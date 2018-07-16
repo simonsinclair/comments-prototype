@@ -76,6 +76,7 @@ export default {
   .submit-comment {
     background-color: #FFF;
     border-radius: 4px;
+    margin-left: 24px;
     padding: 12px;
   }
   .submit-comment--isolated {
