@@ -26,13 +26,7 @@
       <div class="comment__footer">
         <div class="gel-layout">
           <div class="gel-layout__item gel-1/2">
-            <bbc-reply-cta
-              :replies="replies"
-              :is-replies-visible="isRepliesVisible"
-              @reply="doReply()"
-              @show-replies="isRepliesVisible = true"
-              @hide-replies="isRepliesVisible = false">
-            </bbc-reply-cta>
+            <bbc-reply-cta-c @reply="doReply()"></bbc-reply-cta-c>
           </div>
           <div class="gel-layout__item gel-1/2 comment__actions">
             <button class="gel-pica">
@@ -51,7 +45,7 @@
     <transition name="drawer">
       <div class="replies" v-show="isRepliesVisible">
         <transition-group name="new-reply" tag="div">
-          <bbc-reply
+          <bbc-reply-c
             v-for="reply in getOldestReplies(replies, numVisibleReplies)"
             :key="reply.id"
 
@@ -60,7 +54,7 @@
             :timestamp="reply.timestamp"
             :num-up-votes="reply.numUpVotes"
             :num-down-votes="reply.numDownVotes"
-          ></bbc-reply>
+          ></bbc-reply-c>
         </transition-group>
         <button
           v-show="isRepliesLimited"
@@ -69,7 +63,7 @@
             Show more replies
         </button>
         <transition-group name="new-reply" tag="div" class="replies--new">
-          <bbc-reply
+          <bbc-reply-c
             v-for="newReply in newReplies"
             :key="newReply.id"
 
@@ -78,7 +72,7 @@
             :timestamp="newReply.timestamp"
             :num-up-votes="newReply.numUpVotes"
             :num-down-votes="newReply.numDownVotes"
-          ></bbc-reply>
+          ></bbc-reply-c>
         </transition-group>
         <bbc-submit-comment
           class="submit-comment--replies"
@@ -96,8 +90,8 @@
 <script>
 import moment from 'moment';
 
-import BbcReply from './BbcReply';
-import BbcReplyCta from './BbcReplyCta';
+import BbcReplyC from './BbcReplyC';
+import BbcReplyCtaC from './BbcReplyCtaC';
 import BbcSubmitComment from './BbcSubmitComment';
 import BbcContributor from './BbcContributor';
 
@@ -113,7 +107,7 @@ moment.updateLocale('en', {
 });
 
 export default {
-  components: { BbcReply, BbcReplyCta, BbcSubmitComment, BbcContributor },
+  components: { BbcReplyC, BbcReplyCtaC, BbcSubmitComment, BbcContributor },
 
   data() {
     return {
