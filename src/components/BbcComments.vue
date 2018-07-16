@@ -51,7 +51,6 @@
                   :key="comment.id"
 
                   :session="session"
-
                   :display-name="comment.displayName"
                   :comment-text="comment.commentText"
                   :timestamp="comment.timestamp"

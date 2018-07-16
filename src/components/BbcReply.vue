@@ -2,7 +2,6 @@
   <div class="reply">
     <div class="reply__header">
       <bbc-contributor :display-name="displayName"></bbc-contributor>
-      <span class="reply__timestamp">{{ timestamp | fromNow }}</span>
     </div>
     <div class="reply__body">
       <p class="gel-great-primer">{{ replyText }}</p>
@@ -11,8 +10,7 @@
       <div class="gel-layout">
         <div class="gel-layout__item gel-1/2">
           <div class="gel-brevier">
-            <bbc-reply-cta-c :reply-to="displayName" @reply="startReply($event)"></bbc-reply-cta-c>
-            <!-- <span class="reply__timestamp">{{ timestamp | fromNow }}</span> -->
+            <span class="reply__timestamp">{{ timestamp | fromNow }}</span>
             <span class="reply__bullet">&bull;</span>
             <span class="reply__report"><a href="#">Report</a></span>
           </div>
@@ -35,7 +33,6 @@
 import moment from 'moment';
 
 import BbcContributor from './BbcContributor';
-import BbcReplyCtaC from './BbcReplyCtaC';
 
 moment.updateLocale('en', {
   relativeTime: {
@@ -49,7 +46,7 @@ moment.updateLocale('en', {
 });
 
 export default {
-  components: { BbcContributor, BbcReplyCtaC },
+  components: { BbcContributor },
   filters: {
     fromNow(timestamp) {
       return moment(timestamp).fromNow(true);
@@ -61,12 +58,6 @@ export default {
     timestamp: Date,
     numUpVotes: Number,
     numDownVotes: Number,
-  },
-  methods: {
-    startReply(replyTo) {
-      // eslint-disable-next-line
-      console.log('Reply to', replyTo);
-    },
   },
 };
 </script>

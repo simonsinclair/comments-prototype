@@ -1,6 +1,6 @@
 <template>
   <div class="reply-cta">
-    <button class="gel-pica-bold" @click="$emit('reply', replyTo)">
+    <button class="gel-pica-bold" @click="$emit('reply')">
       <div>
         <img src="../assets/reply.svg" alt="" /> <span>Reply</span>
       </div>
@@ -9,11 +9,7 @@
 </template>
 
 <script>
-export default {
-  props: {
-    replyTo: String,
-  },
-};
+export default {};
 </script>
 
 <style lang="scss" scoped="">
