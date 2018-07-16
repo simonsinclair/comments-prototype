@@ -62,6 +62,8 @@
           v-for="reply in getOldestReplies(replies, numVisibleReplies)"
           :key="reply.id"
 
+          @reply-to-reply-submitted="submitReply"
+
           :session="session"
 
           :uuid="reply.uuid"
@@ -83,6 +85,8 @@
         <bbc-reply-c
           v-for="newReply in newReplies"
           :key="newReply.id"
+
+          @reply-to-reply-submitted="submitReply"
 
           :session="session"
 
@@ -170,7 +174,6 @@ export default {
           timestamp: new Date(),
           numUpVotes: 0,
           numDownVotes: 0,
-          replies: [],
         });
       } else {
         // Push reply normally.
@@ -183,7 +186,6 @@ export default {
           timestamp: new Date(),
           numUpVotes: 0,
           numDownVotes: 0,
-          replies: [],
         });
       }
 

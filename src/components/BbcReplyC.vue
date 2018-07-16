@@ -46,25 +46,6 @@
         <a :href="'#' + latestSubmitReplyId">View my reply</a>
       </div>
     </transition>
-
-    <div class="replies" v-show="replies.length > 0">
-      <transition-group name="new-reply" tag="div">
-        <bbc-reply-c
-          v-for="reply in getReplies(replies)"
-          :key="reply.id"
-
-          :session="session"
-
-          :uuid="reply.uuid"
-          :display-name="reply.displayName"
-          :reply-text="reply.replyText"
-          :timestamp="reply.timestamp"
-          :num-up-votes="reply.numUpVotes"
-          :num-down-votes="reply.numDownVotes"
-          :replies="reply.replies"
-        ></bbc-reply-c>
-      </transition-group>
-    </div>
   </div>
 </template>
 
@@ -88,8 +69,6 @@ moment.updateLocale('en', {
 });
 
 export default {
-  name: 'bbc-reply-c',
-
   data() {
     return {
       latestSubmitReplyId: '',
@@ -116,7 +95,6 @@ export default {
     timestamp: Date,
     numUpVotes: Number,
     numDownVotes: Number,
-    replies: Array, // Replies to replies.
   },
 
   methods: {
@@ -127,16 +105,7 @@ export default {
     },
 
     submitReply(replyText, uuid) {
-      this.replies.push({
-        id: this.replies.length + 1, // Increment `nextReplyId` for next reply.
-        uuid,
-        displayName: this.session.displayName,
-        replyText,
-        timestamp: new Date(),
-        numUpVotes: 0,
-        numDownVotes: 0,
-        replies: [],
-      });
+      this.$emit('reply-to-reply-submitted', replyText, uuid);
 
       this.latestSubmitReplyId = uuid;
       this.isSubmitReplyVisible = false;
