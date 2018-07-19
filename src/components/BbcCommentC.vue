@@ -105,6 +105,7 @@
 
 <script>
 import moment from 'moment';
+import inView from 'in-view';
 
 import BbcReplyC from './BbcReplyC';
 import BbcReplyCtaC from './BbcReplyCtaC';

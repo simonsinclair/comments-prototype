@@ -13,6 +13,7 @@
     "deploy": "npm run build && npm run push"
   },
   "dependencies": {
+    "in-view": "^0.6.1",
     "moment": "^2.22.1",
     "shortid": "^2.2.12",
     "vue": "^2.5.2"

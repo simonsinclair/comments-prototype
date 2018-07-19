@@ -51,6 +51,7 @@
 
 <script>
 import moment from 'moment';
+import inView from 'in-view';
 
 import BbcContributor from './BbcContributor';
 import BbcSubmitReply from './BbcSubmitReply';
