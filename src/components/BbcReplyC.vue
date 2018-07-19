@@ -43,7 +43,11 @@
 
     <transition name="new-reply" tag="div">
       <div class="submit-reply-success" v-show="isSubmitReplySuccessVisible">
-        <a :href="'#' + latestSubmitReplyUuid">View my reply</a>
+        <a
+            @click="isSubmitReplySuccessVisible = false"
+            :href="'#' + latestSubmitReplyUuid">
+          View my reply
+        </a>
       </div>
     </transition>
   </div>
