@@ -23,7 +23,7 @@
       <div class="comment__footer">
         <div class="gel-layout">
           <div class="gel-layout__item gel-1/2">
-            <bbc-reply-cta-c @reply="doReply()"></bbc-reply-cta-c>
+            <bbc-reply-cta-c @reply="preReply()"></bbc-reply-cta-c>
           </div>
           <div class="gel-layout__item gel-1/2 comment__actions">
             <button class="gel-pica">
@@ -51,7 +51,7 @@
 
     <transition name="new-reply" tag="div">
       <div class="submit-reply-success" v-show="isSubmitReplySuccessVisible">
-        <a :href="'#' + latestSubmitReplyId">View my reply</a>
+        <a :href="'#' + latestSubmitReplyUuid">View my reply</a>
       </div>
     </transition>
 
@@ -62,7 +62,7 @@
           v-for="reply in getOldestReplies(replies, numVisibleReplies)"
           :key="reply.id"
 
-          @reply-to-reply-submitted="submitReply"
+          @reply-to-reply-submitted="submitReplyToReply"
 
           :session="session"
 
@@ -86,7 +86,7 @@
           v-for="newReply in newReplies"
           :key="newReply.id"
 
-          @reply-to-reply-submitted="submitReply"
+          @reply-to-reply-submitted="submitReplyToReply"
 
           :session="session"
 
@@ -128,7 +128,7 @@ export default {
 
   data() {
     return {
-      latestSubmitReplyId: '',
+      latestSubmitReplyUuid: '',
       isSubmitReplyVisible: false,
       isSubmitReplySuccessVisible: false,
       isRepliesLimited: false,
@@ -138,7 +138,7 @@ export default {
   },
 
   methods: {
-    doReply() {
+    preReply() {
       this.isSubmitReplySuccessVisible = false;
       this.isSubmitReplyVisible = true;
 
@@ -193,13 +193,56 @@ export default {
         });
       }
 
-      this.latestSubmitReplyId = uuid;
       this.isSubmitReplyVisible = false;
-      this.isSubmitReplySuccessVisible = true;
+
+      this.$nextTick(() => {
+        this.afterReply(uuid);
+      });
+    },
+
+    afterReply(replyUuid) {
+      this.latestSubmitReplyUuid = replyUuid;
+
+      if (!inView.is(document.getElementById(replyUuid))) {
+        this.isSubmitReplySuccessVisible = true;
+      }
     },
 
     cancelReply() {
       this.isSubmitReplyVisible = false;
+    },
+
+    submitReplyToReply(replyText, uuid) {
+      // If replies are limited, or would be limited after next reply:
+      if (this.isRepliesLimited || this.replies.length === this.numVisibleReplies) {
+        // Push reply into 'always visible' reply slot.
+        this.newReplies.push({
+          id: this.newReplies.length + 1,
+
+          uuid,
+          displayName: this.session.displayName,
+          replyText,
+          timestamp: new Date(),
+          numUpVotes: 0,
+          numDownVotes: 0,
+        });
+      } else {
+        // Push reply normally.
+        this.replies.push({
+          id: this.replies.length + 1,
+
+          uuid,
+          displayName: this.session.displayName,
+          replyText,
+          timestamp: new Date(),
+          numUpVotes: 0,
+          numDownVotes: 0,
+        });
+      }
+
+      // Because this is a reply to a reply, we don't need
+      // to do any 'afterReply()' stuff. The reply component
+      // handles that itself.
     },
   },
 

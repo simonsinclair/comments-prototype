@@ -11,7 +11,7 @@
         <div class="gel-layout">
           <div class="gel-layout__item gel-1/2">
             <div class="gel-brevier">
-              <bbc-reply-cta-c @reply="doReply()"></bbc-reply-cta-c>
+              <bbc-reply-cta-c @reply="preReply()"></bbc-reply-cta-c>
               <span class="reply__timestamp">{{ timestamp | fromNow }}</span>
               <span class="reply__bullet">&bull;</span>
               <span class="reply__report"><a href="#">Report</a></span>
@@ -43,7 +43,7 @@
 
     <transition name="new-reply" tag="div">
       <div class="submit-reply-success" v-show="isSubmitReplySuccessVisible">
-        <a :href="'#' + latestSubmitReplyId">View my reply</a>
+        <a :href="'#' + latestSubmitReplyUuid">View my reply</a>
       </div>
     </transition>
   </div>
@@ -72,7 +72,7 @@ moment.updateLocale('en', {
 export default {
   data() {
     return {
-      latestSubmitReplyId: '',
+      latestSubmitReplyUuid: '',
       isSubmitReplyVisible: false,
       isSubmitReplySuccessVisible: false,
     };
@@ -99,7 +99,7 @@ export default {
   },
 
   methods: {
-    doReply() {
+    preReply() {
       this.isSubmitReplySuccessVisible = false;
       this.isSubmitReplyVisible = true;
 
@@ -111,13 +111,23 @@ export default {
     submitReply(replyText, uuid) {
       this.$emit('reply-to-reply-submitted', replyText, uuid);
 
-      this.latestSubmitReplyId = uuid;
       this.isSubmitReplyVisible = false;
-      this.isSubmitReplySuccessVisible = true;
+
+      this.$nextTick(() => {
+        this.afterReply(uuid);
+      });
     },
 
     cancelReply() {
       this.isSubmitReplyVisible = false;
+    },
+
+    afterReply(replyUuid) {
+      this.latestSubmitReplyUuid = replyUuid;
+
+      if (!inView.is(document.getElementById(replyUuid))) {
+        this.isSubmitReplySuccessVisible = true;
+      }
     },
 
     getReplies(rawReplies) {
