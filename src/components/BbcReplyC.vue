@@ -102,7 +102,10 @@ export default {
     doReply() {
       this.isSubmitReplySuccessVisible = false;
       this.isSubmitReplyVisible = true;
-      this.$refs.submitReply.focus();
+
+      this.$nextTick(() => {
+        this.$refs.submitReply.focus();
+      });
     },
 
     submitReply(replyText, uuid) {

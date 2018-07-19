@@ -5,11 +5,10 @@
           ref="input"
           class="gel-great-primer"
           type="text"
-          @focus="isActive = true"
           :placeholder="placeholderText"
           v-model.trim="commentText" />
         <img v-if="acceptsMedia" src="../assets/media-chooser.svg" alt="" />
-        <div class="submit-comment__controls" v-show="isActive">
+        <div class="submit-comment__controls">
           <button type="button" @click="cancelComment()">Cancel</button>
           <button type="submit" v-bind:disabled="!isSubmittable">{{ ctaText }}</button>
         </div>
@@ -21,6 +20,13 @@
 import shortid from 'shortid';
 
 export default {
+  data() {
+    return {
+      commentText: '',
+      isSubmittable: false,
+    };
+  },
+
   props: {
     acceptsMedia: {
       type: Boolean,
@@ -32,9 +38,7 @@ export default {
 
   methods: {
     focus() {
-      this.$nextTick(() => {
-        this.$refs.input.focus();
-      });
+      this.$refs.input.focus();
     },
 
     submitComment() {
@@ -43,25 +47,13 @@ export default {
       }
 
       this.$emit('reply-submitted', this.commentText, shortid.generate());
-
-      // Clear `commentText` after posting.
       this.commentText = '';
-      this.isActive = false;
     },
 
     cancelComment() {
       this.commentText = '';
-      this.isActive = false;
       this.$emit('reply-cancelled');
     },
-  },
-
-  data() {
-    return {
-      commentText: '',
-      isActive: false,
-      isSubmittable: false,
-    };
   },
 
   watch: {
