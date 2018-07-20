@@ -32,7 +32,10 @@ export default {
     },
     ctaText: String,
     placeholderText: String,
-    replyingToId: String,
+    replyingToId: {
+      type: String,
+      required: true,
+    },
   },
 
   methods: {
