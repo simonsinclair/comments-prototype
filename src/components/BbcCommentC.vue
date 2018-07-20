@@ -55,7 +55,7 @@
       <div class="submit-reply-success" v-show="isSubmitReplySuccessVisible">
         <a
             @click="isSubmitReplySuccessVisible = false"
-            :href="'#' + latestSubmitReplyId">
+            :href="'#' + latestReplyId">
           View my reply
         </a>
       </div>
@@ -135,7 +135,7 @@ export default {
 
   data() {
     return {
-      latestSubmitReplyId: '',
+      latestReplyId: '',
       isSubmitReplyVisible: false,
       isSubmitReplySuccessVisible: false,
       isRepliesLimited: false,
@@ -172,15 +172,16 @@ export default {
       return rawReplies.slice(0, numReplies);
     },
 
-    submitReply(replyText) {
-      const id = shortid.generate();
+    submitReply(replyText, replyToId) {
+      const newReplyId = shortid.generate();
 
       // If replies are limited, or would be limited after next reply:
       if (this.isRepliesLimited || this.replies.length === this.numVisibleReplies) {
         // Push reply into 'always visible' reply slot.
         this.newReplies.push({
-          id,
+          id: newReplyId,
           displayName: this.session.displayName,
+          replyToId,
           replyText,
           timestamp: new Date(),
           numUpVotes: 0,
@@ -189,8 +190,9 @@ export default {
       } else {
         // Push reply normally.
         this.replies.push({
-          id,
+          id: newReplyId,
           displayName: this.session.displayName,
+          replyToId,
           replyText,
           timestamp: new Date(),
           numUpVotes: 0,
@@ -201,14 +203,14 @@ export default {
       this.isSubmitReplyVisible = false;
 
       this.$nextTick(() => {
-        this.afterReply(id);
+        this.afterReply(newReplyId);
       });
     },
 
-    afterReply(replyId) {
-      this.latestSubmitReplyId = replyId;
+    afterReply(newReplyId) {
+      this.latestReplyId = newReplyId;
 
-      if (!inView.is(document.getElementById(replyId))) {
+      if (!inView.is(document.getElementById(newReplyId))) {
         this.isSubmitReplySuccessVisible = true;
       }
     },
@@ -217,13 +219,14 @@ export default {
       this.isSubmitReplyVisible = false;
     },
 
-    submitReplyToReply(replyText, id) {
+    submitReplyToReply(newReplyId, replyText, replyToId) {
       // If replies are limited, or would be limited after next reply:
       if (this.isRepliesLimited || this.replies.length === this.numVisibleReplies) {
         // Push reply into 'always visible' reply slot.
         this.newReplies.push({
-          id,
+          id: newReplyId,
           displayName: this.session.displayName,
+          replyToId,
           replyText,
           timestamp: new Date(),
           numUpVotes: 0,
@@ -232,8 +235,9 @@ export default {
       } else {
         // Push reply normally.
         this.replies.push({
-          id,
+          id: newReplyId,
           displayName: this.session.displayName,
+          replyToId,
           replyText,
           timestamp: new Date(),
           numUpVotes: 0,

@@ -114,14 +114,15 @@ export default {
     },
 
     submitReply(replyText) {
-      const id = shortid.generate();
+      const newReplyId = shortid.generate();
+      const replyingToId = this.id;
 
-      this.$emit('reply-to-reply-submitted', replyText, id);
+      this.$emit('reply-to-reply-submitted', newReplyId, replyText, replyingToId);
 
       this.isSubmitReplyVisible = false;
 
       this.$nextTick(() => {
-        this.afterReply(id);
+        this.afterReply(newReplyId);
       });
     },
 
@@ -129,10 +130,10 @@ export default {
       this.isSubmitReplyVisible = false;
     },
 
-    afterReply(id) {
-      this.latestReplyId = id;
+    afterReply(newReplyId) {
+      this.latestReplyId = newReplyId;
 
-      if (!inView.is(document.getElementById(id))) {
+      if (!inView.is(document.getElementById(newReplyId))) {
         this.isSubmitReplySuccessVisible = true;
       }
     },
