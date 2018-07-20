@@ -166,6 +166,7 @@ The foreign Remoaners on here pretending to be British do provide plenty of amus
         {
           id: 'jzwvq6-OJI',
           displayName: 'mole59',
+          replyToId: 'L-gSK8MUDO',
           replyText: `I am not pretending to be british, I am british. When your Isolation starts (and this will not be March 2019, but much later) it will be too late to reverse it. I post my comments on here because I think it is a shame that the UK is taking the wrong path. A path that will lead to long term misery for all that live there. You may think you have won something now but you wait.. `,
           timestamp: new Date(2018, 6, 1, 11, 32),
           numUpVotes: 0,
@@ -174,6 +175,7 @@ The foreign Remoaners on here pretending to be British do provide plenty of amus
         {
           id: 'hG22UVBwkt',
           displayName: 'Tom Waller',
+          replyToId: 'L-gSK8MUDO',
           replyText: `Thank you for your post. If I could have given you more than one up arrow I would have, for you speak the truth and if the Brexit support can not see now how wrong they are then the nation called United Kingdom is lost to history.
 
 The people of Scotland and Northern Ireland will not stand for any form of Brexit.
@@ -186,6 +188,7 @@ That is a fact England/Westminster best not ignore.`,
         {
           id: 'EpowiAE_HK',
           displayName: 'Tom Waller',
+          replyToId: 'L-gSK8MUDO',
           replyText: `17.4 million Brexit votes of which all but 2.2 million are ENGLISH from a total UK population of over 64 Million people is not democratic.
 
 NOR was turning down Scotland's request to hold the 2016 referendum to EU Majority rule where 3 out of 4 of the member states of the UK would have to vote for Brexit.`,
@@ -196,6 +199,7 @@ NOR was turning down Scotland's request to hold the 2016 referendum to EU Majori
         {
           id: 'HBDNLRiLMFn',
           displayName: 'bigmowlay',
+          replyToId: 'L-gSK8MUDO',
           replyText: `They don’t understand, or care. Their only agenda is hatred
 
 May is relying on them to keep her in power
@@ -212,6 +216,7 @@ It needs only one to work to save UK.`,
         {
           id: 'GO4xtL6H6jk',
           displayName: 'Tom Waller',
+          replyToId: 'L-gSK8MUDO',
           replyText: `The UK Gov. make interest on those loans should that happen.
 
 Are you enjoying paying for Calillion public works when the EU would have given up to 85% regional development grants on many of those failed projects, which were never tendered to the EU by the UK.
@@ -223,6 +228,7 @@ Are you enjoying paying for Calillion public works when the EU would have given 
         {
           id: 'MClcI5aBWK_',
           displayName: 'Tom Waller',
+          replyToId: 'L-gSK8MUDO',
           replyText: `We are doing our best for the UK Sir, here is a nice quote from the Guardian
 
 "A network of Yes groups all across Scotland has begun to regroup and reform. I was sent a list of more than 150 of them and this was by no means complete. This time, they will be demanding more autonomy from SNP central control over independence"`,
@@ -233,6 +239,7 @@ Are you enjoying paying for Calillion public works when the EU would have given 
         {
           id: 'PqOX3iX-Hg_',
           displayName: 'Jennayyy',
+          replyToId: 'L-gSK8MUDO',
           replyText: `Tom Waller should write for BBC News! He seems to have all the information, not sure if it's the right information but still information.`,
           timestamp: new Date(2018, 6, 3, 13, 43),
           numUpVotes: 0,
@@ -269,6 +276,7 @@ Are you enjoying paying for Calillion public works when the EU would have given 
         {
           id: 'aoXW7Kd33eL',
           displayName: 'anotherfakename',
+          replyToId: 'gEbNZyOC6y7',
           replyText: `Several points. a) We arent out so how can we deliver the benefits of being out. b) May, the government, mps and civil service making a mess of the whole issue are remainers. c) we ended here because those listed in b do not, have not and will never believe in Britain.
 Yes we will end up without leaving, and the UK will suffer from remaining in all the costs and rules as it has for 40 year`,
           timestamp: new Date(2018, 6, 3, 13, 21),
@@ -278,6 +286,7 @@ Yes we will end up without leaving, and the UK will suffer from remaining in all
         {
           id: 'urwooYAjEmP',
           displayName: 'EddieEagle',
+          replyToId: 'gEbNZyOC6y7',
           replyText: ` It’s worthwhile remembering that Brexit was supposed to make us better off. But it’s not it’s a fiasco! We have reached the point now that the lying Quitters preach destruction of our economy is exactly what the country voted for... wasn’t on the big red bus or ballot paper was it? Stop Brexit - it only leads to costs and decline`,
           timestamp: new Date(2018, 6, 3, 10, 0),
           numUpVotes: 0,
@@ -286,6 +295,7 @@ Yes we will end up without leaving, and the UK will suffer from remaining in all
         {
           id: 'XjJNiTU6KtP',
           displayName: 'Tom Waller',
+          replyToId: 'gEbNZyOC6y7',
           replyText: `Quote BBC "There is no Brexit dividend for our industry, particularly in what is an increasingly hostile and protectionist global trading environment.
 
 Our message to government is that until it can demonstrate exactly how a new model for customs and trade with the EU can replicate the benefits we currently enjoy, don't change it."`,
@@ -296,6 +306,7 @@ Our message to government is that until it can demonstrate exactly how a new mod
         {
           id: 'y-XDZsENFAO',
           displayName: 'anotherfakename',
+          replyToId: 'gEbNZyOC6y7',
           replyText: `What benefits? A massive and growing trade deficit is NOT a benefit to us. We can set tariffs as we like which could mean no tariffs on incoming parts for cars built here. I think in the long term we would want to change that though. We can also use tariffs collected on complete cars to lower tax and energy costs for manufacturers here to ensure they can afford tariffs into the EU. No probs`,
           timestamp: new Date(2018, 6, 3, 12, 0),
           numUpVotes: 0,
@@ -304,6 +315,7 @@ Our message to government is that until it can demonstrate exactly how a new mod
         {
           id: 'P42IX_dXdvn',
           displayName: 'british patriot',
+          replyToId: 'gEbNZyOC6y7',
           replyText: `We don't need cars or planes or employees or tax revenue or jobs.
 
 ( I've got 500 Unicorn eggs. Up West they'll charge you £1m each, I can let you have them for a 'pony' a piece or 5 for a 'monkey'...guaranteed to turn base metal into pure gold..cash only......................eggs may be gold painted duck eggs, buyer beware, only for holders of Blue Passports..it's the will of the people, innit)`,
@@ -314,6 +326,7 @@ Our message to government is that until it can demonstrate exactly how a new mod
         {
           id: 'ENSbsndqy_K',
           displayName: 'iliketurtles',
+          replyToId: 'gEbNZyOC6y7',
           replyText: `Are you trying to make a funny british patriot?`,
           timestamp: new Date(2018, 6, 3, 13, 30),
           numUpVotes: 0,
@@ -322,6 +335,7 @@ Our message to government is that until it can demonstrate exactly how a new mod
         {
           id: 'HXjt5mYS2Ob',
           displayName: 'manchestermanny',
+          replyToId: 'gEbNZyOC6y7',
           replyText: `It's hard for me to say this but I totally agree with anotherfakename!`,
           timestamp: new Date(2018, 6, 3, 14, 0),
           numUpVotes: 0,
