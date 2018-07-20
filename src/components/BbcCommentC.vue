@@ -44,6 +44,7 @@
         v-show="isSubmitReplyVisible"
         ref="submitReply"
         :placeholder-text="'Reply as ' + session.displayName"
+        :replying-to-id="id"
         @reply-submitted="submitReply"
         @reply-cancelled="cancelReply"
         cta-text="Add reply">

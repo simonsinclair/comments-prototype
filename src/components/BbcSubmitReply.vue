@@ -32,6 +32,7 @@ export default {
     },
     ctaText: String,
     placeholderText: String,
+    replyingToId: String,
   },
 
   methods: {
@@ -44,7 +45,7 @@ export default {
         return;
       }
 
-      this.$emit('reply-submitted', this.commentText);
+      this.$emit('reply-submitted', this.commentText, this.replyingToId);
       this.commentText = '';
     },
 
