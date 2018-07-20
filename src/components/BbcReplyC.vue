@@ -1,5 +1,5 @@
 <template>
-  <div class="reply-wrap" :id="uuid">
+  <div class="reply-wrap" :id="id">
     <div class="reply">
       <div class="reply__header">
         <bbc-contributor :display-name="displayName"></bbc-contributor>
@@ -45,7 +45,7 @@
       <div class="submit-reply-success" v-show="isSubmitReplySuccessVisible">
         <a
             @click="isSubmitReplySuccessVisible = false"
-            :href="'#' + latestSubmitReplyUuid">
+            :href="'#' + latestReplyId">
           View my reply
         </a>
       </div>
@@ -56,6 +56,7 @@
 <script>
 import moment from 'moment';
 import inView from 'in-view';
+import shortid from 'shortid';
 
 import BbcContributor from './BbcContributor';
 import BbcSubmitReply from './BbcSubmitReply';
@@ -76,7 +77,7 @@ moment.updateLocale('en', {
 export default {
   data() {
     return {
-      latestSubmitReplyUuid: '',
+      latestReplyId: '',
       isSubmitReplyVisible: false,
       isSubmitReplySuccessVisible: false,
     };
@@ -93,7 +94,7 @@ export default {
   props: {
     session: Object,
 
-    uuid: String,
+    id: String,
 
     displayName: String,
     replyText: String,
@@ -112,13 +113,15 @@ export default {
       });
     },
 
-    submitReply(replyText, uuid) {
-      this.$emit('reply-to-reply-submitted', replyText, uuid);
+    submitReply(replyText) {
+      const id = shortid.generate();
+
+      this.$emit('reply-to-reply-submitted', replyText, id);
 
       this.isSubmitReplyVisible = false;
 
       this.$nextTick(() => {
-        this.afterReply(uuid);
+        this.afterReply(id);
       });
     },
 
@@ -126,10 +129,10 @@ export default {
       this.isSubmitReplyVisible = false;
     },
 
-    afterReply(replyUuid) {
-      this.latestSubmitReplyUuid = replyUuid;
+    afterReply(id) {
+      this.latestReplyId = id;
 
-      if (!inView.is(document.getElementById(replyUuid))) {
+      if (!inView.is(document.getElementById(id))) {
         this.isSubmitReplySuccessVisible = true;
       }
     },

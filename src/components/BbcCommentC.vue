@@ -53,7 +53,7 @@
       <div class="submit-reply-success" v-show="isSubmitReplySuccessVisible">
         <a
             @click="isSubmitReplySuccessVisible = false"
-            :href="'#' + latestSubmitReplyUuid">
+            :href="'#' + latestSubmitReplyId">
           View my reply
         </a>
       </div>
@@ -70,7 +70,7 @@
 
           :session="session"
 
-          :uuid="reply.uuid"
+          :id="reply.id"
           :display-name="reply.displayName"
           :reply-text="reply.replyText"
           :timestamp="reply.timestamp"
@@ -94,7 +94,7 @@
 
           :session="session"
 
-          :uuid="newReply.uuid"
+          :id="newReply.id"
           :display-name="newReply.displayName"
           :reply-text="newReply.replyText"
           :timestamp="newReply.timestamp"
@@ -110,6 +110,7 @@
 <script>
 import moment from 'moment';
 import inView from 'in-view';
+import shortid from 'shortid';
 
 import BbcReplyC from './BbcReplyC';
 import BbcReplyCtaC from './BbcReplyCtaC';
@@ -132,7 +133,7 @@ export default {
 
   data() {
     return {
-      latestSubmitReplyUuid: '',
+      latestSubmitReplyId: '',
       isSubmitReplyVisible: false,
       isSubmitReplySuccessVisible: false,
       isRepliesLimited: false,
@@ -169,14 +170,14 @@ export default {
       return rawReplies.slice(0, numReplies);
     },
 
-    submitReply(replyText, uuid) {
+    submitReply(replyText) {
+      const id = shortid.generate();
+
       // If replies are limited, or would be limited after next reply:
       if (this.isRepliesLimited || this.replies.length === this.numVisibleReplies) {
         // Push reply into 'always visible' reply slot.
         this.newReplies.push({
-          id: this.newReplies.length + 1,
-
-          uuid,
+          id,
           displayName: this.session.displayName,
           replyText,
           timestamp: new Date(),
@@ -186,9 +187,7 @@ export default {
       } else {
         // Push reply normally.
         this.replies.push({
-          id: this.replies.length + 1,
-
-          uuid,
+          id,
           displayName: this.session.displayName,
           replyText,
           timestamp: new Date(),
@@ -200,14 +199,14 @@ export default {
       this.isSubmitReplyVisible = false;
 
       this.$nextTick(() => {
-        this.afterReply(uuid);
+        this.afterReply(id);
       });
     },
 
-    afterReply(replyUuid) {
-      this.latestSubmitReplyUuid = replyUuid;
+    afterReply(replyId) {
+      this.latestSubmitReplyId = replyId;
 
-      if (!inView.is(document.getElementById(replyUuid))) {
+      if (!inView.is(document.getElementById(replyId))) {
         this.isSubmitReplySuccessVisible = true;
       }
     },
@@ -216,14 +215,12 @@ export default {
       this.isSubmitReplyVisible = false;
     },
 
-    submitReplyToReply(replyText, uuid) {
+    submitReplyToReply(replyText, id) {
       // If replies are limited, or would be limited after next reply:
       if (this.isRepliesLimited || this.replies.length === this.numVisibleReplies) {
         // Push reply into 'always visible' reply slot.
         this.newReplies.push({
-          id: this.newReplies.length + 1,
-
-          uuid,
+          id,
           displayName: this.session.displayName,
           replyText,
           timestamp: new Date(),
@@ -233,9 +230,7 @@ export default {
       } else {
         // Push reply normally.
         this.replies.push({
-          id: this.replies.length + 1,
-
-          uuid,
+          id,
           displayName: this.session.displayName,
           replyText,
           timestamp: new Date(),
@@ -259,7 +254,7 @@ export default {
   props: {
     session: Object,
 
-    id: Number,
+    id: String,
     displayName: String,
     commentText: String,
     timestamp: Date,

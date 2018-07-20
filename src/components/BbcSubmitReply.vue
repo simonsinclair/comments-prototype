@@ -17,8 +17,6 @@
 </template>
 
 <script>
-import shortid from 'shortid';
-
 export default {
   data() {
     return {
@@ -46,7 +44,7 @@ export default {
         return;
       }
 
-      this.$emit('reply-submitted', this.commentText, shortid.generate());
+      this.$emit('reply-submitted', this.commentText);
       this.commentText = '';
     },
 
