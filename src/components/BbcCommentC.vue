@@ -1,5 +1,6 @@
 <template>
   <div
+    :id="id"
     class="comment-wrap"
     :class="{ 'comment-wrap--has-replies': replies.length > 0 }">
 

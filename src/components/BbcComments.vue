@@ -52,6 +52,7 @@
 
                   :session="session"
 
+                  :id="comment.id"
                   :display-name="comment.displayName"
                   :comment-text="comment.commentText"
                   :timestamp="comment.timestamp"
@@ -78,6 +79,8 @@
 </template>
 
 <script>
+import shortid from 'shortid';
+
 import commentsDataCore from '../comments-core';
 import commentsDataChildrens from '../comments-childrens';
 
@@ -151,9 +154,10 @@ export default {
 
   methods: {
     submitComment(commentText) {
-      const nextCommentId = this.comments.length + 1;
+      const newCommentId = shortid.generate();
+
       this.comments.push({
-        id: nextCommentId, // Increment `nextCommentId` for next reply.
+        id: newCommentId,
         displayName: this.session.displayName,
         commentText,
         timestamp: new Date(),
