@@ -74,11 +74,14 @@
 
           :id="reply.id"
           :display-name="reply.displayName"
+          :reply-to-id="reply.replyToId"
           :reply-text="reply.replyText"
           :timestamp="reply.timestamp"
           :num-up-votes="reply.numUpVotes"
           :num-down-votes="reply.numDownVotes"
-          :replies="reply.replies"
+
+          :reply-stack="replies"
+          :new-reply-stack="newReplies"
         ></bbc-reply-c>
       </transition-group>
       <button
@@ -98,11 +101,14 @@
 
           :id="newReply.id"
           :display-name="newReply.displayName"
+          :reply-to-id="newReply.replyToId"
           :reply-text="newReply.replyText"
           :timestamp="newReply.timestamp"
           :num-up-votes="newReply.numUpVotes"
           :num-down-votes="newReply.numDownVotes"
-          :replies="newReply.replies"
+
+          :reply-stack="replies"
+          :new-reply-stack="newReplies"
         ></bbc-reply-c>
       </transition-group>
     </div>

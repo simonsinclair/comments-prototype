@@ -5,6 +5,11 @@
         <bbc-contributor :display-name="displayName"></bbc-contributor>
       </div>
       <div class="reply__body">
+        <!-- Temp. -->
+        <div v-if="quote">
+          <p>{{ quote.displayName }}</p>
+          <p>{{ quote.replyText }}</p>
+        </div>
         <p class="gel-great-primer">{{ replyText }}</p>
       </div>
       <div class="reply__footer">
@@ -35,6 +40,7 @@
         v-show="isSubmitReplyVisible"
         ref="submitReply"
         :placeholder-text="'Reply as ' + session.displayName"
+        :replying-to-id="id"
         @reply-submitted="submitReply"
         @reply-cancelled="cancelReply"
         cta-text="Add reply">
@@ -96,12 +102,33 @@ export default {
     session: Object,
 
     id: String,
-
     displayName: String,
+    replyToId: {
+      type: String,
+      required: true,
+    },
     replyText: String,
     timestamp: Date,
     numUpVotes: Number,
     numDownVotes: Number,
+
+    // For searching replies to.
+    replyStack: {
+      type: Array,
+      required: true,
+    },
+
+    newReplyStack: {
+      type: Array,
+      required: true,
+    },
+  },
+
+  computed: {
+    quote() {
+      const stack = _.concat(this.replyStack, this.newReplyStack);
+      return _.find(stack, ['id', this.replyToId]);
+    },
   },
 
   methods: {
@@ -114,9 +141,8 @@ export default {
       });
     },
 
-    submitReply(replyText) {
+    submitReply(replyText, replyingToId) {
       const newReplyId = shortid.generate();
-      const replyingToId = this.id;
 
       this.$emit('reply-to-reply-submitted', newReplyId, replyText, replyingToId);
 
