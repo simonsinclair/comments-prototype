@@ -3,7 +3,7 @@ module.exports = {
   title: 'Will the UK car industry get a good deal?',
   comments: [
     {
-      id: 1,
+      id: 't7JccCZny',
       displayName: 'John_from_Hendon',
       commentText: `Has Boris not yet been sacked?
 
@@ -18,7 +18,7 @@ Kick out Boris.`,
       replies: [],
     },
     {
-      id: 2,
+      id: 'KJOVydh64C',
       displayName: 'DPJmendoza',
       commentText: `So the withdrawal bill has been made law. were leaving but we have no plan, no plan for no deal, massive uncertainty, 100's of unresolved issues with only months to go, Tories divided and are never going to agree in a billion years.The EU may no be perfect but smashing everything up with no plan is no solution it's absolute insanity. The one certainty in all this is that the Tory party will fall.`,
       timestamp: new Date(2018, 5, 26, 12, 30),
@@ -27,7 +27,7 @@ Kick out Boris.`,
       replies: [],
     },
     {
-      id: 3,
+      id: 'klPLTs6rFt',
       displayName: 'Alan C',
       commentText: `The howling mob of Brexiteers don't care what happens to the country just so long as we leave the EU. Shame on them.`,
       timestamp: new Date(2018, 5, 26, 12, 33),
@@ -36,7 +36,7 @@ Kick out Boris.`,
       replies: [],
     },
     {
-      id: 4,
+      id: 'HAXvd1Zuyk',
       displayName: 'DPJmendoza',
       commentText: `We elect a PM to act in the best interest of the people and businesses etc, we do not elect a PM to act in the parties own interests and Kotow to likes of Bojo and Ree's Mogg who have there own agendas and devious reasons for wanting to leave. maybe we should all follow the Brexiteers with no plan other than were leaving, destination unknown, absolute insanity!`,
       // new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]]]]]);
@@ -48,7 +48,7 @@ Kick out Boris.`,
       replies: [],
     },
     {
-      id: 5,
+      id: 'bWlRtMc_wb',
       displayName: 'Please no more Brexit job losses',
       commentText: `Senior Tory politician resigns over failure to protect UK jobs.
 
@@ -59,7 +59,7 @@ Start of a trend?`,
       replies: [],
     },
     {
-      id: 6,
+      id: 'GGUMTgXrAw',
       displayName: 'BBC Remoanbots Paid in Euros to Cry',
       commentText: `My point? EU propagandists lying to the UK full time on here.`,
       timestamp: new Date(2018, 5, 27, 15, 33),
@@ -68,7 +68,7 @@ Start of a trend?`,
       replies: [],
     },
     {
-      id: 7,
+      id: 'n3C3MluZeN',
       displayName: 'CommonSense',
       commentText: `Impose quota's on the foreign can manufacturers if they want to threaten a country. You want to import your French, German vehicles etc, 45% UK content is required`,
       timestamp: new Date(2018, 5, 28, 16, 35),
@@ -77,7 +77,7 @@ Start of a trend?`,
       replies: [],
     },
     {
-      id: 8,
+      id: '8SdHSy0jXR',
       displayName: 'My Polypersonalities',
       commentText: `Cadence Minerals just spiked up 40% .. sold a few of these ... not all profit but every little helps ...
 
@@ -92,7 +92,7 @@ Still, Brexitear Odey will be enjoying his £200 Million profits betting against
       replies: [],
     },
     {
-      id: 9,
+      id: 'lCDE2s0bpj',
       displayName: '0racle',
       commentText: `Kamal you must stop reporting the facts, you know our far-right Tory bot friends don't like the news being reported.
 
@@ -103,7 +103,7 @@ We all know the type of UK they want and it's not one the vast majority do. Orwe
       replies: [],
     },
     {
-      id: 10,
+      id: 'Hq83XAKaHb',
       displayName: 'Tom Waller',
       commentText: `Harmony. That is why the EU alter UK regulations mostly, not national laws.
 
@@ -120,7 +120,7 @@ Guess what England. Nothing but troubles ahead. Did warn you 2 years ago to Exit
       replies: [],
     },
     {
-      id: 11,
+      id: 'Lp8VY-3JYh',
       displayName: 'longmemory',
       commentText: `Oh well it looks like:
 
@@ -133,7 +133,7 @@ Springtime for Merkel & Germany
       replies: [],
     },
     {
-      id: 12,
+      id: 'KySAiD5ZLq',
       displayName: 'Cap Ferrat',
       commentText: `Yes indeed, looks like Germany is about to change its political leadership with the coalition disintegrating.
 
@@ -153,7 +153,7 @@ Watch and learn`,
       replies: [],
     },
     {
-      id: 13,
+      id: 'L-gSK8MUDO',
       displayName: 'Cap Ferrat',
       commentText: `Oh dear, it seems that yet again there are the same old folk on here, bitterly resenting the democratic decision taken by the majority of the U.K.
 I for one, am very happy to cheer on Brexit as it is now unstoppable.
@@ -164,7 +164,7 @@ The foreign Remoaners on here pretending to be British do provide plenty of amus
       numDownVotes: 3,
       replies: [
         {
-          id: 1,
+          id: 'jzwvq6-OJI',
           displayName: 'mole59',
           replyText: `I am not pretending to be british, I am british. When your Isolation starts (and this will not be March 2019, but much later) it will be too late to reverse it. I post my comments on here because I think it is a shame that the UK is taking the wrong path. A path that will lead to long term misery for all that live there. You may think you have won something now but you wait.. `,
           timestamp: new Date(2018, 6, 1, 11, 32),
@@ -172,7 +172,7 @@ The foreign Remoaners on here pretending to be British do provide plenty of amus
           numDownVotes: 0,
         },
         {
-          id: 2,
+          id: 'hG22UVBwkt',
           displayName: 'Tom Waller',
           replyText: `Thank you for your post. If I could have given you more than one up arrow I would have, for you speak the truth and if the Brexit support can not see now how wrong they are then the nation called United Kingdom is lost to history.
 
@@ -184,7 +184,7 @@ That is a fact England/Westminster best not ignore.`,
           numDownVotes: 0,
         },
         {
-          id: 3,
+          id: 'EpowiAE_HK',
           displayName: 'Tom Waller',
           replyText: `17.4 million Brexit votes of which all but 2.2 million are ENGLISH from a total UK population of over 64 Million people is not democratic.
 
@@ -194,7 +194,7 @@ NOR was turning down Scotland's request to hold the 2016 referendum to EU Majori
           numDownVotes: 0,
         },
         {
-          id: 4,
+          id: 'HBDNLRiLMFn',
           displayName: 'bigmowlay',
           replyText: `They don’t understand, or care. Their only agenda is hatred
 
@@ -210,7 +210,7 @@ It needs only one to work to save UK.`,
           numDownVotes: 0,
         },
         {
-          id: 5,
+          id: 'GO4xtL6H6jk',
           displayName: 'Tom Waller',
           replyText: `The UK Gov. make interest on those loans should that happen.
 
@@ -221,7 +221,7 @@ Are you enjoying paying for Calillion public works when the EU would have given 
           numDownVotes: 0,
         },
         {
-          id: 6,
+          id: 'MClcI5aBWK_',
           displayName: 'Tom Waller',
           replyText: `We are doing our best for the UK Sir, here is a nice quote from the Guardian
 
@@ -231,7 +231,7 @@ Are you enjoying paying for Calillion public works when the EU would have given 
           numDownVotes: 0,
         },
         {
-          id: 7,
+          id: 'PqOX3iX-Hg_',
           displayName: 'Jennayyy',
           replyText: `Tom Waller should write for BBC News! He seems to have all the information, not sure if it's the right information but still information.`,
           timestamp: new Date(2018, 6, 3, 13, 43),
@@ -241,7 +241,7 @@ Are you enjoying paying for Calillion public works when the EU would have given 
       ],
     },
     {
-      id: 14,
+      id: 'ipJVUELli5c',
       displayName: 'SnowyDay',
       commentText: `Germany knocked out of the World Cup, Merkel next ? Then the EU ? Better stay in the UK guys, the EU's going down`,
       timestamp: new Date(2018, 6, 1, 11, 8),
@@ -250,7 +250,7 @@ Are you enjoying paying for Calillion public works when the EU would have given 
       replies: [],
     },
     {
-      id: 15,
+      id: '0oCaCvhS6mx',
       displayName: 'make sense',
       commentText: `Theres always Macron to take over once Merkel falls. Oh wait! Hes busy building a private swimming pool and buying crockery!`,
       timestamp: new Date(2018, 6, 2, 12, 23),
@@ -259,7 +259,7 @@ Are you enjoying paying for Calillion public works when the EU would have given 
       replies: [],
     },
     {
-      id: 16,
+      id: 'gEbNZyOC6y7',
       displayName: 'EddieEagle',
       commentText: `We are ending up with a soft Brexit. And the Quitters only have themselves to blame for this by failing to deliver the promised benefits. Not the EU’s fault, migrants or Remain supporters, it’s the lying Quitters, Tories and UKIP bigots’ fault for believing in their own lies. Bye bye cliff edge 👋 and welcome to what’s best for Britain 🇬🇧`,
       timestamp: new Date(2018, 6, 2, 13, 2),
@@ -267,7 +267,7 @@ Are you enjoying paying for Calillion public works when the EU would have given 
       numDownVotes: 0,
       replies: [
         {
-          id: 1,
+          id: 'aoXW7Kd33eL',
           displayName: 'anotherfakename',
           replyText: `Several points. a) We arent out so how can we deliver the benefits of being out. b) May, the government, mps and civil service making a mess of the whole issue are remainers. c) we ended here because those listed in b do not, have not and will never believe in Britain.
 Yes we will end up without leaving, and the UK will suffer from remaining in all the costs and rules as it has for 40 year`,
@@ -276,7 +276,7 @@ Yes we will end up without leaving, and the UK will suffer from remaining in all
           numDownVotes: 0,
         },
         {
-          id: 2,
+          id: 'urwooYAjEmP',
           displayName: 'EddieEagle',
           replyText: ` It’s worthwhile remembering that Brexit was supposed to make us better off. But it’s not it’s a fiasco! We have reached the point now that the lying Quitters preach destruction of our economy is exactly what the country voted for... wasn’t on the big red bus or ballot paper was it? Stop Brexit - it only leads to costs and decline`,
           timestamp: new Date(2018, 6, 3, 10, 0),
@@ -284,7 +284,7 @@ Yes we will end up without leaving, and the UK will suffer from remaining in all
           numDownVotes: 0,
         },
         {
-          id: 3,
+          id: 'XjJNiTU6KtP',
           displayName: 'Tom Waller',
           replyText: `Quote BBC "There is no Brexit dividend for our industry, particularly in what is an increasingly hostile and protectionist global trading environment.
 
@@ -294,7 +294,7 @@ Our message to government is that until it can demonstrate exactly how a new mod
           numDownVotes: 0,
         },
         {
-          id: 4,
+          id: 'y-XDZsENFAO',
           displayName: 'anotherfakename',
           replyText: `What benefits? A massive and growing trade deficit is NOT a benefit to us. We can set tariffs as we like which could mean no tariffs on incoming parts for cars built here. I think in the long term we would want to change that though. We can also use tariffs collected on complete cars to lower tax and energy costs for manufacturers here to ensure they can afford tariffs into the EU. No probs`,
           timestamp: new Date(2018, 6, 3, 12, 0),
@@ -302,7 +302,7 @@ Our message to government is that until it can demonstrate exactly how a new mod
           numDownVotes: 0,
         },
         {
-          id: 5,
+          id: 'P42IX_dXdvn',
           displayName: 'british patriot',
           replyText: `We don't need cars or planes or employees or tax revenue or jobs.
 
@@ -312,7 +312,7 @@ Our message to government is that until it can demonstrate exactly how a new mod
           numDownVotes: 0,
         },
         {
-          id: 6,
+          id: 'ENSbsndqy_K',
           displayName: 'iliketurtles',
           replyText: `Are you trying to make a funny british patriot?`,
           timestamp: new Date(2018, 6, 3, 13, 30),
@@ -320,7 +320,7 @@ Our message to government is that until it can demonstrate exactly how a new mod
           numDownVotes: 0,
         },
         {
-          id: 7,
+          id: 'HXjt5mYS2Ob',
           displayName: 'manchestermanny',
           replyText: `It's hard for me to say this but I totally agree with anotherfakename!`,
           timestamp: new Date(2018, 6, 3, 14, 0),
@@ -330,7 +330,7 @@ Our message to government is that until it can demonstrate exactly how a new mod
       ],
     },
     {
-      id: 17,
+      id: 'kgsyp-kDmc7',
       displayName: 'londonbob',
       commentText: `Tick tock tick tock barnier`,
       timestamp: new Date(2018, 6, 3, 13, 30),
@@ -339,7 +339,7 @@ Our message to government is that until it can demonstrate exactly how a new mod
       replies: [],
     },
     {
-      id: 18,
+      id: 'RvwEThKAfK6',
       displayName: 'icecoldstevet',
       commentText: `Although investment is lower at present it is still significant even though Brexit is now happening (repeal of 1972 act taking us out is now law). Lower level of investment could also be due to cyclical and other reasons.
 

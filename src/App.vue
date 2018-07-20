@@ -92,6 +92,14 @@
 <script>
 import BbcComments from './components/BbcComments';
 
+// import shortid from 'shortid';
+
+// let uuids = [];
+// for (var i = 40 - 1; i >= 0; i--) {
+//   uuids.push(shortid.generate());
+// }
+// console.log(uuids);
+
 export default {
   name: 'App',
   components: { BbcComments },
