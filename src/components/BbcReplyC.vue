@@ -54,6 +54,7 @@
 </template>
 
 <script>
+import _ from 'lodash';
 import moment from 'moment';
 import inView from 'in-view';
 import shortid from 'shortid';
