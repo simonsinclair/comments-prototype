@@ -122,9 +122,7 @@ Guess what England. Nothing but troubles ahead. Did warn you 2 years ago to Exit
     {
       id: 'Lp8VY-3JYh',
       displayName: 'longmemory',
-      commentText: `Oh well it looks like:
-
-Springtime for Merkel & Germany
+      commentText: `Oh well, great for Merkel & Germany
 
 :-) `,
       timestamp: new Date(2018, 5, 30, 11, 44),
