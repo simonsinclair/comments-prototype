@@ -45,7 +45,7 @@
       <bbc-submit-reply
         v-show="isSubmitReplyVisible"
         ref="submitReply"
-        :placeholder-text="'Reply as ' + session.displayName"
+        :placeholder-text="'Add your reply...'"
         :replying-to-id="id"
         @reply-submitted="submitReply"
         @reply-cancelled="cancelReply"
