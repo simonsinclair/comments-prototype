@@ -90,7 +90,7 @@
         v-show="isRepliesLimited"
         class="replies__show-more gel-brevier-bold"
         @click="showMoreReplies()">
-          Show more replies
+          {{ replies.length }} more replies <img src="../assets/down-arrow-blue.svg" alt="" />
       </button>
       <transition-group name="new-reply" tag="div" class="replies--new">
         <bbc-reply-c
