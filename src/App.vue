@@ -132,7 +132,7 @@ export default {
     box-sizing: inherit;
   }
 
-  $blue: #3a64ee;
+  $blue: #3A64EE;
 
   body {
     font-family: "ReithSans", sans-serif;
