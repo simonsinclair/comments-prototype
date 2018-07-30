@@ -9,14 +9,16 @@
             <input
               type="radio"
               value="BbcCommentA"
-              v-model="session.commentComponent" />
+              v-model="session.commentComponent"
+              disabled="" />
           </label>
           <label>
             B
             <input
               type="radio"
               value="BbcCommentB"
-              v-model="session.commentComponent" />
+              v-model="session.commentComponent"
+              disabled="" />
           </label>
           <label>
             C
@@ -39,7 +41,8 @@
             <input
               type="radio"
               value="childrens"
-              v-model="session.theme" />
+              v-model="session.theme"
+              disabled="" />
           </label>
         </fieldset>
         <button type="submit">Hide</button>
