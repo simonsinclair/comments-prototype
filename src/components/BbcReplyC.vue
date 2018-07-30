@@ -182,8 +182,8 @@ export default {
 <style lang="scss" scoped="">
   .reply-wrap {
     // padding-left: 24px;
-    padding-right: 20px-2;
-    padding-left: 20px;
+    padding-right: 20px;
+    padding-left: 20px-2;
 
     &:last-child {
       // background-color: pink;

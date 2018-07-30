@@ -71,14 +71,23 @@ export default {
 <style lang="scss" scoped="">
   .submit-comment {
     background-color: #FFF;
-    border-radius: 4px;
-    margin-left: 24px;
-    padding: 12px;
+    // border-bottom: 1px solid #CCC;
+    border-left: 2px solid #3A64EE;
+    // border-radius: 4px;
+    margin-left: 20px-2;
+    padding: 20px 20px 0;
+
+    .reply-wrap & {
+      margin-left: 0;
+      padding-right: 0;
+    }
   }
   .submit-comment--isolated {
     box-shadow: 0px 2px 1px 0px rgba(0,0,0,0.3)
   }
     .submit-comment__form {
+      border-bottom: 1px solid #CCC;
+      padding-bottom: 20px;
 
       > input {
         border: none;
