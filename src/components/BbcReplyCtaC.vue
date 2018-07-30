@@ -23,6 +23,7 @@ export default {};
     }
 
     > button {
+        color: #3A64EE;
 
       > div {
         display: flex;
