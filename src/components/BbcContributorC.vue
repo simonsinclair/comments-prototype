@@ -2,7 +2,7 @@
   <div class="contributor">
     <div>
       <span class="contributor__name gel-pica-bold">{{ displayName }}</span>
-      <span v-if="quote">to {{ quote.displayName }}</span>
+      <span class="contributor__quotee" v-if="quote"><span>to</span> {{ quote.displayName }}</span>
     </div>
     <span class="contributor__timestamp gel-long-primer">{{ timestamp | fromNow }}</span>
   </div>
@@ -40,10 +40,16 @@ export default {
 <style lang="scss" scoped="">
   .contributor {}
     .contributor__name,
-    .contributor__timestamp {
-      display: block;
-    }
+    .contributor__timestamp {}
+
     .contributor__name {}
+    .contributor__quotee {
+      color: #999;
+
+      span {
+        font-style: italic;
+      }
+    }
     .contributor__timestamp {
       color: #999;
     }
