@@ -10,9 +10,9 @@
       </div>
       <div class="reply__body">
         <!-- Temp. -->
-        <div v-if="quote">
-          <p>{{ quote.displayName }}</p>
-          <p>{{ quote.replyText }}</p>
+        <div class="reply__quote" v-if="quote">
+          <p class="gel-pica-bold">{{ quote.displayName }}</p>
+          <p class="gel-pica">{{ quote.replyText }}</p>
         </div>
         <p class="gel-great-primer">{{ replyText }}</p>
       </div>
@@ -180,11 +180,14 @@ export default {
 
 <style lang="scss" scoped="">
   .reply-wrap {
-    padding-left: 24px;
+    // padding-left: 24px;
+    padding-right: 20px-2;
+    padding-left: 20px;
   }
 
   .reply {
-    background-color: #FFF;
+    // background-color: #FFF;
+    border-left: 2px solid #3A64EE;
     margin-bottom: 2px;
 
     &:last-child {
@@ -192,9 +195,11 @@ export default {
     }
   }
   .reply__header,
-  .reply__body {
-    padding-right: 12px;
-    padding-left: 12px;
+  .reply__body,
+  .reply__footer {
+    // padding-right: 12px;
+    // padding-left: 12px;
+    margin-left: 16px;
   }
   .reply__header {
     padding-top: 12px;
@@ -205,7 +210,17 @@ export default {
       white-space: pre-line;
     }
   }
+    .reply__quote {
+      background-color: #F0F0F0;
+      border-left: 2px solid #3A64EE;
+      // padding: 8px;
+
+        > p {
+          // padding: 0;
+        }
+    }
   .reply__footer {
+    border-bottom: 1px solid #CCC;
 
     button {
       padding: 12px;
@@ -223,19 +238,19 @@ export default {
     }
 
 
-    .reply__timestamp,
-    .reply__bullet,
-    .reply__report {
-      display: inline-block;
-    }
-    .reply__timestamp {
-      margin-left: 12px;
-    }
-    .reply__bullet {
-      margin-left: 4px;
-    }
-    .reply__report {
-      margin-left: 4px;
-    }
+    // .reply__timestamp,
+    // .reply__bullet,
+    // .reply__report {
+    //   display: inline-block;
+    // }
+    // .reply__timestamp {
+    //   margin-left: 12px;
+    // }
+    // .reply__bullet {
+    //   margin-left: 4px;
+    // }
+    // .reply__report {
+    //   margin-left: 4px;
+    // }
 </style>
 

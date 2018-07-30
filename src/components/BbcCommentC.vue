@@ -88,7 +88,7 @@
       </transition-group>
       <button
         v-show="isRepliesLimited"
-        class="replies__show-more gel-brevier-bold"
+        class="replies__show-more gel-long-primer-bold"
         @click="showMoreReplies()">
           {{ replies.length }} more replies <img src="../assets/down-arrow-blue.svg" alt="" />
       </button>
@@ -281,6 +281,10 @@ export default {
 
 <style lang="scss" scoped="">
   .comment-wrap {
+      background-color: #FFF;
+      border-radius: 2px;
+      box-shadow: 0px 2px 1px 0px rgba(0,0,0,0.3);
+      margin-bottom: 16px;
 
       &:last-child {
         margin-bottom: 24px;
@@ -289,56 +293,59 @@ export default {
       &.comment-wrap--has-replies {}
 
       &.comment-wrap--replies-visible {
-        margin-bottom: 24px;
+        // margin-bottom: 24px;
       }
     }
 
       .comment {
-        background-color: #FFF;
-        border-radius: 2px;
-        box-shadow: 0px 2px 1px 0px rgba(0,0,0,0.3);
-        margin-bottom: 16px;
+        // background-color: #FFF;
+        // border-radius: 2px;
+        // box-shadow: 0px 2px 1px 0px rgba(0,0,0,0.3);
+        // margin-bottom: 16px;
+        // border-bottom: 1px solid #CCC;
         position: relative;
 
         .comment-wrap--has-replies & {
-          margin-bottom: 16px+8;
+          border-bottom: 1px solid #CCC;
 
-          &::before,
-          &::after {
-            background-color: #DDD;
-            border-radius: 0 0 2px 2px;
-            box-shadow: 0 1px 1px rgba(0,0,0,0.3), inset 0 1px 1px rgba(0,0,0,0.3);
-            content: '';
-            display: block;
-            height: 4px;
-            position: absolute;
-          }
+          // margin-bottom: 16px+8;
 
-          &::before {
-            right: 8px;
-            bottom: -4px;
-            left: 8px;
-            // width: 94%;
-          }
+          // &::before,
+          // &::after {
+          //   background-color: #DDD;
+          //   border-radius: 0 0 2px 2px;
+          //   box-shadow: 0 1px 1px rgba(0,0,0,0.3), inset 0 1px 1px rgba(0,0,0,0.3);
+          //   content: '';
+          //   display: block;
+          //   height: 4px;
+          //   position: absolute;
+          // }
 
-          &::after {
-            background-color: #CCC;
-            right: 16px;
-            bottom: -8px;
-            left: 16px;
-            // width: 88%;
-          }
+          // &::before {
+          //   right: 8px;
+          //   bottom: -4px;
+          //   left: 8px;
+          //   // width: 94%;
+          // }
+
+          // &::after {
+          //   background-color: #CCC;
+          //   right: 16px;
+          //   bottom: -8px;
+          //   left: 16px;
+          //   // width: 88%;
+          // }
         }
 
         .comment-wrap--replies-visible & {
-          border-bottom-right-radius: 0;
-          border-bottom-left-radius: 0;
-          margin-bottom: 0;
+          // border-bottom-right-radius: 0;
+          // border-bottom-left-radius: 0;
+          // margin-bottom: 0;
 
-          &::before,
-          &::after {
-            content: normal;
-          }
+          // &::before,
+          // &::after {
+          //   content: normal;
+          // }
         }
       }
         .comment__header,
@@ -383,8 +390,8 @@ export default {
 
       .replies {
         // background-color: #DDD;
-        border-bottom-right-radius: 2px;
-        border-bottom-left-radius: 2px;
+        // border-bottom-right-radius: 2px;
+        // border-bottom-left-radius: 2px;
         // box-shadow: 0px 2px 1px 0px rgba(0,0,0,0.3);
         margin-bottom: 24px;
         padding-top: 12px;
@@ -394,8 +401,8 @@ export default {
       .replies__show-more {
         color: #3a64ee;
         display: block;
-        margin-right: auto;
-        margin-left: auto;
+        // margin-right: auto;
+        // margin-left: auto;
         padding: 4px 16px 16px 16px;
       }
 
