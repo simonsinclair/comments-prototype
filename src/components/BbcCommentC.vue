@@ -397,7 +397,7 @@ export default {
         // border-bottom-left-radius: 2px;
         // box-shadow: 0px 2px 1px 0px rgba(0,0,0,0.3);
         margin-bottom: 24px;
-        padding-top: 12px;
+        // padding-top: 12px;
         padding-bottom: 12px;
       }
 

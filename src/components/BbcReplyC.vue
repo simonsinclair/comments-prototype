@@ -184,16 +184,20 @@ export default {
     // padding-left: 24px;
     padding-right: 20px-2;
     padding-left: 20px;
+
+    &:last-child {
+      // background-color: pink;
+    }
   }
 
   .reply {
     // background-color: #FFF;
     border-left: 2px solid #3A64EE;
-    margin-bottom: 2px;
+    // margin-bottom: 2px;
 
-    &:last-child {
-      margin-bottom: 12px;
-    }
+    // &:last-child {
+    //   margin-bottom: 12px;
+    // }
   }
   .reply__header,
   .reply__body,
@@ -212,16 +216,15 @@ export default {
     }
   }
     .reply__quote {
-      background-color: #F0F0F0;
+      background-color: #F5F5F5;
       border-left: 2px solid #3A64EE;
-      // padding: 8px;
-
-        > p {
-          // padding: 0;
-        }
     }
   .reply__footer {
     border-bottom: 1px solid #CCC;
+
+    .reply-wrap:last-child & {
+      // border-bottom: none;
+    }
 
     button {
       padding: 12px;
