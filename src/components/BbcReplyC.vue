@@ -217,7 +217,17 @@ export default {
   }
     .reply__quote {
       background-color: #F5F5F5;
-      border-left: 2px solid #3A64EE;
+      padding: 12px;
+      margin-top: 16px;
+
+      p {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        &:last-child {
+          margin-top: 8px;
+        }
+      }
     }
   .reply__footer {
     border-bottom: 1px solid #CCC;
@@ -227,8 +237,8 @@ export default {
     }
 
     button {
-      padding: 12px;
-      padding-top: 0;
+      // padding: 12px;
+      // padding-top: 0;
     }
   }
 
