@@ -2,7 +2,7 @@
   <div class="reply-wrap" :id="id">
     <div class="reply">
       <div class="reply__header">
-        <bbc-contributor :display-name="displayName"></bbc-contributor>
+        <bbc-contributor-c :display-name="displayName" :timestamp="timestamp"></bbc-contributor-c>
       </div>
       <div class="reply__body">
         <!-- Temp. -->
@@ -17,9 +17,9 @@
           <div class="gel-layout__item gel-1/2">
             <div class="gel-brevier">
               <bbc-reply-cta-c @reply="preReply()"></bbc-reply-cta-c>
-              <span class="reply__timestamp">{{ timestamp | fromNow }}</span>
-              <span class="reply__bullet">&bull;</span>
-              <span class="reply__report"><a href="#">Report</a></span>
+              <!-- <span class="reply__timestamp">{{ timestamp | fromNow }}</span> -->
+              <!-- <span class="reply__bullet">&bull;</span> -->
+              <!-- <span class="reply__report"><a href="#">Report</a></span> -->
             </div>
           </div>
           <div class="gel-layout__item gel-1/2 reply__actions">
@@ -61,25 +61,25 @@
 
 <script>
 import _ from 'lodash';
-import moment from 'moment';
+// import moment from 'moment';
 import inView from 'in-view';
 import shortid from 'shortid';
 
-import BbcContributor from './BbcContributor';
+import BbcContributorC from './BbcContributorC';
 import BbcSubmitReply from './BbcSubmitReply';
 import BbcReplyCtaC from './BbcReplyCtaC';
 import BbcReplyC from './BbcReplyC';
 
-moment.updateLocale('en', {
-  relativeTime: {
-    s: 'just now',
-    m: '1 minute',
-    h: '1 hour',
-    d: '1 day',
-    M: '1 month',
-    y: '1 year',
-  },
-});
+// moment.updateLocale('en', {
+//   relativeTime: {
+//     s: 'just now',
+//     m: '1 minute',
+//     h: '1 hour',
+//     d: '1 day',
+//     M: '1 month',
+//     y: '1 year',
+//   },
+// });
 
 export default {
   data() {
@@ -90,13 +90,13 @@ export default {
     };
   },
 
-  components: { BbcContributor, BbcSubmitReply, BbcReplyCtaC, BbcReplyC },
+  components: { BbcContributorC, BbcSubmitReply, BbcReplyCtaC, BbcReplyC },
 
-  filters: {
-    fromNow(timestamp) {
-      return moment(timestamp).fromNow(true);
-    },
-  },
+  // filters: {
+  //   fromNow(timestamp) {
+  //     return moment(timestamp).fromNow(true);
+  //   },
+  // },
 
   props: {
     session: Object,

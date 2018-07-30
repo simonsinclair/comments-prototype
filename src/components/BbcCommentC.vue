@@ -7,7 +7,7 @@
     <!-- Comment -->
     <div class="comment">
       <div class="comment__header">
-        <bbc-contributor :display-name="displayName"></bbc-contributor>
+        <bbc-contributor-c :display-name="displayName" :timestamp="timestamp"></bbc-contributor-c>
         <!--
           Todo:
             - Render special flag, e.g. Editors pick
@@ -15,11 +15,11 @@
       </div>
       <div class="comment__body">
         <p class="gel-great-primer">{{ commentText }}</p>
-        <span class="gel-brevier">
+        <!-- <span class="gel-brevier">
           <span class="comment__timestamp">{{ timestamp | fromNow }}</span>
           <span class="comment__bullet">&bull;</span>
           <span class="comment__report"><a href="#">Report</a></span>
-        </span>
+        </span> -->
       </div>
       <div class="comment__footer">
         <div class="gel-layout">
@@ -116,28 +116,28 @@
 </template>
 
 <script>
-import moment from 'moment';
+// import moment from 'moment';
 import inView from 'in-view';
 import shortid from 'shortid';
 
 import BbcReplyC from './BbcReplyC';
 import BbcReplyCtaC from './BbcReplyCtaC';
 import BbcSubmitReply from './BbcSubmitReply';
-import BbcContributor from './BbcContributor';
+import BbcContributorC from './BbcContributorC';
 
-moment.updateLocale('en', {
-  relativeTime: {
-    s: 'just now',
-    m: '1 minute',
-    h: '1 hour',
-    d: '1 day',
-    M: '1 month',
-    y: '1 year',
-  },
-});
+// moment.updateLocale('en', {
+//   relativeTime: {
+//     s: 'just now',
+//     m: '1 minute',
+//     h: '1 hour',
+//     d: '1 day',
+//     M: '1 month',
+//     y: '1 year',
+//   },
+// });
 
 export default {
-  components: { BbcReplyC, BbcReplyCtaC, BbcSubmitReply, BbcContributor },
+  components: { BbcReplyC, BbcReplyCtaC, BbcSubmitReply, BbcContributorC },
 
   data() {
     return {
@@ -257,11 +257,11 @@ export default {
     },
   },
 
-  filters: {
-    fromNow(timestamp) {
-      return moment(timestamp).fromNow(true);
-    },
-  },
+  // filters: {
+  //   fromNow(timestamp) {
+  //     return moment(timestamp).fromNow(true);
+  //   },
+  // },
 
   props: {
     session: Object,
