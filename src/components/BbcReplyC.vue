@@ -2,7 +2,11 @@
   <div class="reply-wrap" :id="id">
     <div class="reply">
       <div class="reply__header">
-        <bbc-contributor-c :display-name="displayName" :timestamp="timestamp"></bbc-contributor-c>
+        <bbc-contributor-c
+          :display-name="displayName"
+          :timestamp="timestamp"
+          :quote="quote">
+        </bbc-contributor-c>
       </div>
       <div class="reply__body">
         <!-- Temp. -->

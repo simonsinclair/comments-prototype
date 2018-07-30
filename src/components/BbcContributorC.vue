@@ -1,7 +1,10 @@
 <template>
   <div class="contributor">
-    <span class="contributor__name gel-pica-bold">{{ displayName }}</span>
-    <span class="contributor__timestamp gel-pica">{{ timestamp | fromNow }}</span>
+    <div>
+      <span class="contributor__name gel-pica-bold">{{ displayName }}</span>
+      <span v-if="quote">to {{ quote.displayName }}</span>
+    </div>
+    <span class="contributor__timestamp gel-long-primer">{{ timestamp | fromNow }}</span>
   </div>
 </template>
 
@@ -23,6 +26,7 @@ export default {
   props: {
     displayName: String,
     timestamp: Date,
+    quote: Object,
   },
 
   filters: {
