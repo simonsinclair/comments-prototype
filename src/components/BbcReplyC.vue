@@ -55,7 +55,8 @@
 
     <transition name="new-reply" tag="div">
       <div class="submit-reply-success" v-show="isSubmitReplySuccessVisible">
-        <img src="../assets/tick.svg" alt="" height="16" width="" />  <span>Thank you.</span> Your reply has been
+        <img src="../assets/tick.svg" alt="" height="16" width="16" />
+        <span>Thank you.</span> Your reply has been
         <a
             @click="isSubmitReplySuccessVisible = false"
             :href="'#' + latestReplyId">
