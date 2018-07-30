@@ -29,7 +29,9 @@
             <button class="gel-brevier">
               <img src="../assets/down-thumb.svg" alt="" /> {{ numDownVotes }}
             </button>
-            <button><img src="../assets/share.svg" alt="" /></button>
+            <button>
+              <img src="../assets/gel-icon-more-vertical.svg" alt="" height="16" width="16" />
+            </button>
           </div>
         </div>
       </div>
