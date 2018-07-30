@@ -101,16 +101,16 @@ import BbcReplyCta from './BbcReplyCta';
 import BbcSubmitComment from './BbcSubmitComment';
 import BbcContributor from './BbcContributor';
 
-moment.updateLocale('en', {
-  relativeTime: {
-    s: 'just now',
-    m: '1 minute',
-    h: '1 hour',
-    d: '1 day',
-    M: '1 month',
-    y: '1 year',
-  },
-});
+// moment.updateLocale('en', {
+//   relativeTime: {
+//     s: 'just now',
+//     m: '1 minute',
+//     h: '1 hour',
+//     d: '1 day',
+//     M: '1 month',
+//     y: '1 year',
+//   },
+// });
 
 export default {
   components: { BbcReply, BbcReplyCta, BbcSubmitComment, BbcContributor },

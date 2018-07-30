@@ -11,16 +11,16 @@
 <script>
 import moment from 'moment';
 
-moment.updateLocale('en', {
-  relativeTime: {
-    s: 'just now',
-    m: '1 minute',
-    h: '1 hour',
-    d: '1 day',
-    M: '1 month',
-    y: '1 year',
-  },
-});
+// moment.updateLocale('en', {
+//   relativeTime: {
+//     s: 'just now',
+//     m: '1 minute',
+//     h: '1 hour',
+//     d: '1 day',
+//     M: '1 month',
+//     y: '1 year',
+//   },
+// });
 
 export default {
   props: {
@@ -31,7 +31,7 @@ export default {
 
   filters: {
     fromNow(timestamp) {
-      return moment(timestamp).fromNow(true);
+      return moment(timestamp).fromNow();
     },
   },
 };
