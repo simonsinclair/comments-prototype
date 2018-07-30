@@ -87,12 +87,14 @@
           :new-reply-stack="newReplies"
         ></bbc-reply-c>
       </transition-group>
-      <button
-        v-show="isRepliesLimited"
-        class="replies__show-more gel-long-primer-bold"
-        @click="showMoreReplies()">
-          {{ replies.length }} more replies <img src="../assets/down-arrow-blue.svg" alt="" />
-      </button>
+      <div v-show="isRepliesLimited" class="replies__show-more">
+        <button
+          class="gel-long-primer-bold"
+          @click="showMoreReplies()">
+            {{ replies.length - getOldestReplies(replies, numVisibleReplies).length }}
+            more replies <img src="../assets/down-arrow-blue.svg" alt="" />
+        </button>
+      </div>
       <transition-group name="new-reply" tag="div" class="replies--new">
         <bbc-reply-c
           v-for="newReply in newReplies"
@@ -400,11 +402,20 @@ export default {
       }
 
       .replies__show-more {
-        color: #3a64ee;
-        display: block;
+        margin-right: 20px;
+        margin-left: 40px;
+
+        // color: #3a64ee;
+        // display: block;
         // margin-right: auto;
         // margin-left: auto;
-        padding: 4px 16px 16px 16px;
+        // padding: 4px 16px 16px 16px;
+
+        button {
+          color: #3a64ee;
+          padding-top: 16px;
+          padding-bottom: 16-8px;
+        }
       }
 
   .submit-reply-success {
