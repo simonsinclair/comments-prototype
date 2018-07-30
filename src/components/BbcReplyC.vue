@@ -55,11 +55,11 @@
 
     <transition name="new-reply" tag="div">
       <div class="submit-reply-success" v-show="isSubmitReplySuccessVisible">
+        <span>Thank you.</span> Your reply has been
         <a
             @click="isSubmitReplySuccessVisible = false"
             :href="'#' + latestReplyId">
-          View my reply
-        </a>
+          added below</a>.
       </div>
     </transition>
   </div>
@@ -237,6 +237,19 @@ export default {
       }
     }
 
+  .submit-reply-success {
+    border-bottom: 1px solid #DDD;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-left: 20px;
+
+    span {
+      font-weight: bold;
+    }
+    a {
+      font-weight: normal;
+    }
+  }
 
     // .reply__timestamp,
     // .reply__bullet,
